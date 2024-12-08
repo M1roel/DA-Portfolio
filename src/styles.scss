@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    height: 100vh;
+    background-color: #120B35;
+}
+
+
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Handjet';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../src/assets/fonts/handjet/Handjet-Regular.ttf') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../src/assets/fonts/roboto/RobotoMono-Regular.ttf') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+ 

@@ -1,0 +1,25 @@
+.navbar {
+  height: 92px !important;
+  color: #e15544;
+  font-size: 22px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 140px;
+  > div {
+    > a {
+      text-decoration: none;
+      color: #e15544;
+      font-family: 'Roboto';
+      margin-right: 48px;
+
+      &:hover {
+        text-decoration: underline;
+        color: #02F4BF;
+      }
+    }
+  }
+}
