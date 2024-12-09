@@ -1,24 +1,49 @@
+@use '../../../variables.scss';
+
 .navbar {
   height: 92px !important;
-  color: #e15544;
+  color: variables.$primary-color;
   font-size: 22px;
-}
 
-.nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 140px;
-  > div {
-    > a {
-      text-decoration: none;
-      color: #e15544;
-      font-family: 'Roboto';
-      margin-right: 48px;
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 140px;
 
-      &:hover {
-        text-decoration: underline;
-        color: #02F4BF;
+    .nav-left {
+      display: flex;
+      align-items: center;
+
+      .navbar-initials {
+        p {
+          font-family: variables.$font-secondary !important;
+          font-size: 48px;
+          line-height: 48px;
+          margin-right: 48px;
+        }
+      }
+
+      .nav-links {
+        a {
+          text-decoration: none;
+          color: variables.$primary-color;
+          font-family: variables.$font-primary;
+          margin-right: 48px;
+
+          &:hover {
+            text-decoration: underline;
+            color: variables.$hover-color;
+          }
+        }
+      }
+    }
+
+    .nav-right {
+      margin-left: auto;
+
+      p {
+        font-family: variables.$font-primary;
       }
     }
   }
