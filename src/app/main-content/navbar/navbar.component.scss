@@ -1,14 +1,13 @@
-@use '../../../variables.scss';
+@use '../../../variables.scss' as v;
+@use '../../../mixins.scss' as m;
 
 .navbar {
   height: 92px !important;
-  color: variables.$primary-color;
+  color: v.$primary-color;
   font-size: 22px;
 
   .nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include m.flexBox();
     padding: 24px 140px;
 
     .nav-left {
@@ -17,7 +16,7 @@
 
       .navbar-initials {
         p {
-          font-family: variables.$font-secondary !important;
+          font-family: v.$font-secondary !important;
           font-size: 48px;
           line-height: 48px;
           margin-right: 48px;
@@ -27,13 +26,13 @@
       .nav-links {
         a {
           text-decoration: none;
-          color: variables.$primary-color;
-          font-family: variables.$font-primary;
+          color: v.$primary-color;
+          font-family: v.$font-primary;
           margin-right: 48px;
 
           &:hover {
             text-decoration: underline;
-            color: variables.$hover-color;
+            color: v.$hover-color;
           }
         }
       }
@@ -43,7 +42,7 @@
       margin-left: auto;
 
       p {
-        font-family: variables.$font-primary;
+        font-family: v.$font-primary;
       }
     }
   }
