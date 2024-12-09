@@ -1,7 +1,9 @@
-@use '../../../variables.scss';
+@use "../../../variables.scss" as v;
+@use "../../../mixins.scss" as m;
 
 * {
   height: 70vh;
+  max-height: 556px;
 }
 
 .hero {
@@ -9,21 +11,20 @@
   flex-direction: row;
 
   .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    color: variables.$secondary-color;
-    font-family: variables.$font-primary;
+    @include m.flexBox(column, flex-end, flex-start, 8px);
+    color: v.$secondary-color;
+    font-family: v.$font-primary;
 
     p:first-child {
       font-size: 54px;
       margin: 0;
+      max-height: 71px;
     }
 
     p:last-child {
       font-size: 84px;
       margin: 0;
+      max-height: 91px;
     }
   }
 
