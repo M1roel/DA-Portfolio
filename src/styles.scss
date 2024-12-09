@@ -1,40 +1,59 @@
+@use './variables.scss';
+
 * {
-    margin: 0;
-    background-color: #120B35;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    max-width: 1920px;
+  margin: 0;
+  background-color: #120b35;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  max-width: 1920px;
 }
 
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Handjet";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/assets/fonts/handjet/Handjet-Regular.ttf") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Handjet';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../src/assets/fonts/handjet/Handjet-Regular.ttf') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/assets/fonts/roboto/RobotoMono-Regular.ttf") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../src/assets/fonts/roboto/RobotoMono-Regular.ttf') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
- 
-  @mixin styleFont($fontFamily, $fontSize, $fontWeight, $lineWeight, $fontColor) {
-    font-family: $fontFamily;
-    font-size: $fontSize;
-    font-weight: $fontWeight;
-    line-height: $lineWeight;
-    color: $fontColor;
-  }
-  
-  @mixin flexBox($flexDirection, $justifyContent, $alignItems, $gap) {
-    display: flex;
-    flex-direction: $flexDirection;
-    justify-content: $justifyContent;
-    align-items: $alignItems;
+@mixin flexBox(
+  $flexDirection: row,
+  $justifyContent: center,
+  $alignItems: center,
+  $gap: null
+) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+
+  @if $gap != null {
     gap: $gap;
   }
+}
+
+@mixin styleFont(
+  $fontFamily: "Roboto",
+  $fontSize: 16px,
+  $fontWeight: 400,
+  $lineHeight: null,
+  $fontColor: #02F4BF
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+
+  @if $lineHeight != null {
+    line-height: $lineHeight;
+  }
+
+  color: $fontColor;
+}
