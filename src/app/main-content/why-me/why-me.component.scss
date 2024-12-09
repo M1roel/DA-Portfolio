@@ -1,0 +1,15 @@
+@use "../../../variables.scss" as v;
+@use "../../../mixins.scss" as m;
+
+.why-me {
+  @include m.flexBox(row, center, center);
+
+  .why-me-right {
+    @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
+  }
+  span {
+    display: block;
+    text-align: right;
+    margin-right: 50px;
+  }
+}
