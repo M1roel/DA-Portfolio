@@ -23,3 +23,18 @@
     src: url('../src/assets/fonts/roboto/RobotoMono-Regular.ttf') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
  
+  @mixin styleFont($fontFamily, $fontSize, $fontWeight, $lineWeight, $fontColor) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineWeight;
+    color: $fontColor;
+  }
+  
+  @mixin flexBox($flexDirection, $justifyContent, $alignItems, $gap) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    gap: $gap;
+  }
