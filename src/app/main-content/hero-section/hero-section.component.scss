@@ -1,0 +1,39 @@
+@use '../../../variables.scss';
+
+* {
+  height: 70vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: variables.$primary-color;
+    font-family: variables.$font-primary;
+
+    p:first-child {
+      font-size: 54px;
+      margin: 0;
+    }
+
+    p:last-child {
+      font-size: 84px;
+      margin: 0;
+    }
+  }
+
+  .hero-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    img {
+      max-height: 100%;
+    }
+  }
+}
