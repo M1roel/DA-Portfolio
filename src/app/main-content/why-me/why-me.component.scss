@@ -3,6 +3,7 @@
 
 .why-me {
   @include m.flexBox(row, center, center);
+  margin-bottom: 80px;
 
   .why-me-right {
     @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);

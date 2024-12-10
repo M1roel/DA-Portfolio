@@ -1,0 +1,12 @@
+@use "../../../variables.scss" as v;
+@use "../../../mixins.scss" as m;
+
+* {
+    width: 100%;
+    max-height: 422px;
+    margin-bottom: 80px;
+  }
+
+.skills h2 {
+    @include m.styleFont('Roboto', 54px, 400, 64.8px, v.$primary-color)
+}  
