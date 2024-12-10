@@ -8,7 +8,7 @@
 
   .nav-link {
     @include m.flexBox();
-    padding: 24px 140px;
+    padding: 24px 0px;
 
     .nav-left {
       display: flex;
