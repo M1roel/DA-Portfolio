@@ -1,0 +1,10 @@
+@use "../../../variables.scss" as v;
+@use "../../../mixins.scss" as m;
+
+.projects {
+    @include m.flexBox(column, center, center, null);
+
+    h2 {
+        @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$primary-color)
+    }
+}
