@@ -5,8 +5,37 @@
     width: 100%;
     max-height: 422px;
     margin-bottom: 80px;
+    
   }
 
 .skills h2 {
     @include m.styleFont('Roboto', 54px, 400, 64.8px, v.$primary-color)
 }  
+
+.skills {
+  text-align: center;
+}
+
+.skill-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.skill {
+  text-align: center;
+  flex: 1 1 80px;
+  margin-bottom: 10px;
+
+  img{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color)
+  }
+}

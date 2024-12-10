@@ -1,3 +1,9 @@
 <section class="skills">
   <h2>My Skills</h2>
+  <div class="skill-icons">
+    <div *ngFor="let skill of skills" class="skill">
+      <img [src]="skill.img" [alt]="skill.name" />
+      <p>{{ skill.name }}</p>
+    </div>
+  </div>
 </section>
