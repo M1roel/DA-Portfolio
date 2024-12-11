@@ -1,11 +1,10 @@
 @use './variables.scss';
 
 * {
-  margin: 0;  
+  margin: 0;
+  padding: 0; 
   box-sizing: border-box;
   scroll-behavior: smooth;
-  max-width: 1920px;
-  margin: 0px 20px;
 }
 
 body {
@@ -13,7 +12,9 @@ body {
     to bottom,
     #13074E 0%,
     #1D0A79F2 95%
-  );
+  );  
+  max-width: 1440px;
+  margin: 0px auto;
 }
 
 @font-face {
