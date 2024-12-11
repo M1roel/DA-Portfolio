@@ -26,9 +26,8 @@
       .nav-links {
         a {
           text-decoration: none;
-          color: v.$primary-color;
-          font-family: v.$font-primary;
           margin-right: 48px;
+          @include m.styleFont('Roboto', 22px, 500, 26.4px, v.$primary-color);
 
           &:hover {
             text-decoration: underline;

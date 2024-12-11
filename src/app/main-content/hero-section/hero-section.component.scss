@@ -13,17 +13,15 @@
 
   .hero-left {
     @include m.flexBox(column, flex-end, flex-start, 8px);
-    color: v.$secondary-color;
-    font-family: v.$font-primary;
 
     p:first-child {
-      font-size: clamp(2rem, 2vw, 54px);
+      @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$secondary-color);
       margin: 0;
       max-height: 71px;
     }
 
     p:last-child {
-      font-size: clamp(3rem, 3vw, 84px);
+      @include m.styleFont('Roboto', 82px, 700, 98.4px, v.$secondary-color);
       margin: 0;
       max-height: 91px;
     }

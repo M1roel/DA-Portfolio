@@ -1,0 +1,10 @@
+@use "../../../variables.scss" as v;
+@use "../../../mixins.scss" as m;
+
+.said-about {
+  max-height: 307px;
+
+  h3 {
+    @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
+  }
+}
