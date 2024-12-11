@@ -1,3 +1,19 @@
 <section class="projects">
     <h2>My Projects</h2>
-</section>
+  
+    <div class="project" *ngFor="let project of projects">
+      <div class="project-left">
+        <img [src]="project.image" [alt]="project.name">
+      </div>
+      <div class="project-right">
+        <h3>{{ project.name }}</h3>
+        <p class="stack">{{ project.stack }}</p>
+        <p class="description">{{ project.description }}</p>
+        <div class="buttons">
+          <a [href]="project.github" target="_blank" class="button">GitHub</a>
+          <a [href]="project.liveDemo" target="_blank" class="button">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  

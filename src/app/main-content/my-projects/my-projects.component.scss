@@ -2,9 +2,105 @@
 @use "../../../mixins.scss" as m;
 
 .projects {
-    @include m.flexBox(column, center, center, null);
+  @include m.flexBox(column, center, center, null);
+  padding: 50px 20px;
 
-    h2 {
-        @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$primary-color)
+  h2 {
+    @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$primary-color);
+    margin-bottom: 30px;
+  }
+
+  .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     }
+
+    .project-left {
+      flex: 1;
+      padding: 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    .project-right {
+      flex: 2;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 28px;
+        color: v.$primary-color;
+        margin-bottom: 10px;
+      }
+
+      .stack {
+        font-size: 16px;
+        color: #777;
+        margin-bottom: 15px;
+      }
+
+      .description {
+        font-size: 16px;
+        color: #444;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 20px;
+
+        .button {
+          padding: 10px 20px;
+          text-decoration: none;
+          background-color: #13074E;
+          color: white;
+          border-radius: 5px;
+          transition: background-color 0.3s, transform 0.3s;
+
+          &:hover {
+            background-color: #8a005d;
+            transform: translateY(-3px);
+          }
+
+          &:active {
+            transform: translateY(1px);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-left {
+      margin-bottom: 20px;
+    }
+
+    .project-right {
+      padding: 15px;
+    }
+  }
 }
