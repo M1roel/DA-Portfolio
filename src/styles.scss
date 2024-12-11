@@ -1,12 +1,19 @@
 @use './variables.scss';
 
 * {
-  margin: 0;
-  background-color: #120b35;
+  margin: 0;  
   box-sizing: border-box;
   scroll-behavior: smooth;
   max-width: 1920px;
   margin: 0px 20px;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    #13074E 0%,
+    #1D0A79F2 95%
+  );
 }
 
 @font-face {
