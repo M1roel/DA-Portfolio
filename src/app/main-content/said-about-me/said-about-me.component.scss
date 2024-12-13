@@ -8,3 +8,25 @@
     @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
   }
 }
+
+.about-main {
+  @include m.flexBox();
+  gap: 32px;
+}
+
+.about {
+  @include m.flexBox(column, center, flex-start);
+  max-width: 297px;
+
+  h4 {
+    @include m.styleFont('Roboto', 24px, 700, 28.8px, v.$primary-color);
+  }
+
+  h5 {
+    @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);
+  }
+
+  p {
+    @include m.styleFont('Roboto', 18px, 400, 21.6px, v.$secondary-color);
+  }
+}
