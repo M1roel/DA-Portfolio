@@ -1,0 +1,8 @@
+@use "../../../variables.scss" as v;
+@use "../../../mixins.scss" as m;
+
+.contact-me {
+    h2 {
+        @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$primary-color);
+    }
+}

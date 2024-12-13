@@ -3,6 +3,7 @@
 
 .said-about {
   max-height: 307px;
+  margin-bottom: 50px;
 
   h3 {
     @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
