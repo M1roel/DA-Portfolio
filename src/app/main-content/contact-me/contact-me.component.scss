@@ -2,15 +2,82 @@
 @use "../../../mixins.scss" as m;
 
 .contact-me {
-  h2 {
-    @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
+  .contact-headline {
+    @include m.flexBox(row, flex-start, center);
+
+    h2 {
+      @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
+    }
+
+    img {
+      margin-left: 20px;
+    }
   }
-}
 
-.contact-headline {
-  @include m.flexBox(row, flex-start, center);
+  .contact-text {
+    @include m.flexBox(row, flex-start, flex-start);
+    margin-top: 20px;
 
-  img {
-    margin-left: 20px;
+    .contact-text-left {
+      text-align: justify;
+      @include m.styleFont("Roboto", 18px, 400, 21.6px, v.$secondary-color);
+      max-width: 504px;
+      margin-right: 50px;
+    }
+
+    .contact-text-right {
+      @include m.flexBox(column, center, flex-start);
+
+      span {
+        margin-left: 20px;
+        @include m.styleFont("Roboto", 20px, 500, 24px, v.$secondary-color);
+      }
+
+      .contact-text-mail,
+      .contact-text-phone {
+        @include m.flexBox(row, center, center);
+      }
+    }
+  }
+
+  .contact-form {
+    max-width: 1440px;
+    height: 144px;
+    margin-top: 20px;
+    gap: 40px;
+    @include m.flexBox(row, flex-start, flex-start);
+
+    .form-left {
+      @include m.flexBox(column, flex-start, flex-start);
+      gap: 40px;
+
+      input {
+        width: 507px;
+        height: 56px;
+        background-color: transparent;
+        border: 1.5px solid v.$secondary-color;        
+        padding: 0px 12px;
+
+        &::placeholder {
+            @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);            
+            opacity: 60%;
+        }
+      }
+    }
+
+    .form-right {
+      textarea {
+        width: 637px;
+        height: 144px;
+        background-color: transparent;
+        border: 1.5px solid v.$secondary-color;
+        padding: 10px 12px;
+
+        &::placeholder {
+            @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);
+            opacity: 60%;
+        }
+      }
+    }
   }
 }
