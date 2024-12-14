@@ -2,7 +2,15 @@
 @use "../../../mixins.scss" as m;
 
 .contact-me {
-    h2 {
-        @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$primary-color);
-    }
+  h2 {
+    @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
+  }
+}
+
+.contact-headline {
+  @include m.flexBox(row, flex-start, center);
+
+  img {
+    margin-left: 20px;
+  }
 }
