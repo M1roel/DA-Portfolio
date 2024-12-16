@@ -68,7 +68,7 @@
       }
 
       .why-me-talk-btn {
-        @include m.flexBox(row, center, center);
+        @include m.flexBox(row, flex-end, center);
         margin-top: 20px;
 
         >button {
@@ -79,7 +79,6 @@
           padding: 15px 30px 15px 30px;
           gap: 10px;
           opacity: 0px;
-          margin-left: 80px;
         }
       }
     }
