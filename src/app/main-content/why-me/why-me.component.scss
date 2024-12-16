@@ -6,10 +6,9 @@
   margin-bottom: 80px;
 
   .why-me-left {
-
-    img{
-    max-width: 488px;    
-    object-fit: contain;
+    img {
+      max-width: 488px;
+      object-fit: contain;
     }
   }
 
@@ -22,7 +21,7 @@
       @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
       @include m.flexBox(row, flex-end, center);
     }
-  
+
     span {
       display: block;
       text-align: right;
@@ -31,7 +30,7 @@
     .why-me-iam {
       width: 568px;
 
-      h3  {
+      h3 {
         @include m.styleFont("Roboto", 48px, 700, 57.6px, v.$primary-color);
         margin-right: 64px;
       }
@@ -46,15 +45,15 @@
           margin-left: 11px;
         }
       }
-      
+
       .why-me-arrow {
         height: 60px;
         img {
-        margin-left: 125px;
+          margin-left: 125px;
         }
       }
 
-      .why-me-remote {        
+      .why-me-remote {
         @include m.flexBox(row, space-between, center);
         margin: 0px 150px;
 
@@ -67,6 +66,22 @@
           }
         }
       }
+
+      .why-me-talk-btn {
+        @include m.flexBox(row, center, center);
+        margin-top: 20px;
+
+        >button {
+          background-color: v.$secondary-color;
+          @include m.styleFont("Roboto", 18px, 500, 21.6px, black);
+          width: 169px;
+          height: 52px;
+          padding: 15px 30px 15px 30px;
+          gap: 10px;
+          opacity: 0px;
+          margin-left: 80px;
+        }
+      }
     }
-  } 
+  }
 }
