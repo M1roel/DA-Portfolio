@@ -41,18 +41,23 @@
   }
 
   .contact-form {
-    max-width: 1440px;
-    height: 144px;
+    max-width: 100%;
     margin-top: 20px;
     gap: 40px;
     @include m.flexBox(row, flex-start, flex-start);
+
+    .form-left, .form-right {
+      flex: 1;
+      min-width: 280px;
+    }
 
     .form-left {
       @include m.flexBox(column, flex-start, flex-start);
       gap: 32px;
 
       input {
-        width: 507px;
+        width: 100%;
+        max-width: 507px;
         height: 56px;
         background-color: transparent;
         border: 1.5px solid v.$secondary-color;        
@@ -67,7 +72,8 @@
 
     .form-right {
       textarea {
-        width: 637px;
+        width: 100%;
+        max-width: 637px;
         height: 144px;
         background-color: transparent;
         border: 1.5px solid v.$secondary-color;
@@ -78,6 +84,21 @@
             opacity: 60%;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    flex-direction: column;
+
+    .form-left, .form-right {
+      width: 100%;
+      max-width: none;
+    }
+
+    input, textarea {
+      width: 100%;
     }
   }
 }
