@@ -2,14 +2,71 @@
 @use "../../../mixins.scss" as m;
 
 .why-me {
-  @include m.flexBox(row, center, center);
+  @include m.flexBox(row, space-between, center);
   margin-bottom: 80px;
+
+  .why-me-left {
+
+    img{
+    max-width: 488px;    
+    object-fit: contain;
+    }
+  }
 
   .why-me-right {
     @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
-  }
-  span {
-    display: block;
-    text-align: right;
-  }
+    @include m.flexBox(column, flex-end, flex-end);
+    max-width: 658px;
+
+    h2 {
+      @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
+      @include m.flexBox(row, flex-end, center);
+    }
+  
+    span {
+      display: block;
+      text-align: right;
+    }
+
+    .why-me-iam {
+      width: 568px;
+
+      h3  {
+        @include m.styleFont("Roboto", 48px, 700, 57.6px, v.$primary-color);
+        margin-right: 64px;
+      }
+
+      .why-me-locate {
+        @include m.flexBox(row, flex-start, center);
+        height: 56px;
+
+        span {
+          max-width: 235px;
+          text-align: left;
+          margin-left: 11px;
+        }
+      }
+      
+      .why-me-arrow {
+        height: 60px;
+        img {
+        margin-left: 125px;
+        }
+      }
+
+      .why-me-remote {        
+        @include m.flexBox(row, space-between, center);
+        margin: 0px 150px;
+
+        .why-me-remote-left {
+          @include m.flexBox(row, center, flex-end);
+
+          span {
+            text-align: left;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  } 
 }
