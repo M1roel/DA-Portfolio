@@ -29,12 +29,16 @@
     .hero-left-btn {
       @include m.styleFont("Roboto", 18px, 100, 21.6px, v.$primary-color);
       background-color: transparent;
+      position: absolute;
+      left: 0;
+      top: 250px;
       padding: 15px 15px;
       width: 169px;
       height: 52px;
       rotate: -90deg;
       border: 1px solid v.$secondary-color;
       text-align: center;
+      cursor: pointer;
     }
   }
 
