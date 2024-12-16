@@ -1,29 +1,40 @@
 @use "../../../variables.scss" as v;
 @use "../../../mixins.scss" as m;
 
-* {
-  width: 100%;
-  max-height: 556px;
-}
-
 .hero {
-  display: flex;
-  flex-direction: row;
+  @include m.flexBox(row, space-between, flex-end);
+  width: 100%;
+  max-height: 554px;
   margin-bottom: 80px;
 
   .hero-left {
     @include m.flexBox(column, flex-end, flex-start, 8px);
+    height: 142px;
+    margin-left: 53px;
 
-    p:first-child {
-      @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$secondary-color);
-      margin: 0;
-      max-height: 71px;
+    h2 {
+      @include m.styleFont("Roboto", 36px, 500, 44px, v.$secondary-color);
     }
 
-    p:last-child {
-      @include m.styleFont('Roboto', 82px, 700, 98.4px, v.$secondary-color);
-      margin: 0;
-      max-height: 91px;
+    p {
+      @include m.styleFont("Roboto", 60px, 700, 45px, v.$secondary-color);
+    }
+
+    img {
+      position: relative;
+      left: 100%;
+      top: 2%;
+    }
+
+    .hero-left-btn {
+      @include m.styleFont("Roboto", 18px, 100, 21.6px, v.$primary-color);
+      background-color: transparent;
+      padding: 15px 15px;
+      width: 169px;
+      height: 52px;
+      rotate: -90deg;
+      border: 1px solid v.$secondary-color;
+      text-align: center;
     }
   }
 
@@ -33,8 +44,6 @@
     img {
       width: 100%;
       height: 100%;
-      max-width: 554px;
-      max-height: 554px;
       object-fit: contain;
     }
   }
