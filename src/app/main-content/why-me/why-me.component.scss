@@ -4,6 +4,7 @@
 .why-me {
   @include m.flexBox(row, space-between, center);
   margin-bottom: 80px;
+  gap: 2px;
 
   .why-me-left {
     img {      
@@ -17,6 +18,7 @@
     @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
     @include m.flexBox(column, flex-end, flex-end);
     max-width: 658px;
+    gap: 10px;
 
     h2 {
       @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
