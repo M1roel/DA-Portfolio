@@ -1,33 +1,40 @@
 @use "../../../variables.scss" as v;
 @use "../../../mixins.scss" as m;
 
-.said-about {
-  max-height: 307px;
+.said-about {  
+  @include m.flexBox(column, center, center);
+  height: 307px;
   margin-bottom: 50px;
 
   h3 {
     @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
+    margin-bottom: 32px;
   }
 }
 
 .about-main {
-  @include m.flexBox();
-  gap: 32px;
+  @include m.flexBox(row, flex-start, flex-start);
+
+  img {
+    margin: 0px 32px;
+  }
 }
 
 .about {
   @include m.flexBox(column, center, flex-start);
-  max-width: 297px;
+  width: 297px;
+  margin-right: 32px;
 
   h4 {
-    @include m.styleFont('Roboto', 24px, 700, 28.8px, v.$primary-color);
+    @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
   }
 
   h5 {
-    @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);
+    @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
+    margin-bottom: 8px;
   }
 
   p {
-    @include m.styleFont('Roboto', 18px, 400, 21.6px, v.$secondary-color);
+    @include m.styleFont("Roboto", 18px, 400, 21.6px, v.$secondary-color);
   }
 }
