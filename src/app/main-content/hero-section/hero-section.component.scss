@@ -4,12 +4,12 @@
 .hero {
   @include m.flexBox(row, space-between, flex-end);
   width: 100%;
-  max-height: 554px;
+  height: 554px;
   margin-bottom: 80px;
 
   .hero-left {
     @include m.flexBox(column, flex-end, flex-start, 8px);
-    height: 142px;
+    height: 100%;
     margin-left: 53px;
 
     h2 {
@@ -20,30 +20,38 @@
       @include m.styleFont("Roboto", 60px, 700, 45px, v.$secondary-color);
     }
 
-    img {
-      position: relative;
-      left: 100%;
-      top: 2%;
-    }
+    .hero-left-btn {      
+      @include m.flexBox(row, center, flex-end);
+      height: 100%;
 
-    .hero-left-btn {
-      @include m.styleFont("Roboto", 18px, 100, 21.6px, v.$primary-color);
-      background-color: transparent;
-      position: absolute;
-      left: 0;
-      top: 250px;
-      padding: 15px 15px;
-      width: 169px;
-      height: 52px;
-      rotate: -90deg;
-      border: 1px solid v.$secondary-color;
-      text-align: center;
-      cursor: pointer;
+      button {       
+        @include m.styleFont("Roboto", 18px, 100, 21.6px, v.$primary-color);
+        background-color: transparent;
+        width: 169px;
+        height: 52px;
+        padding: 15px 15px;
+        rotate: -90deg;        
+        transform-origin: top left;
+        border: 1px solid v.$secondary-color;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .hero-mid {
+    @include m.flexBox(column, center, center);
+    height: 100%;
+
+    img {
+      width: auto;
+      height: auto;
     }
   }
 
   .hero-right {
     @include m.flexBox(row, flex-end, flex-start);
+    width: 554px;
 
     img {
       width: 100%;
