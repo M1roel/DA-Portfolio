@@ -24,7 +24,7 @@ export class MyProjectsComponent {
       description: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poisoned bottles to fight against the crazy orca.',
       image: '../../../assets/img/sharkie-project.png',
       github: 'https://github.com/M1roel/DA-Sharkie',
-      liveDemo: 'https://live-demo2.com'
+      liveDemo: 'http://sharkie.peterpfautsch.de/'
     },
     {
       name: 'CRM',
