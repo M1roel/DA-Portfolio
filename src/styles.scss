@@ -19,7 +19,16 @@ body {
   margin: 0px auto;
 }
 
+body, html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 ::-webkit-scrollbar {
+  display: none;
+}
+
+/* ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
@@ -37,7 +46,7 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #8a005d;
-}
+} 
 
 scrollbar {
   width: 8px;
@@ -46,7 +55,7 @@ scrollbar {
 scrollbarthumb {
   background-color: #13074e;
   border-radius: 10px;
-}
+} */
 
 button {
   cursor: pointer;
