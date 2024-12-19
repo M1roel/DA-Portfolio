@@ -10,7 +10,6 @@
   .hero-left {
     @include m.flexBox(column, flex-end, flex-start, 8px);
     height: 100%;
-    margin-left: 53px;
 
     h2 {
       @include m.styleFont("Roboto", 36px, 500, 44px, v.$secondary-color);
