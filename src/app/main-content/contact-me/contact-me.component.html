@@ -27,6 +27,7 @@
     #contactForm="ngForm"
     class="contact-form"
   >
+  <div class="form-inputs">
     <div class="form-left">
       <input
         [(ngModel)]="contactData.name"
@@ -62,7 +63,14 @@
       <span>Please enter a message</span>
       }
     </div>
+  </div>
 
-    <input type="submit" value="submit" />
+    <div class="form-privacy-submit">
+      <input type="checkbox" id="privacy-policy" name="privacy-policy" />
+      <label for="privacy-policy">
+        I've read the privacy policy and agree to the processing of my data as
+        outlined.</label><br />
+      <input type="submit" value="submit" />
+    </div>
   </form>
 </section>
