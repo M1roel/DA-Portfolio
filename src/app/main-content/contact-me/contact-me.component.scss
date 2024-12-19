@@ -49,6 +49,7 @@
     .form-inputs {
       width: 100%;
       @include m.flexBox();
+
       .form-left,
       .form-right {
         flex: 1;
@@ -100,6 +101,49 @@
             opacity: 60%;
           }
         }
+      }
+    }
+
+    .form-privacy-submit {
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        border: 1px solid v.$primary-color;
+        background-color: transparent;
+        appearance: none;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+          background-color: v.$secondary-color;
+        }
+    
+        &:checked {
+          background-color: v.$secondary-color;
+      
+          &::after {
+            content: "✔";
+            @include m.styleFont("Roboto", 14px, 400, 16.8px, v.$primary-color);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      label {
+        @include m.styleFont("Roboto", 14px, 400, 16.8px, v.$secondary-color);
+      }
+
+      input[type="submit"] {
+        @include m.styleFont("Roboto", 18px, 500, 21.6px, #827b7b);
+        background-color: transparent;
+        width: 104px;
+        height: 52px;
+        border: 1px solid #827b7b;
+        cursor: pointer;
       }
     }
   }
