@@ -105,6 +105,10 @@
     }
 
     .form-privacy-submit {
+      @include m.flexBox(row, space-between, flex-start);
+      width: 100%;
+      height: 74px;
+
       input[type="checkbox"] {
         width: 18px;
         height: 18px;
