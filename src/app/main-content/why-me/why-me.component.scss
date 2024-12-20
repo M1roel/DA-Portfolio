@@ -74,14 +74,19 @@
         @include m.flexBox(row, flex-end, center);
         margin-top: 20px;
 
-        >button {
+        .btn {
           background-color: v.$secondary-color;
           @include m.styleFont("Roboto", 18px, 500, 21.6px, black);
+          text-decoration: none;
           width: 169px;
           height: 52px;
           padding: 15px 30px 15px 30px;
           gap: 10px;
           opacity: 0px;
+
+          &:hover {
+            color: v.$primary-color;
+          }
         }
       }
     }
