@@ -24,7 +24,7 @@
       height: 100%;
 
       button {       
-        @include m.styleFont("Roboto", 18px, 100, 21.6px, v.$primary-color);
+        @include m.styleFont("Roboto", 18px, 500, 21.6px, v.$primary-color);
         background-color: transparent;
         width: 169px;
         height: 52px;
