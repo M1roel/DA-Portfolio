@@ -1,0 +1,7 @@
+@use "../../../../variables.scss" as v;
+@use "../../../../mixins.scss" as m;
+
+footer {
+    @include m.flexBox(row, space-between, center);
+    color: v.$primary-color;
+}
