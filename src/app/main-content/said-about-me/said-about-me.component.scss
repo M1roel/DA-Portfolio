@@ -22,7 +22,6 @@
 
 .about {
   @include m.flexBox(column, center, flex-start);
-  width: 297px;
   margin-right: 32px;
 
   h4 {
