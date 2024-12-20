@@ -2,6 +2,45 @@
 @use "../../../../mixins.scss" as m;
 
 footer {
+  @include m.flexBox(row, space-between, center);
+
+  .footer-left {
+    @include m.flexBox(column, space-between, center);
+
+    span:nth-of-type(1) {
+      @include m.styleFont("Handjet", 54px, 400, 54px, v.$primary-color);
+    }
+
+    span:nth-of-type(2) {
+      @include m.styleFont("Roboto", 12px, 500, 12px, v.$primary-color);
+    }
+  }
+
+  .footer-mid {
+    @include m.flexBox(column, center, center);
+    gap: 16px;
+
+    .footer-copyright {
+      @include m.styleFont("Roboto", 23px, 400, 27.6px, v.$primary-color);
+    }
+
+    a {
+      text-decoration: none;
+      @include m.styleFont("Roboto", 14px, 400, 16.8px, v.$primary-color);
+      margin-right: 16px;
+    }
+
+    a:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .footer-right {
+    width: 154px;
     @include m.flexBox(row, space-between, center);
-    color: v.$primary-color;
+    
+    img {
+        cursor: pointer;
+    }
+  }
 }
