@@ -45,15 +45,15 @@
       margin-left: auto;
       @include m.flexBox(row, center, center);
       cursor: pointer;
-    
+
       a .arrow-img {
         width: 25px;
         height: 60px;
-        transition: all 0.3s ease;
       }
-    
+
       a:hover .arrow-img {
-        content: url('../../../assets/img/arrow_07.png');
+        transform: scaleY(1.2) scaleX(1.8);
+        content: url("../../../assets/img/arrow_07.png");
       }
     }
   }
@@ -140,10 +140,10 @@
         &:hover {
           background-color: v.$secondary-color;
         }
-    
+
         &:checked {
           background-color: v.$secondary-color;
-      
+
           &::after {
             content: "✔";
             @include m.styleFont("Roboto", 14px, 400, 16.8px, v.$primary-color);
