@@ -37,6 +37,18 @@
       .contact-text-phone {
         @include m.flexBox(row, center, center);
       }
+
+      .contact-text-mail img:hover {
+        content: url("../../../assets/img/icon_mail_02.png");
+      }
+
+      .contact-text-mail:active span {
+        text-decoration: underline;
+      }
+      
+      .contact-text-phone img:hover {
+        content: url("../../../assets/img/icon_phone_02.png");
+      }
     }
 
     .contact-text-arrow {
