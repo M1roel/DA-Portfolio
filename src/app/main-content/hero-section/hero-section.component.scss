@@ -42,9 +42,14 @@
     @include m.flexBox(column, center, center);
     height: 100%;
 
-    img {
-      width: auto;
-      height: auto;
+    a .arrow-img {
+      width: 25px;
+      height: 60px;
+    }
+
+    a:hover .arrow-img {
+      transform: scaleY(1.2) scaleX(1.8);
+      content: url("../../../assets/img/arrow_08.png");
     }
   }
 
