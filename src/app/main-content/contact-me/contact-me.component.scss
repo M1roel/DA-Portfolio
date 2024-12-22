@@ -169,15 +169,37 @@
 
       label {
         @include m.styleFont("Roboto", 14px, 400, 16.8px, v.$secondary-color);
+
+        a {
+          color: v.$primary-color;
+          text-decoration: none;
+        }
       }
 
       input[type="submit"] {
-        @include m.styleFont("Roboto", 18px, 500, 21.6px, #827b7b);
-        background-color: transparent;
+        @include m.styleFont('Roboto', 18px, 500, 21.6px, #827B7B);
         width: 104px;
         height: 52px;
         border: 1px solid #827b7b;
+        background-color: transparent;
         cursor: pointer;
+        transition: all 0.3s ease;
+    
+        &.submit-active {
+          border-color: v.$secondary-color;
+          color: v.$primary-color;
+          transition: 0.3 ease-in;
+
+          &:hover {
+            color: v.$secondary-color;
+          }
+        }
+    
+        &.submit-inactive {
+          border-color: #827b7b;
+          color: #827b7b;
+          cursor: help;
+        }
       }
     }
   }

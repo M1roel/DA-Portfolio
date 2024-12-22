@@ -22,7 +22,11 @@
     </div>
     <div class="contact-text-arrow">
       <a href="#navbar">
-        <img src="../../../assets/img/arrow_06.png" alt="arrow up" class="arrow-img">
+        <img
+          src="../../../assets/img/arrow_06.png"
+          alt="arrow up"
+          class="arrow-img"
+        />
       </a>
     </div>
   </div>
@@ -32,52 +36,64 @@
     #contactForm="ngForm"
     class="contact-form"
   >
-  <div class="form-inputs">
-    <div class="form-left">
-      <input
-        [(ngModel)]="contactData.name"
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your Name"
-        required
-      />
+    <div class="form-inputs">
+      <div class="form-left">
+        <input
+          [(ngModel)]="contactData.name"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
 
-      <input
-        [(ngModel)]="contactData.email"
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Your Email"
-        required
-        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-      />
-    </div>
+        <input
+          [(ngModel)]="contactData.email"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+        />
+      </div>
 
-    <div class="form-right">
-      <textarea
-        #message="ngModel"
-        minlength="4"
-        [(ngModel)]="contactData.message"
-        name="message"
-        id="message"
-        placeholder="Your Message"
-        required
-      ></textarea>
-      @if (!message.valid && message.touched) {
-      <span>Please enter a message</span>
-      }
+      <div class="form-right">
+        <textarea
+          #message="ngModel"
+          minlength="4"
+          [(ngModel)]="contactData.message"
+          name="message"
+          id="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        @if (!message.valid && message.touched) {
+        <span>Please enter a message</span>
+        }
+      </div>
     </div>
-  </div>
 
     <div class="form-privacy-submit">
       <div>
-      <input type="checkbox" id="privacy-policy" name="privacy-policy" />
-      <label for="privacy-policy">
-        I've read the privacy policy and agree to the processing of my data as
-        outlined.</label><br />
+        <input 
+          type="checkbox" 
+          id="privacy-policy" 
+          [(ngModel)]="privacyChecked" 
+          name="privacy-policy" 
+        />
+        <label for="privacy-policy">
+          I've read the
+          <a href="/privacy-policy" target="_blank">privacy policy</a>
+          and agree to the processing of my data as outlined.
+        </label><br />
       </div>
-      <input type="submit" value="Send" />
+      <input 
+        type="submit" 
+        [ngClass]="{'submit-active': privacyChecked, 'submit-inactive': !privacyChecked}"
+        [disabled]="!privacyChecked"
+        value="Send"
+      />
     </div>
   </form>
 </section>

@@ -13,6 +13,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ContactMeComponent {
 
   http = inject(HttpClient);
+  privacyChecked: boolean = false;
 
   contactData = {
     name: '',
