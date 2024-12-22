@@ -1,10 +1,11 @@
-@use '../../../variables.scss' as v;
-@use '../../../mixins.scss' as m;
+@use "../../../variables.scss" as v;
+@use "../../../mixins.scss" as m;
 
 .navbar {
   height: 92px !important;
   color: v.$primary-color;
   font-size: 22px;
+  background: linear-gradient(to bottom, #0b042d 0%, #0b042d33 20%);
 
   .nav-link {
     @include m.flexBox();
@@ -27,10 +28,9 @@
         a {
           text-decoration: none;
           margin-right: 48px;
-          @include m.styleFont('Roboto', 22px, 500, 26.4px, v.$primary-color);
+          @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
 
           &:hover {
-            text-decoration: underline;
             color: v.$hover-color;
           }
         }

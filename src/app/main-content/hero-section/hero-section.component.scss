@@ -19,21 +19,26 @@
       @include m.styleFont("Roboto", 60px, 700, 45px, v.$secondary-color);
     }
 
-    .hero-left-btn {      
+    .hero-left-btn {
       @include m.flexBox(row, center, flex-end);
       height: 100%;
 
-      button {       
+      button {
         @include m.styleFont("Roboto", 18px, 500, 21.6px, v.$primary-color);
         background-color: transparent;
         width: 169px;
         height: 52px;
         padding: 15px 15px;
-        rotate: -90deg;        
+        transform: rotate(-90deg) translate(120px, 0);
         transform-origin: top left;
         border: 1px solid v.$secondary-color;
         text-align: center;
         cursor: pointer;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          color: v.$secondary-color;
+        }
       }
     }
   }
