@@ -45,7 +45,7 @@
       .contact-text-mail:active span {
         text-decoration: underline;
       }
-      
+
       .contact-text-phone img:hover {
         content: url("../../../assets/img/icon_phone_02.png");
       }
@@ -91,6 +91,7 @@
         gap: 32px;
 
         input {
+          @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
           width: 100%;
           max-width: 507px;
           height: 56px;
@@ -113,6 +114,7 @@
 
       .form-right {
         textarea {
+          @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
           width: 100%;
           max-width: 637px;
           height: 144px;
@@ -131,6 +133,13 @@
             opacity: 60%;
           }
         }
+      }
+      
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: v.$secondary-color;
+        border-radius: 0;
       }
     }
 
@@ -177,14 +186,14 @@
       }
 
       input[type="submit"] {
-        @include m.styleFont('Roboto', 18px, 500, 21.6px, #827B7B);
+        @include m.styleFont("Roboto", 18px, 500, 21.6px, #827b7b);
         width: 104px;
         height: 52px;
         border: 1px solid #827b7b;
         background-color: transparent;
         cursor: pointer;
         transition: all 0.3s ease;
-    
+
         &.submit-active {
           border-color: v.$secondary-color;
           color: v.$primary-color;
@@ -194,7 +203,7 @@
             color: v.$secondary-color;
           }
         }
-    
+
         &.submit-inactive {
           border-color: #827b7b;
           color: #827b7b;
