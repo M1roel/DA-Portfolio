@@ -3,6 +3,7 @@
 
 footer {
   @include m.flexBox(row, space-between, center);
+  margin-bottom: 50px;
 
   .footer-left {
     @include m.flexBox(column, space-between, center);
