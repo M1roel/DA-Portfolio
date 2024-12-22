@@ -1,26 +1,26 @@
 <footer>
-    <div class="footer-left">
-        <span>&lt;PP&gt;</span>
-        <span>frontend developer</span>
+  <div class="footer-left">
+    <span>&lt;PP&gt;</span>
+    <span>frontend developer</span>
+  </div>
+  <div class="footer-mid">
+    <div class="footer-copyright">
+      <span>© Peter Pfautsch {{ currentYear }}</span>
     </div>
-    <div class="footer-mid">
-        <div class="footer-copyright">
-            <span>© Peter Pfautsch {{ currentYear }}</span>
-        </div>
-        <div class="footer-links">
-            <a href="">Legal notice</a>
-            <a href="">Privacy policy</a>
-        </div>
+    <div class="footer-links">
+      <a href="">Legal notice</a>
+      <a href="">Privacy policy</a>
     </div>
-    <div class="footer-right">
-        <a href="https://github.com/M1roel" target="_blank">
-            <img src="../../../../assets/img/github_button.png" alt="github button">
-        </a>
-        <a href="mailto:p.pfautsch@arcor.de" target="_blank">
-            <img src="../../../../assets/img/email_button.png" alt="email button">
-        </a>
-        <a href="https://www.linkedin.com/in/peter-pfautsch-379bb62aa/" target="_blank">
-            <img src="../../../../assets/img/linkedin_button.png" alt="linkedin button">
-        </a>
-    </div>
+  </div>
+  <div class="footer-right">
+    <a
+      *ngFor="let icon of icons"
+      [href]="icon.url"
+      target="_blank"
+      (mouseover)="onHover(icon)"
+      (mouseleave)="onLeave(icon)"
+    >
+      <img [src]="icon.image" [alt]="icon.alt" class="footer-icon" />
+    </a>
+  </div>
 </footer>

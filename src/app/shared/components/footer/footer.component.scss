@@ -38,9 +38,22 @@ footer {
   .footer-right {
     width: 154px;
     @include m.flexBox(row, space-between, center);
-    
-    img {
-        cursor: pointer;
+
+    .footer-icon {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      img {
+        display: block;
+        width: auto;
+        height: auto;
+      }
+
+      a {
+        display: inline-block;
+      }
     }
   }
 }
