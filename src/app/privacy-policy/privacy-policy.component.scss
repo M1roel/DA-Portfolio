@@ -1,0 +1,11 @@
+@use "../../variables.scss" as v;
+@use "../../mixins.scss" as m;
+
+.privacy-policy {
+    @include m.styleFont('Roboto', 16px, 400, 26.1px);
+    margin-bottom: 20px;
+
+    h2, h3 {
+        color: v.$primary-color;
+    }
+}
