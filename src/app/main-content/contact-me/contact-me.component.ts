@@ -11,7 +11,6 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contact-me.component.scss',
 })
 export class ContactMeComponent {
-
   http = inject(HttpClient);
   privacyChecked: boolean = false;
 
@@ -22,6 +21,9 @@ export class ContactMeComponent {
   };
 
   mailTest = true;
+  nameError: string = '';
+  emailError: string = '';
+  messageError: string = '';
 
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
@@ -34,22 +36,74 @@ export class ContactMeComponent {
     },
   };
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
+  async validateInputs(): Promise<boolean> {
+    const isNameValid = this.checkName();
+    const isEmailValid = this.checkEmail();
+    const isMessageValid = this.checkMessage();
 
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    const results = await Promise.all([
+      isNameValid,
+      isEmailValid,
+      isMessageValid,
+    ]);
 
-      ngForm.resetForm();
+    return results.every((result) => result === true);
+  }
+
+  async checkName(): Promise<boolean> {
+    const namePattern = /^[A-Za-z]{3,}$/;
+    const nameInput = document.getElementById('name') as HTMLInputElement;
+
+    if (!namePattern.test(this.contactData.name)) {
+      this.nameError =
+        'Your Name is required.';
+      nameInput.classList.add('input-error');
+      return false;
+    } else {
+      this.nameError = '';
+      nameInput.classList.remove('input-error');
+      return true;
+    }
+  }
+
+  async checkEmail(): Promise<boolean> {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(this.contactData.email)) {
+      alert('Please enter a valid email address.');
+      return false;
+    }
+    return true;
+  }
+
+  async checkMessage(): Promise<boolean> {
+    const wordCount = this.contactData.message.trim().split(/\s+/).length;
+    if (wordCount < 4) {
+      alert('Message must be at least 4 words long.');
+      return false;
+    }
+    return true;
+  }
+
+  async onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted) {
+      const isFormValid = await this.validateInputs();
+      if (isFormValid && !this.mailTest) {
+        this.http
+          .post(this.post.endPoint, this.post.body(this.contactData))
+          .subscribe({
+            next: (response) => {
+              alert('Message sent successfully!');
+              ngForm.resetForm();
+            },
+            error: (error) => {
+              console.error(error);
+            },
+            complete: () => console.info('send post complete'),
+          });
+      } else if (isFormValid && this.mailTest) {
+        alert('Mail test is active. Form not sent.');
+        ngForm.resetForm();
+      }
     }
   }
 }

@@ -46,6 +46,9 @@
           name="name"
           placeholder="Your Name"
           required
+          (blur)="checkName()"
+          [value]="nameError || contactData.name"
+          [class.input-error]="nameError"
         />
 
         <input
@@ -69,29 +72,29 @@
           placeholder="Your Message"
           required
         ></textarea>
-        @if (!message.valid && message.touched) {
-        <span>Please enter a message</span>
-        }
       </div>
     </div>
 
     <div class="form-privacy-submit">
       <div>
-        <input 
-          type="checkbox" 
-          id="privacy-policy" 
-          [(ngModel)]="privacyChecked" 
-          name="privacy-policy" 
+        <input
+          type="checkbox"
+          id="privacy-policy"
+          [(ngModel)]="privacyChecked"
+          name="privacy-policy"
         />
         <label for="privacy-policy">
           I've read the
           <a href="/privacy-policy" target="_blank">privacy policy</a>
-          and agree to the processing of my data as outlined.
-        </label><br />
+          and agree to the processing of my data as outlined. </label
+        ><br />
       </div>
-      <input 
-        type="submit" 
-        [ngClass]="{'submit-active': privacyChecked, 'submit-inactive': !privacyChecked}"
+      <input
+        type="submit"
+        [ngClass]="{
+          'submit-active': privacyChecked,
+          'submit-inactive': !privacyChecked
+        }"
         [disabled]="!privacyChecked"
         value="Send"
       />
