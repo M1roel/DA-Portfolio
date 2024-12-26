@@ -50,6 +50,7 @@
             (blur)="checkName()"
             [value]="nameError || contactData.name"
             [ngStyle]="{ 'color': nameError ? '#F92103' : '' }"
+            title="The name must have more than 2 letters"
           />
         </div>
 
@@ -65,6 +66,7 @@
             (blur)="checkEmail()"
             [value]="emailError || contactData.email"
             [ngStyle]="{ 'color': emailError ? '#F92103' : '' }"
+            title="Please enter a valid email address"
           />
         </div>
       </div>
@@ -81,6 +83,7 @@
             (blur)="checkMessage()"
             [value]="messageError || contactData.message"
             [ngStyle]="{ 'color': messageError ? '#F92103' : '' }"
+            title="Your message must have at least 4 words"
           ></textarea>
         </div>
       </div>
@@ -108,6 +111,7 @@
         }"
         [disabled]="!privacyChecked"
         value="Send"
+        [title]="privacyChecked ? '' : 'Please accept the privacy policy'"
       />
     </div>
   </form>
