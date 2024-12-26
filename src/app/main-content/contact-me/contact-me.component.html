@@ -50,7 +50,7 @@
             (blur)="checkName()"
             [value]="nameError || contactData.name"
             [ngStyle]="{ 'color': nameError ? '#F92103' : '' }"
-            title="The name must have more than 2 letters"
+            title="The name must have more than 2 letters, no numbers or special characters"
           />
         </div>
 
@@ -66,7 +66,7 @@
             (blur)="checkEmail()"
             [value]="emailError || contactData.email"
             [ngStyle]="{ 'color': emailError ? '#F92103' : '' }"
-            title="Please enter a valid email address"
+            title="Please enter a valid email address (e.g. example@domain.com)"
           />
         </div>
       </div>
