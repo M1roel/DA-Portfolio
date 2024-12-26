@@ -39,17 +39,18 @@
   >
     <div class="form-inputs">
       <div class="form-left">
-        <input
-          [(ngModel)]="contactData.name"
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          required
-          (blur)="checkName()"
-          [value]="nameError || contactData.name"
-          [class.input-error]="nameError"
-        />
+        <div class="form-name" [class.input-error]="nameError">
+          <input
+            [(ngModel)]="contactData.name"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+            (blur)="checkName()"
+            [value]="nameError || contactData.name"
+          />
+        </div>
 
         <input
           [(ngModel)]="contactData.email"
@@ -58,7 +59,10 @@
           name="email"
           placeholder="Your Email"
           required
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"          
+          (blur)="checkEmail()"
+          [value]="emailError || contactData.email"
+          [class.input-error]="emailError"
         />
       </div>
 
@@ -71,6 +75,9 @@
           id="message"
           placeholder="Your Message"
           required
+          (blur)="checkMessage()"
+          [value]="messageError || contactData.message"
+          [class.input-error]="messageError"
         ></textarea>
       </div>
     </div>

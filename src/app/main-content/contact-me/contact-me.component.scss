@@ -110,6 +110,22 @@
             opacity: 60%;
           }
         }
+
+        .form-name {
+          position: relative;
+          width: 100%;
+        }
+        
+        .form-name.input-error::after {
+          content: url("../../../assets/img/error_icon.png");
+          position: absolute;
+          right: 40px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 25px;
+          height: 36px;
+        }
+        
       }
 
       .form-right {
@@ -210,23 +226,6 @@
           cursor: help;
         }
       }
-    }
-  }
-
-  .input-error {
-    color: #f92103 !important;
-    position: relative;
-
-    &::after {
-      content: url("../../../assets/img/error_icon.png");
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 25px;
-      height: 36px;
-      z-index: 10;
-      visibility: visible;
     }
   }
 }

@@ -55,8 +55,7 @@ export class ContactMeComponent {
     const nameInput = document.getElementById('name') as HTMLInputElement;
 
     if (!namePattern.test(this.contactData.name)) {
-      this.nameError =
-        'Your Name is required.';
+      this.nameError = 'Your name is required.';
       nameInput.classList.add('input-error');
       return false;
     } else {
@@ -68,20 +67,29 @@ export class ContactMeComponent {
 
   async checkEmail(): Promise<boolean> {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
     if (!emailPattern.test(this.contactData.email)) {
-      alert('Please enter a valid email address.');
+      this.emailError = 'Your Email is required';
+      emailInput.classList.add('input.error');
       return false;
+    } else {
+      this.emailError = '';
+      emailInput.classList.remove('input-error');
+      return true;
     }
-    return true;
   }
 
   async checkMessage(): Promise<boolean> {
     const wordCount = this.contactData.message.trim().split(/\s+/).length;
+    const messageInput = document.getElementById('message') as HTMLInputElement;
     if (wordCount < 4) {
-      alert('Message must be at least 4 words long.');
+      this.messageError = 'Your message is required';
       return false;
-    }
+    } else {
+      this.messageError = '';
+      messageInput.classList.remove('input-error');
     return true;
+    }
   }
 
   async onSubmit(ngForm: NgForm) {
