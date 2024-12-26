@@ -12,68 +12,91 @@
   }
 
   .project {
-    @include m.flexBox(row, center, flex-start);
-    width: 100%;
-    margin-bottom: 40px;
-
-    .project-left {      
-      @include m.flexBox(row, flex-end, center);
-      width: 50%;
-      padding: 10px;
-
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  
+    &:nth-child(even) {
+      .project-left {
+        order: 1;
+      }
+      .project-right {
+        order: 2;
+      }
+    }
+  
+    &:nth-child(odd) {
+      .project-left {
+        order: 2;
+      }
+      .project-right {
+        order: 1;
+      }
+    }
+  
+    .project-left,
+    .project-right {
+      flex: 1;
+      min-width: 280px;
+    }
+  
+    .project-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
       img {
         width: 100%;
         max-width: 1000px;
         height: auto;
       }
     }
-
+  
     .project-right {
       width: 50%;
       padding: 0px 40px;
       @include m.flexBox(column, center, flex-start);
-
+  
       h3 {
         @include m.styleFont('Roboto', 48px, 700, 57.6px, v.$secondary-color);
         margin-bottom: 10px;
       }
-
+  
       .stack {
         @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);
         margin-bottom: 15px;
       }
-
+  
       .description {
         @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);
         margin-bottom: 20px;
       }
-
+  
       .buttons {
         display: flex;
         gap: 20px;
-
+  
         .button {
           padding: 10px 20px;
           text-decoration: none;
           @include m.styleFont('Roboto', 18px, 500, 21.6px, v.$primary-color);
-          
         }
-
+  
         .button:nth-child(1) {
           background-color: transparent;
           border: 1px solid v.$secondary-color;
           transition: color 0.5s, transform 0.5s;
-
+  
           &:hover {
             color: v.$secondary-color;
           }
         }
-      
+  
         .button:nth-child(2) {
           background-color: #02F4BF;
-          color: black;          
+          color: black;
           transition: color 0.5s, transform 0.5s;
-
+  
           &:hover {
             color: v.$primary-color;
           }
