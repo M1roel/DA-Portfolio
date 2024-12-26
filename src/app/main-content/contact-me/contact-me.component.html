@@ -39,7 +39,7 @@
   >
     <div class="form-inputs">
       <div class="form-left">
-        <div class="form-name" [class.input-error]="nameError">
+        <div class="form-name" [ngClass]="{'input-error': nameError, 'input-done': !nameError && contactData.name}">
           <input
             [(ngModel)]="contactData.name"
             type="text"
@@ -53,7 +53,7 @@
           />
         </div>
 
-        <div class="form-email" [class.input-error]="emailError">
+        <div class="form-email" [ngClass]="{'input-error': emailError, 'input-done': !emailError && contactData.email}">
           <input
             [(ngModel)]="contactData.email"
             type="email"
@@ -70,7 +70,7 @@
       </div>
 
       <div class="form-right">
-        <div class="form-message" [class.input-error]="messageError">
+        <div class="form-message" [ngClass]="{'input-error': messageError, 'input-done': !messageError && contactData.message}">
           <textarea
             #message="ngModel"
             [(ngModel)]="contactData.message"

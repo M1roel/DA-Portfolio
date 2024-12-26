@@ -122,9 +122,18 @@
           }
         }
 
-        .input-error::after,
         .input-error::after {
           content: url("../../../assets/img/error_icon.png");
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 25px;
+          height: 36px;
+        }
+
+        .input-done::after {
+          content: url("../../../assets/img/done_icon.png");
           position: absolute;
           right: 20px;
           top: 50%;
@@ -168,6 +177,16 @@
 
         .form-message.input-error::after {
           content: url("../../../assets/img/error_icon.png");
+          position: absolute;
+          right: 10px;
+          top: 20px;
+          transform: translateY(-50%);
+          width: 25px;
+          height: 36px;
+        }
+
+        .form-message.input-done::after {
+          content: url("../../../assets/img/done_icon.png");
           position: absolute;
           right: 10px;
           top: 20px;

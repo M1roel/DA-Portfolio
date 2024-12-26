@@ -57,10 +57,12 @@ export class ContactMeComponent {
     if (!namePattern.test(this.contactData.name)) {
       this.nameError = 'Your name is required';
       nameInput.classList.add('input-error');
+      nameInput.classList.remove('input-done');
       return false;
     } else {
       this.nameError = '';
       nameInput.classList.remove('input-error');
+      nameInput.classList.add('input-done');
       return true;
     }
   }
