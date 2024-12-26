@@ -71,7 +71,6 @@
         <div class="form-message" [class.input-error]="messageError">
           <textarea
             #message="ngModel"
-            minlength="4"
             [(ngModel)]="contactData.message"
             name="message"
             id="message"
