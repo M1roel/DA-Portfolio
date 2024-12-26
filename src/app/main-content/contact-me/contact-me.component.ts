@@ -55,7 +55,7 @@ export class ContactMeComponent {
     const nameInput = document.getElementById('name') as HTMLInputElement;
 
     if (!namePattern.test(this.contactData.name)) {
-      this.nameError = 'Your name is required.';
+      this.nameError = 'Your name is required';
       nameInput.classList.add('input-error');
       return false;
     } else {
