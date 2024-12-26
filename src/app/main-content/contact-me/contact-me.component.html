@@ -52,33 +52,35 @@
           />
         </div>
 
-        <input
-          [(ngModel)]="contactData.email"
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"          
-          (blur)="checkEmail()"
-          [value]="emailError || contactData.email"
-          [class.input-error]="emailError"
-        />
+        <div class="form-email" [class.input-error]="emailError">
+          <input
+            [(ngModel)]="contactData.email"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            (blur)="checkEmail()"
+            [value]="emailError || contactData.email"
+          />
+        </div>
       </div>
 
       <div class="form-right">
-        <textarea
-          #message="ngModel"
-          minlength="4"
-          [(ngModel)]="contactData.message"
-          name="message"
-          id="message"
-          placeholder="Your Message"
-          required
-          (blur)="checkMessage()"
-          [value]="messageError || contactData.message"
-          [class.input-error]="messageError"
-        ></textarea>
+        <div class="form-message" [class.input-error]="messageError">
+          <textarea
+            #message="ngModel"
+            minlength="4"
+            [(ngModel)]="contactData.message"
+            name="message"
+            id="message"
+            placeholder="Your Message"
+            required
+            (blur)="checkMessage()"
+            [value]="messageError || contactData.message"
+          ></textarea>
+        </div>
       </div>
     </div>
 

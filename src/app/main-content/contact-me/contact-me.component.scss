@@ -90,16 +90,12 @@
         @include m.flexBox(column, flex-start, flex-start);
         gap: 32px;
 
-        input {
-          @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
+        .form-name,
+        .form-email {
+          position: relative;
           width: 100%;
-          max-width: 507px;
-          height: 56px;
-          background-color: transparent;
-          border: 1.5px solid v.$secondary-color;
-          padding: 0px 12px;
 
-          &::placeholder {
+          input {
             @include m.styleFont(
               "Roboto",
               18px,
@@ -107,16 +103,28 @@
               25.2px,
               v.$secondary-color
             );
-            opacity: 60%;
+            width: 90%;
+            max-width: 507px;
+            height: 56px;
+            background-color: transparent;
+            border: 1.5px solid v.$secondary-color;
+            padding: 0px 12px;
+
+            &::placeholder {
+              @include m.styleFont(
+                "Roboto",
+                18px,
+                400,
+                25.2px,
+                v.$secondary-color
+              );
+              opacity: 60%;
+            }
           }
         }
 
-        .form-name {
-          position: relative;
-          width: 100%;
-        }
-        
-        .form-name.input-error::after {
+        .form-name.input-error::after,
+        .form-email.input-error::after {
           content: url("../../../assets/img/error_icon.png");
           position: absolute;
           right: 40px;
@@ -125,20 +133,14 @@
           width: 25px;
           height: 36px;
         }
-        
       }
 
       .form-right {
-        textarea {
-          @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
+        .form-message {
+          position: relative;
           width: 100%;
-          max-width: 637px;
-          height: 144px;
-          background-color: transparent;
-          border: 1.5px solid v.$secondary-color;
-          padding: 10px 12px;
 
-          &::placeholder {
+          textarea {
             @include m.styleFont(
               "Roboto",
               18px,
@@ -146,8 +148,34 @@
               25.2px,
               v.$secondary-color
             );
-            opacity: 60%;
+            width: 95%;
+            max-width: 637px;
+            height: 144px;
+            background-color: transparent;
+            border: 1.5px solid v.$secondary-color;
+            padding: 10px 12px;
+
+            &::placeholder {
+              @include m.styleFont(
+                "Roboto",
+                18px,
+                400,
+                25.2px,
+                v.$secondary-color
+              );
+              opacity: 60%;
+            }
           }
+        }
+
+        .form-message.input-error::after {
+          content: url("../../../assets/img/error_icon.png");
+          position: relative;
+          right: 40px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 25px;
+          height: 36px;
         }
       }
 
