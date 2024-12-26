@@ -2,20 +2,17 @@
 @use "../../../mixins.scss" as m;
 
 .skills {
-    margin-bottom: 50px;
-  }
+  margin-bottom: 50px;  
+  text-align: center;
 
-.skills h2 {
-    @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$primary-color);
+  h2 {
+    @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
     @include m.flexBox(row, flex-start, flex-start);
     margin-bottom: 50px;
-}  
-
-.skills {
-  text-align: center;
+  }
 }
 
-.skill-icons {  
+.skill-icons {
   @include m.flexBox(row, flex-start, center);
   gap: 20px;
   flex-wrap: wrap;
@@ -26,7 +23,25 @@
   width: 100px;
   margin-bottom: 50px;
 
-  img{
+  .skill-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &.challenge-me .skill-content {
+    flex-direction: row;
+    align-items: center;
+
+    .icon-and-name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  img {
     width: 60px;
     height: 60px;
     margin-bottom: 5px;
@@ -37,7 +52,12 @@
   }
 
   p {
-    @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color)
+    @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
+  }
+
+  .tooltip {
+    width: 400px;
+    white-space: wrap;
   }
 }
 

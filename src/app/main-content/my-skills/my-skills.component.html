@@ -1,9 +1,16 @@
 <section class="skills" id="skills">
   <h2>My Skills</h2>
   <div class="skill-icons">
-    <div *ngFor="let skill of skills" class="skill">
-      <img [src]="skill.img" [alt]="skill.name" />
-      <p>{{ skill.name }}</p>
+    <div *ngFor="let skill of skills" class="skill" [ngClass]="{'challenge-me': skill.name === 'Challenge me'}" (mouseenter)="showTooltip(skill.name)" (mouseleave)="hideTooltip()">
+      <div class="skill-content">
+        <div class="icon-and-name">
+          <img [src]="skill.img" [alt]="skill.name" />
+          <p>{{ skill.name }}</p>
+        </div>
+        <div *ngIf="tooltipVisible && skill.name === 'Challenge me'" class="tooltip">
+          <p>I am always happy to learn new technologies, just tell me what you need.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

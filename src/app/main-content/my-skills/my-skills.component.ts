@@ -24,5 +24,17 @@ export class MySkillsComponent {
     { name: 'Linux', img: '../../../assets/img/linux-icon.png'},
     { name: 'Flask', img: '../../../assets/img/flask-icon.png'},
     { name: 'Challenge me', img: '../../../assets/img/challenge-icon.png'}
-  ]
+  ];
+
+  tooltipVisible: boolean = false;
+
+  showTooltip(skillName: string) {
+    if (skillName === 'Challenge me') {
+      this.tooltipVisible = true;
+    }
+  }
+
+  hideTooltip() {
+    this.tooltipVisible = false;
+  }
 }
