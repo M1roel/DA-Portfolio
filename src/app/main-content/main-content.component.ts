@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { WhyMeComponent } from './why-me/why-me.component';
