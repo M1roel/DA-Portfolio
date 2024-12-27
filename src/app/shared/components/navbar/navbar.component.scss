@@ -50,3 +50,13 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .navbar {
+    @include m.flexBox(row, space-between, center);
+    .nav-links,
+    .nav-right {
+      display: none;
+    }
+  }
+}

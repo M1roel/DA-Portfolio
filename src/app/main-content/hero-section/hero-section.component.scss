@@ -111,7 +111,7 @@
       }
 
       .hero-left-btn {
-        button {          
+        button {
           @include m.styleFont("Roboto", 14px, 500, 15.6px, v.$primary-color);
           width: 130px;
           height: 40px;
@@ -154,11 +154,15 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 576px) {    
+    @include m.flexBox(column, center, center);
     height: 350px;
     margin-bottom: 30px;
 
     .hero-left {
+      order: 2;
+      text-align: center;
+
       h2 {
         @include m.styleFont("Roboto", 20px, 500, 28px, v.$secondary-color);
       }
@@ -168,17 +172,22 @@
       }
 
       .hero-left-btn {
-        button {
-          width: 90px;
-          height: 30px;
-          padding: 6px 6px;
-          transform: rotate(-90deg) translate(50px, 0);
-        }
+        display: none;
       }
     }
 
+    .hero-mid {
+      display: none;
+    }
+
     .hero-right {
-      width: 300px;
+      order: 1;
+      width: 100%;
+
+      img {
+        width: 100vw;
+        object-fit: cover;
+      }
     }
   }
 

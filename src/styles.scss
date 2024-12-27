@@ -126,3 +126,9 @@ button {
   font-weight: 700;
   src: url("../src/assets/fonts/roboto/RobotoMono-Bold.ttf") format("truetype"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+@media (max-width: 576px) {
+  body {
+    padding: 0px 20px;
+  }
+}
