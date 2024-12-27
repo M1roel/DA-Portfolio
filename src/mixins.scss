@@ -31,3 +31,7 @@
 
   color: $fontColor;
 }
+
+@mixin dNone {
+  display: none;
+}

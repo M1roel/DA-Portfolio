@@ -48,15 +48,36 @@
         font-family: v.$font-primary;
       }
     }
+
+    .nav-burger-menu {
+      @include m.dNone;
+
+      @media (max-width: 576px) {
+        display: block;
+        cursor: pointer;
+
+        img {
+          font-size: 32px;
+          color: v.$primary-color;
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 576px) {
   .navbar {
-    @include m.flexBox(row, space-between, center);
-    .nav-links,
-    .nav-right {
-      display: none;
+
+    .nav-link {
+      @include m.flexBox(row, space-between, center);
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-right {
+        display: none;
+      }
     }
   }
 }
