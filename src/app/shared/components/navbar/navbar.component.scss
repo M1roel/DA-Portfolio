@@ -1,5 +1,9 @@
-@use "../../../variables.scss" as v;
-@use "../../../mixins.scss" as m;
+@use "../../../../variables.scss" as v;
+@use "../../../../mixins.scss" as m;
+
+:host {
+  scroll-behavior: smooth;
+}
 
 .navbar {
   height: 92px !important;
