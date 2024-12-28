@@ -30,6 +30,10 @@
       text-align: right;
     }
 
+    .why-me-arrow-left {
+      display: none;
+    }
+
     .why-me-iam {
       width: 568px;
       gap: 16px;
@@ -134,6 +138,10 @@
         }
       }
 
+      .why-me-arrow-right {
+        display: none;
+      }
+
       .why-me-talk-btn {
         @include m.flexBox(row, flex-end, center);
         margin-top: 20px;
@@ -177,6 +185,11 @@
         @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
       }
 
+      .why-me-arrow-left {
+        width: 100%;
+        @include m.flexBox(row, flex-start, center);
+      }
+
       .why-me-iam {
         @include m.flexBox(column, center, center);
         width: 100%;
@@ -184,6 +197,7 @@
         h3 {
           @include m.styleFont("Roboto", 18px, 700, 25.2px, v.$primary-color);
           margin-right: 0px;
+          margin-bottom: 20px;
         }
 
         .why-me-locate {
@@ -213,7 +227,6 @@
           margin: 0px 0px;
 
           .why-me-remote-left {
-
             .remote-img-wrapper {
               margin-right: 0px;
 
@@ -234,9 +247,24 @@
           }
         }
 
+        .why-me-arrow-right {
+          width: 100%;
+          @include m.flexBox(row, flex-end, center);
+        }
+
         .why-me-talk-btn {
+          margin: 0;
+
           .btn {
             opacity: 1;
+            @include m.styleFont("Roboto", 16px, 400, 19.2px, black);
+            padding: 10px 20px 10px 20px;
+            width: 137px;
+            height: 43px;
+
+            &:hover {
+              color: v.$primary-color;
+            }
           }
         }
       }
