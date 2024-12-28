@@ -4,7 +4,6 @@
 .hero {
   @include m.flexBox(row, space-between, flex-end);
   width: 100%;
-  height: 554px;
   margin-bottom: 80px;
 
   .hero-left {
@@ -70,7 +69,6 @@
   }
 
   @media (max-width: 1200px) {
-    height: 500px;
     margin-bottom: 60px;
 
     .hero-left {
@@ -98,7 +96,6 @@
   }
 
   @media (max-width: 992px) {
-    height: 450px;
     margin-bottom: 50px;
 
     .hero-left {
@@ -127,7 +124,6 @@
   }
 
   @media (max-width: 768px) {
-    height: 400px;
     margin-bottom: 40px;
 
     .hero-left {
@@ -156,19 +152,19 @@
 
   @media (max-width: 576px) {    
     @include m.flexBox(column, center, center);
-    height: 350px;
     margin-bottom: 30px;
+    gap: 10px;
 
     .hero-left {
       order: 2;
       text-align: center;
 
       h2 {
-        @include m.styleFont("Roboto", 20px, 500, 28px, v.$secondary-color);
+        @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$secondary-color);
       }
 
       p {
-        @include m.styleFont("Roboto", 30px, 700, 25px, v.$secondary-color);
+        @include m.styleFont("Roboto", 40px, 700, 48px, v.$secondary-color);
       }
 
       .hero-left-btn {
@@ -192,7 +188,6 @@
   }
 
   @media (max-width: 320px) {
-    height: 300px;
     margin-bottom: 20px;
 
     .hero-left {
