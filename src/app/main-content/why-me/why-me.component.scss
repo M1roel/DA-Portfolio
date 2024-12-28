@@ -32,6 +32,7 @@
 
     .why-me-iam {
       width: 568px;
+      gap: 16px;
 
       h3 {
         @include m.styleFont("Roboto", 48px, 700, 57.6px, v.$primary-color);
@@ -40,39 +41,47 @@
 
       .why-me-locate {
         @include m.flexBox(row, flex-start, center);
-        height: 56px;
         position: relative;
 
-        .locate-img-wrapper {
-          position: relative;
-          display: inline-block;
-          margin-right: 10px;
-          margin-bottom: 10px;
+        span {
+          text-align: left;
+          width: 150px;
+        }
 
-          &:hover::after {
-            content: "";
-            display: block;
-            width: 25px;
-            height: 10px;
-            background: url("../../../assets/img/elipse_icon.png") no-repeat
-              center;
-            background-size: contain;
-            position: absolute;
-            top: 85%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-          }
+        .why-me-locate-right {
+          @include m.flexBox(row, flex-start, center);
 
-          img {
-            width: auto;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease-out;
-          }
+          .locate-img-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
 
-          &:hover img {
-            transform: translateY(-5px);
+            &:hover::after {
+              content: "";
+              display: block;
+              width: 25px;
+              height: 10px;
+              background: url("../../../assets/img/elipse_icon.png") no-repeat
+                center;
+              background-size: contain;
+              position: absolute;
+              top: 85%;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 10;
+            }
+
+            img {
+              width: auto;
+              height: auto;
+              display: block;
+              transition: transform 0.3s ease-out;
+            }
+
+            &:hover img {
+              transform: translateY(-5px);
+            }
           }
         }
       }
@@ -94,8 +103,6 @@
           .remote-img-wrapper {
             position: relative;
             display: inline-block;
-            margin-right: 10px;
-            margin-bottom: 10px;
 
             &:hover::after {
               content: "";
@@ -122,6 +129,7 @@
           span {
             text-align: left;
             margin-left: 10px;
+            width: 130px;
           }
         }
       }
@@ -157,39 +165,72 @@
     }
 
     .why-me-right {
+      @include m.flexBox(column, center, center);
       width: 100%;
-      text-align: center;
 
       h2 {
-        font-size: 32px;
+        @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);
+      }
+
+      span {
+        text-align: center;
+        @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
       }
 
       .why-me-iam {
+        @include m.flexBox(column, center, center);
         width: 100%;
 
         h3 {
-          font-size: 30px;
+          @include m.styleFont("Roboto", 18px, 700, 25.2px, v.$primary-color);
+          margin-right: 0px;
         }
 
         .why-me-locate {
+          @include m.flexBox(column, center, center);
+
           .locate-img-wrapper {
+            @include m.flexBox(row, center, center);
             margin-right: 0px;
+
+            img {
+              height: 32px;
+              width: 26px;
+            }
+          }
+
+          span {
+            text-align: center;
+            width: 100%;
           }
         }
 
         .why-me-arrow {
-          img {
-            margin-left: 0px;
-          }
+          display: none;
         }
 
         .why-me-remote {
           margin: 0px 0px;
 
           .why-me-remote-left {
+
             .remote-img-wrapper {
               margin-right: 0px;
+
+              img {
+                height: 43.96px;
+                width: 49.12px;
+              }
             }
+
+            span {
+              text-align: center;
+              width: 100%;
+            }
+          }
+
+          .why-me-remote-right {
+            display: none;
           }
         }
 
