@@ -7,15 +7,18 @@
   width: 100%;
 
   h2 {
-    @include m.styleFont('Roboto', 54px, 500, 64.8px, v.$primary-color);
+    @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
     margin-bottom: 30px;
+    @media (max-width: 768px) {
+      @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);      
+    }
   }
 
   .project {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
-  
+
     &:nth-child(even) {
       .project-left {
         order: 1;
@@ -24,7 +27,7 @@
         order: 2;
       }
     }
-  
+
     &:nth-child(odd) {
       .project-left {
         order: 2;
@@ -33,75 +36,79 @@
         order: 1;
       }
     }
-  
+
     .project-left,
     .project-right {
       flex: 1;
       min-width: 280px;
     }
-  
+
     .project-left {
       display: flex;
       justify-content: center;
       align-items: center;
-  
+
       img {
         width: 100%;
         max-width: 1000px;
         height: auto;
       }
     }
-  
+
     .project-right {
       width: 50%;
       padding: 0px 40px;
       @include m.flexBox(column, center, flex-start);
-  
+
       h3 {
-        @include m.styleFont('Roboto', 48px, 700, 57.6px, v.$secondary-color);
+        @include m.styleFont("Roboto", 48px, 700, 57.6px, v.$secondary-color);
         margin-bottom: 10px;
       }
-  
+
       .stack {
-        @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);
+        @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
         margin-bottom: 15px;
       }
-  
+
       .description {
-        @include m.styleFont('Roboto', 18px, 400, 25.2px, v.$secondary-color);
+        @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
         margin-bottom: 20px;
       }
-  
+
       .buttons {
         display: flex;
         gap: 20px;
-  
+
         .button {
           padding: 10px 20px;
           text-decoration: none;
-          @include m.styleFont('Roboto', 18px, 500, 21.6px, v.$primary-color);
+          @include m.styleFont("Roboto", 18px, 500, 21.6px, v.$primary-color);
         }
-  
+
         .button:nth-child(1) {
           background-color: transparent;
           border: 1px solid v.$secondary-color;
           transition: color 0.5s, transform 0.5s;
-  
+
           &:hover {
             color: v.$secondary-color;
           }
         }
-  
+
         .button:nth-child(2) {
-          background-color: #02F4BF;
+          background-color: #02f4bf;
           color: black;
           transition: color 0.5s, transform 0.5s;
-  
+
           &:hover {
             color: v.$primary-color;
           }
         }
       }
+    }
+
+    .project-responsive {
+      display: none;
     }
   }
 
@@ -109,14 +116,71 @@
     .project {
       flex-direction: column;
       align-items: flex-start;
-    }
 
-    .project-left {
-      margin-bottom: 20px;
-    }
+      .project-left,
+      .project-right {
+        display: none;
+      }
 
-    .project-right {
-      padding: 15px;
+      .project-responsive {
+        @include m.flexBox(column, center, center);
+        width: 100%;
+        padding: 0px 20px;
+        margin-bottom: 20px;        
+        text-align: center;
+
+        h4 {
+          @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$secondary-color);
+          margin-bottom: 10px;
+        }
+
+        h5 {
+          @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
+          margin-bottom: 15px;
+        }
+
+        p {
+          @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
+          margin-bottom: 20px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+        }
+
+        .buttons {
+          display: flex;
+          gap: 20px;
+  
+          .button {
+            padding: 10px 20px;
+            text-decoration: none;
+            @include m.styleFont("Roboto", 18px, 500, 21.6px, v.$primary-color);
+          }
+  
+          .button:nth-child(1) {
+            background-color: transparent;
+            border: 1px solid v.$secondary-color;
+            transition: color 0.5s, transform 0.5s;
+  
+            &:hover {
+              color: v.$secondary-color;
+            }
+          }
+  
+          .button:nth-child(2) {
+            background-color: #02f4bf;
+            color: black;
+            transition: color 0.5s, transform 0.5s;
+  
+            &:hover {
+              color: v.$primary-color;
+            }
+          }
+        }
+      }
     }
   }
 }

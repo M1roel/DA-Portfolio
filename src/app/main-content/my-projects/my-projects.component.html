@@ -14,6 +14,16 @@
           <a [href]="project.liveDemo" target="_blank" class="button">Live Test</a>
         </div>
       </div>
+      <div class="project-responsive">
+        <h4>{{ project.name }}</h4>
+        <h5 class="stack">{{ project.stack }}</h5>
+        <p class="description">{{ project.description }}</p>
+        <img [src]="project.image" [alt]="project.name">
+        <div class="buttons">
+          <a [href]="project.github" target="_blank" class="button">GitHub</a>
+          <a [href]="project.liveDemo" target="_blank" class="button">Live Test</a>
+        </div>
+      </div>
     </div>
   </section>
   
