@@ -136,4 +136,16 @@
       <span>01522 1763968</span>
     </div>
   </div>
+
+  <div class="contact-footer-right">
+    <a
+      *ngFor="let icon of icons"
+      [href]="icon.url"
+      target="_blank"
+      (mouseover)="onHover(icon)"
+      (mouseleave)="onLeave(icon)"
+    >
+      <img [src]="icon.image" [alt]="icon.alt" class="footer-icon" />
+    </a>
+  </div>
 </section>

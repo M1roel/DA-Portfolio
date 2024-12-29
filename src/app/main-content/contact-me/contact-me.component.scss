@@ -279,6 +279,10 @@
   .contact-text-arrow-responsive {
     display: none;
   }
+
+  .contact-footer-right {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
@@ -379,6 +383,21 @@
 
       .contact-text-phone img:hover {
         content: url("../../../assets/img/icon_phone_02.png");
+      }
+    }
+
+    .contact-footer-right {
+      @include m.flexBox(row, center, center);
+      margin: 50px 0;
+
+      a {
+        text-decoration: none;
+        @include m.styleFont("Roboto", 14px, 400, 16.8px, v.$primary-color);
+        margin-right: 16px;
+      }
+  
+      a:last-child {
+        margin-right: 0;
       }
     }
   }
