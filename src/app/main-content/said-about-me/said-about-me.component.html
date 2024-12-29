@@ -1,13 +1,17 @@
 <section class="said-about" id="said-about">
   <div class="said-about-headline">
     <h3>Need a teamplayer? Here what my colleagues said about me</h3>
-    <div class="about-main">
-      <img src="../../../assets/img/arrow_05.png" alt="arrow icon" />
-      <div class="about" *ngFor="let about of abouts">
-        <h4>{{ about.name }}</h4>
-        <h5>{{ about.project }}</h5>
-        <p>{{ about.description }}</p>
-      </div>
+  </div>
+  <div class="said-about-headline-responsive">
+    <h4>Need a teamplayer?</h4>
+    <p>Here what my colleagues said about me</p>
+  </div>
+  <div class="about-main">
+    <img src="../../../assets/img/arrow_05.png" alt="arrow icon" />
+    <div class="about" *ngFor="let about of abouts">
+      <h4>{{ about.name }}</h4>
+      <h5>{{ about.project }}</h5>
+      <p>{{ about.description }}</p>
     </div>
   </div>
 </section>

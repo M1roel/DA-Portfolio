@@ -1,39 +1,65 @@
 @use "../../../variables.scss" as v;
 @use "../../../mixins.scss" as m;
 
-.said-about {  
+.said-about {
   @include m.flexBox(column, center, center);
-  height: 307px;
   margin-bottom: 50px;
 
-  h3 {
-    @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
-    margin-bottom: 32px;
-  }
-}
+  .said-about-headline {
+    @include m.flexBox(column, center, flex-start);
+    width: 100%;
 
-.about-main {
-  @include m.flexBox(row, flex-start, flex-start);
+    @media (max-width: 576px) {
+      display: none;
+    }
 
-  img {
-    margin: 0px 32px;
-  }
-}
-
-.about {
-  @include m.flexBox(column, center, flex-start);
-  margin-right: 32px;
-
-  h4 {
-    @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
+    h3 {
+      @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
+      margin-bottom: 32px;
+    }
   }
 
-  h5 {
-    @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
-    margin-bottom: 8px;
+  .said-about-headline-responsive {
+    display: none;
+
+    @media (max-width: 576px) {
+      @include m.flexBox(column, center, center);
+      width: 100%;
+
+      h4 {
+        @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
+        margin-bottom: 32px;
+      }
+
+      p {
+        @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$primary-color);
+      }
+    }
   }
 
-  p {
-    @include m.styleFont("Roboto", 18px, 400, 21.6px, v.$secondary-color);
+  .about-main {
+    @include m.flexBox(row, flex-start, flex-start);
+
+    img {
+      margin: 0px 32px;
+    }
+  }
+
+  .about {
+    @include m.flexBox(column, center, flex-start);
+    margin-right: 32px;
+
+    h4 {
+      @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
+    }
+
+    h5 {
+      @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
+      margin-bottom: 8px;
+    }
+
+    p {
+      @include m.styleFont("Roboto", 18px, 400, 21.6px, v.$secondary-color);
+    }
   }
 }
