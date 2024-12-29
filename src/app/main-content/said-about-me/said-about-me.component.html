@@ -10,6 +10,7 @@
     <img src="../../../assets/img/arrow_05.png" alt="arrow icon" />
     <div class="about" *ngFor="let about of abouts">
       <h4>{{ about.name }}</h4>
+      <p class="about-project-responsive">{{ about.project }}</p>
       <h5>{{ about.project }}</h5>
       <p>{{ about.description }}</p>
     </div>
