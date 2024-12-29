@@ -340,16 +340,6 @@
       .form-privacy-submit {
         @include m.flexBox(column, center, center);
         width: 100%;
-
-        label {
-          @include m.styleFont("Roboto", 12px, 400, 14.4px, v.$secondary-color);
-          text-align: center;
-        }
-
-        input {
-          width: 100%;
-          margin-top: 20px;
-        }
       }
     }
 
