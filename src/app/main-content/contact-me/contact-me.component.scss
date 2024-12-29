@@ -89,6 +89,7 @@
       .form-left {
         @include m.flexBox(column, flex-start, flex-start);
         gap: 32px;
+        margin-right: 40px;
 
         .form-name,
         .form-email {
@@ -103,7 +104,7 @@
               25.2px,
               v.$secondary-color
             );
-            width: 98%;
+            width: 100%;
             height: 56px;
             background-color: transparent;
             border: 1.5px solid v.$secondary-color;
@@ -273,11 +274,18 @@
       }
     }
   }
+
+  .contact-text-right-responsive,
+  .contact-text-arrow-responsive {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
   .contact-me {
     width: 100%;
+    @include m.flexBox(column, center, center);
+
     .contact-headline {
       h2 {
         @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);
@@ -289,7 +297,89 @@
     }
 
     .contact-text {
+
+      .contact-text-left {
+        @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
+        text-align: center;
+        margin-right: 0;
+      }
+
+      .contact-text-right,
+      .contact-text-arrow {
+        display: none;
+      }
+    }
+
+    .contact-form {
+      .form-inputs {
+        width: 100%;
+        @include m.flexBox(column, center, center);
+
+        .form-left,
+        .form-right {
+          width: 100%;
+          margin: 0;
+        }
+
+        .form-name,
+        .form-email,
+        .form-message {
+          width: 100%;
+        }
+
+        .form-email {
+          margin-bottom: 30px;
+        }
+
+      }
+
+      .form-privacy-submit {
+        @include m.flexBox(column, center, center);
+        width: 100%;
+
+        label {
+          @include m.styleFont("Roboto", 12px, 400, 14.4px, v.$secondary-color);
+          text-align: center;
+        }
+
+        input {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .contact-text-arrow-responsive{      
+      @include m.flexBox(row, flex-end, center);
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .contact-text-right-responsive {
       @include m.flexBox(column, center, center);
+      gap: 28px;
+
+      span {
+        @include m.styleFont("Roboto", 20px, 500, 24px, v.$secondary-color);
+        margin-top: 10px
+      }
+
+      .contact-text-mail,
+      .contact-text-phone {
+        @include m.flexBox(column, center, center);
+      }
+
+      .contact-text-mail img:hover {
+        content: url("../../../assets/img/icon_mail_02.png");
+      }
+
+      .contact-text-mail:active span {
+        text-decoration: underline;
+      }
+
+      .contact-text-phone img:hover {
+        content: url("../../../assets/img/icon_phone_02.png");
+      }
     }
   }
 }
