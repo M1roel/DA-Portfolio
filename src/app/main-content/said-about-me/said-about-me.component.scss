@@ -64,6 +64,8 @@
 
   .about {
     @include m.flexBox(column, center, flex-start);
+    width: 100%;
+    box-sizing: border-box;
     margin-right: 32px;
 
     @media (max-width: 576px) {
@@ -71,6 +73,8 @@
       border: 1px solid v.$secondary-color;
       text-align: center;
       padding: 15px;
+      width: 100%;
+      min-width: 239px;
     }
 
     h4 {
