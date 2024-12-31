@@ -5,17 +5,33 @@
         <p>&lt;PP&gt;</p>
       </div>
       <div class="nav-links">
-        <a href="#why-me">Why me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact-me">Contact</a>
+        <div class="nav-links-left">
+          <a href="#why-me">Why me</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact-me">Contact</a>
+        </div>
       </div>
     </div>
     <div class="nav-right">
       <p>DE|EN</p>
     </div>
-    <div class="nav-burger-menu">
-      <img src="../../../../assets/img/burger_menu.png" alt="burger menu icon">
+    <div class="nav-burger-menu" (click)="toggleMenu()">
+      <img
+        src="../../../../assets/img/burger_menu.png"
+        alt="burger menu icon"
+      />
     </div>
+  </div>
+  <div class="full-screen-menu" *ngIf="menuOpen">
+    <img
+      src="../../../../assets/img/exit_menu.png"
+      alt="burger menu icon"
+      (click)="toggleMenu()"
+    />
+    <a href="#why-me" (click)="toggleMenu()">Why me</a>
+    <a href="#skills" (click)="toggleMenu()">Skills</a>
+    <a href="#projects" (click)="toggleMenu()">Projects</a>
+    <a href="#contact-me" (click)="toggleMenu()">Contact</a>
   </div>
 </section>
