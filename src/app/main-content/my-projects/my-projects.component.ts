@@ -16,7 +16,7 @@ export class MyProjectsComponent {
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
       image: '../../../assets/img/join-project.png',
       github: 'https://github.com/M1roel/DA-Join',
-      liveDemo: 'https://live-demo1.com'
+      liveDemo: 'http://join.peterpfautsch.de/'
     },
     {
       name: 'Sharkie',

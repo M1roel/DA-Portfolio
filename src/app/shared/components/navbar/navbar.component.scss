@@ -6,14 +6,21 @@
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 92px !important;
   color: v.$primary-color;
   font-size: 22px;
-  background: linear-gradient(to bottom, #0b042d 0%, #0b042d33 20%);
+  background: linear-gradient(to bottom, #0b042d 0%, #0b042d33 95%);
+  
 
   .nav-link {
     @include m.flexBox();
     padding: 24px 0px;
+    max-width: 1440px;
+    margin: 0 auto;
 
     .nav-left {
       display: flex;
