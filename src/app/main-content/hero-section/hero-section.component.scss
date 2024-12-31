@@ -4,23 +4,33 @@
 .hero {
   @include m.flexBox(row, space-between, flex-end);
   width: 100%;
-  margin: 80px 0;
+  height: 100vh;
+  margin-bottom: 100px;
 
   .hero-left {
     @include m.flexBox(column, flex-end, flex-start, 8px);
     height: 100%;
+    width: 75%;
 
-    h2 {
-      @include m.styleFont("Roboto", 36px, 500, 44px, v.$secondary-color);
-    }
+    .hero-left-arrow {
+      @include m.flexBox(column, flex-end, flex-end);
+      height: 33%;
+      width: 85%;
 
-    p {
-      @include m.styleFont("Roboto", 60px, 700, 45px, v.$secondary-color);
+      a .arrow-img {
+        width: 25px;
+        height: 60px;
+      }
+
+      a:hover .arrow-img {
+        transform: scaleY(1.2) scaleX(1.8);
+        content: url("../../../assets/img/arrow_08.png");
+      }
     }
 
     .hero-left-btn {
       @include m.flexBox(row, center, flex-end);
-      height: 100%;
+      height: 33%;
 
       button {
         @include m.styleFont("Roboto", 18px, 500, 21.6px, v.$primary-color);
@@ -28,7 +38,7 @@
         width: 169px;
         height: 52px;
         padding: 15px 15px;
-        transform: rotate(-90deg) translate(120px, 0);
+        transform: rotate(-90deg) translate(-220px, 0);
         transform-origin: top left;
         border: 1px solid v.$secondary-color;
         text-align: center;
@@ -40,26 +50,24 @@
         }
       }
     }
-  }
 
-  .hero-mid {
-    @include m.flexBox(column, center, center);
-    height: 50vh;
+    .hero-left-name {
+      @include m.flexBox(column, flex-end, flex-start);
+      height: 33%;
 
-    a .arrow-img {
-      width: 25px;
-      height: 60px;
-    }
+      h2 {
+        @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$secondary-color);
+      }
 
-    a:hover .arrow-img {
-      transform: scaleY(1.2) scaleX(1.8);
-      content: url("../../../assets/img/arrow_08.png");
+      p {
+        @include m.styleFont("Roboto", 82px, 700, 98.4px, v.$secondary-color);
+      }
     }
   }
 
   .hero-right {
     @include m.flexBox(row, flex-end, flex-start);
-    width: 554px;
+    width: 75%;
 
     img {
       width: 100%;
@@ -68,89 +76,7 @@
     }
   }
 
-  @media (max-width: 1200px) {
-    margin-bottom: 60px;
-
-    .hero-left {
-      h2 {
-        @include m.styleFont("Roboto", 32px, 500, 40px, v.$secondary-color);
-      }
-
-      p {
-        @include m.styleFont("Roboto", 50px, 700, 40px, v.$secondary-color);
-      }
-
-      .hero-left-btn {
-        button {
-          width: 150px;
-          height: 45px;
-          padding: 12px 12px;
-          transform: rotate(-90deg) translate(100px, 0);
-        }
-      }
-    }
-
-    .hero-right {
-      width: 450px;
-    }
-  }
-
-  @media (max-width: 992px) {
-    margin-bottom: 50px;
-
-    .hero-left {
-      h2 {
-        @include m.styleFont("Roboto", 28px, 500, 36px, v.$secondary-color);
-      }
-
-      p {
-        @include m.styleFont("Roboto", 40px, 700, 35px, v.$secondary-color);
-      }
-
-      .hero-left-btn {
-        button {
-          @include m.styleFont("Roboto", 14px, 500, 15.6px, v.$primary-color);
-          width: 130px;
-          height: 40px;
-          padding: 10px 10px;
-          transform: rotate(-90deg) translate(80px, 0);
-        }
-      }
-    }
-
-    .hero-right {
-      width: 400px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    margin-bottom: 40px;
-
-    .hero-left {
-      h2 {
-        @include m.styleFont("Roboto", 24px, 500, 32px, v.$secondary-color);
-      }
-
-      p {
-        @include m.styleFont("Roboto", 35px, 700, 30px, v.$secondary-color);
-      }
-
-      .hero-left-btn {
-        button {
-          width: 110px;
-          height: 35px;
-          padding: 8px 8px;
-          transform: rotate(-90deg) translate(60px, 0);
-        }
-      }
-    }
-
-    .hero-right {
-      width: 350px;
-    }
-  }
-
-  @media (max-width: 576px) {    
+  @media (max-width: 576px) {
     @include m.flexBox(column, center, center);
     margin-bottom: 30px;
     gap: 10px;
@@ -158,22 +84,26 @@
     .hero-left {
       order: 2;
       text-align: center;
-
-      h2 {
-        @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$secondary-color);
-      }
-
-      p {
-        @include m.styleFont("Roboto", 40px, 700, 48px, v.$secondary-color);
-      }
+      height: auto;
 
       .hero-left-btn {
         display: none;
       }
-    }
 
-    .hero-mid {
-      display: none;
+      .hero-left-arrow {
+        display: none;
+      }
+
+      .hero-left-name {
+        h2 {
+          @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$secondary-color);
+        }
+  
+        p {
+          @include m.styleFont("Roboto", 40px, 700, 48px, v.$secondary-color);
+        }
+  
+      }
     }
 
     .hero-right {
@@ -183,33 +113,6 @@
       img {
         object-fit: cover;
       }
-    }
-  }
-
-  @media (max-width: 320px) {
-    margin-bottom: 20px;
-
-    .hero-left {
-      h2 {
-        @include m.styleFont("Roboto", 18px, 500, 24px, v.$secondary-color);
-      }
-
-      p {
-        @include m.styleFont("Roboto", 25px, 700, 20px, v.$secondary-color);
-      }
-
-      .hero-left-btn {
-        button {
-          width: 70px;
-          height: 25px;
-          padding: 4px 4px;
-          transform: rotate(-90deg) translate(40px, 0);
-        }
-      }
-    }
-
-    .hero-right {
-      width: 250px;
     }
   }
 }
