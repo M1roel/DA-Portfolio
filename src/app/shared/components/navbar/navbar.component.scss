@@ -17,7 +17,7 @@
 
   .nav-link {
     @include m.flexBox();
-    padding: 24px 0px;
+    padding: 24px 20px;
     max-width: 1440px;
     margin: 0 auto;
 
@@ -30,7 +30,7 @@
           @include m.styleFont("Handjet", 48px, 500, 48px, v.$primary-color);
           margin-right: 48px;
 
-          @media (max-width: 850px) {
+          @media (max-width: 895px) {
             font-size: 40px;
             margin-right: 20px;
           }
@@ -44,7 +44,7 @@
             margin-right: 48px;
             @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
 
-            @media (max-width: 850px) {
+            @media (max-width: 895px) {
               font-size: 18px;
               margin-right: 20px;
             }

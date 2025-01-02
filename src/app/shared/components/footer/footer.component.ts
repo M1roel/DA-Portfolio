@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
@@ -44,4 +46,15 @@ export class FooterComponent {
   onLeave(icon: any) {
     icon.image = icon.originalImage;
   }
+
+  constructor(private translate: TranslateService) {
+      this.translate.addLangs(['de', 'en']);
+      this.translate.setDefaultLang('en');
+      this.translate.use('en');
+    }
+  
+    useLanguage(event: Event, language: string): void {
+      event.preventDefault();
+      this.translate.use(language);
+    }
 }

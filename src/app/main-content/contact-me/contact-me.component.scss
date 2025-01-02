@@ -301,7 +301,6 @@
     }
 
     .contact-text {
-
       .contact-text-left {
         @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
         text-align: center;
@@ -334,16 +333,19 @@
         .form-email {
           margin-bottom: 30px;
         }
-
       }
 
       .form-privacy-submit {
         @include m.flexBox(column, center, center);
         width: 100%;
+
+        input {
+          margin-top: 30px;
+        }
       }
     }
 
-    .contact-text-arrow-responsive{      
+    .contact-text-arrow-responsive {
       @include m.flexBox(row, flex-end, center);
       width: 100%;
       margin-top: 20px;
@@ -355,7 +357,7 @@
 
       span {
         @include m.styleFont("Roboto", 20px, 500, 24px, v.$secondary-color);
-        margin-top: 10px
+        margin-top: 10px;
       }
 
       .contact-text-mail,
@@ -385,7 +387,7 @@
         @include m.styleFont("Roboto", 14px, 400, 16.8px, v.$primary-color);
         margin-right: 16px;
       }
-  
+
       a:last-child {
         margin-right: 0;
       }

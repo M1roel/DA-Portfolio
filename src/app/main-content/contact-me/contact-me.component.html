@@ -1,13 +1,12 @@
 <section class="contact-me" id="contact-me">
   <div class="contact-headline">
-    <h2>Contact me</h2>
+    <h2>{{ "CONTACT.TITLE" | translate }}</h2>
     <img src="../../../assets/img/arrow_01.png" alt="arrow" />
   </div>
   <div class="contact-text">
     <div class="contact-text-left">
       <p>
-        Still not sure if I am the right person for your project? Contact me so
-        I can reassure you. Let us work together
+        {{ "CONTACT.DESCRIPTION" | translate }}
       </p>
     </div>
     <div class="contact-text-right">
@@ -39,51 +38,69 @@
   >
     <div class="form-inputs">
       <div class="form-left">
-        <div class="form-name" [ngClass]="{'input-error': nameError, 'input-done': !nameError && contactData.name}">
+        <div
+          class="form-name"
+          [ngClass]="{
+            'input-error': nameError,
+            'input-done': !nameError && contactData.name
+          }"
+        >
           <input
             [(ngModel)]="contactData.name"
             type="text"
             id="name"
             name="name"
-            placeholder="Your Name"
+            [placeholder]="'CONTACT.FORM.NAME' | translate"
             required
             (blur)="checkName()"
             [value]="nameError || contactData.name"
-            [ngStyle]="{ 'color': nameError ? '#F92103' : '' }"
-            title="The name must have more than 2 letters, no numbers or special characters"
+            [ngStyle]="{ color: nameError ? '#F92103' : '' }"
+            [title]="'CONTACT.FORM.NAME_HINT' | translate"
           />
         </div>
 
-        <div class="form-email" [ngClass]="{'input-error': emailError, 'input-done': !emailError && contactData.email}">
+        <div
+          class="form-email"
+          [ngClass]="{
+            'input-error': emailError,
+            'input-done': !emailError && contactData.email
+          }"
+        >
           <input
             [(ngModel)]="contactData.email"
             type="email"
             id="email"
             name="email"
-            placeholder="Your Email"
+            [placeholder]="'CONTACT.FORM.EMAIL' | translate"
             required
             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
             (blur)="checkEmail()"
             [value]="emailError || contactData.email"
-            [ngStyle]="{ 'color': emailError ? '#F92103' : '' }"
-            title="Please enter a valid email address (e.g. example@domain.com)"
+            [ngStyle]="{ color: emailError ? '#F92103' : '' }"
+            [title]="'CONTACT.FORM.EMAIL_HINT' | translate"
           />
         </div>
       </div>
 
       <div class="form-right">
-        <div class="form-message" [ngClass]="{'input-error': messageError, 'input-done': !messageError && contactData.message}">
+        <div
+          class="form-message"
+          [ngClass]="{
+            'input-error': messageError,
+            'input-done': !messageError && contactData.message
+          }"
+        >
           <textarea
             #message="ngModel"
             [(ngModel)]="contactData.message"
             name="message"
             id="message"
-            placeholder="Your Message"
+            [placeholder]="'CONTACT.FORM.MESSAGE' | translate"
             required
             (blur)="checkMessage()"
             [value]="messageError || contactData.message"
-            [ngStyle]="{ 'color': messageError ? '#F92103' : '' }"
-            title="Your message must have at least 4 words"
+            [ngStyle]="{ color: messageError ? '#F92103' : '' }"
+            [title]="'CONTACT.FORM.MESSAGE_HINT' | translate"
           ></textarea>
         </div>
       </div>
@@ -98,9 +115,11 @@
           name="privacy-policy"
         />
         <label for="privacy-policy">
-          I've read the
-          <a href="/privacy-policy" target="_blank">privacy policy</a>
-          and agree to the processing of my data as outlined. </label
+          {{ "CONTACT.FORM.PRIVACY_POLICY_TEXT_1" | translate }}
+          <a href="/privacy-policy" target="_blank">{{
+            "CONTACT.FORM.PRIVACY_POLICY" | translate
+          }}</a>
+          {{ "CONTACT.FORM.PRIVACY_POLICY_TEXT_2" | translate }}</label
         ><br />
       </div>
       <input
@@ -110,8 +129,8 @@
           'submit-inactive': !privacyChecked
         }"
         [disabled]="!privacyChecked"
-        value="Send"
-        [title]="privacyChecked ? '' : 'Please accept the privacy policy'"
+        [value]="'CONTACT.FORM.SUBMIT' | translate"
+        [title]="privacyChecked ? '' : ('CONTACT.FORM.ACCEPT' | translate)"
       />
     </div>
   </form>

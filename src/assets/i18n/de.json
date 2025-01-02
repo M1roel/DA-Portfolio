@@ -12,9 +12,9 @@
   "WHY_ME": {
     "TITLE": "Warum ich",
     "DESCRIPTION": "Ich bin motiviert, kontinuierlich neue Technologien zu erlernen und mich weiterzuentwickeln.\nMeine Fähigkeit, komplexe Probleme zu lösen und meine Leidenschaft für das Programmieren machen\nmich zu einem wertvollen Mitglied Ihres Teams.",
-    "IAM": "Ich",
-    "LOCATED": "bin wohnhaft in Mönchengladbach",
-    "AVAILABLE": "bin bereit für Remote-Arbeit",
+    "IAM": "Ich bin",
+    "LOCATED": "in Mönchengladbach zu Hause",
+    "AVAILABLE": "bereit für Remote-Arbeit",
     "LETS_TALK": "Schreib mir"
   },
   "SKILLS": {
@@ -28,5 +28,29 @@
     "TITLE": "Sind Sie auf der Suche nach einem Teamplayer? Das ist die Meinung meiner Kollegen.",
     "TITLE_RESPONSIVE": "Sind Sie auf der Suche nach einem Teamplayer?",
     "DESCRIPTION_RESPONSIVE": "Das ist die Meinung meiner Kollegen."
+  },
+  "CONTACT": {
+    "TITLE": "Kontaktieren Sie mich",
+    "DESCRIPTION": "Noch unsicher, ob ich der Richtige für Ihr Projekt bin? Melden Sie sich gerne – ich beantworte Ihre Fragen und freue mich auf die Zusammenarbeit.",
+    "FORM": {
+      "NAME": "Ihr Name",
+      "EMAIL": "Ihre E-Mail",
+      "MESSAGE": "Ihre Nachricht",
+      "SUBMIT": "Senden",
+      "ACCEPT": "Bitte akzeptieren Sie die Datenschutzbestimmungen",
+      "PRIVACY_POLICY": "Datenschutzbestimmungen",
+      "PRIVACY_POLICY_TEXT_1": "Ich habe die",
+      "PRIVACY_POLICY_TEXT_2": "gelesen und stimme der Verarbeitung meiner Daten zu, wie im Text beschrieben.",
+      "NAME_ERROR": "Ihr Name ist erforderlich",
+      "EMAIL_ERROR": "Ihre E-Mail ist erforderlich",
+      "MESSAGE_ERROR": "Ihre Nachricht ist erforderlich",
+      "NAME_HINT": "Der Name muss mehr als 2 Buchstaben haben, keine Zahlen oder Sonderzeichen",
+      "EMAIL_HINT": "Bitte geben Sie eine gültige E-Mail-Adresse ein (z. B. beispiel@domain.de)",
+      "MESSAGE_HINT": "Ihre Nachricht muss mindestens 4 Wörter enthalten"
+    }
+  },
+  "FOOTER": {
+    "IMPRINT": "Impressum",
+    "PRIVACY_POLICY": "Datenschutzbestimmungen"
   }
 }

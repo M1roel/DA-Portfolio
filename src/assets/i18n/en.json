@@ -28,5 +28,29 @@
     "TITLE": "Need a teamplayer? Here what my colleagues said about me",
     "TITLE_RESPONSIVE": "Need a teamplayer?",
     "DESCRIPTION_RESPONSIVE": "Here what my colleagues said about me."
+  },
+  "CONTACT": {
+    "TITLE": "Contact me",
+    "DESCRIPTION": "Still not sure if I am the right person for your project? Contact me so I can reassure you. Let us work together.",
+    "FORM": {
+      "NAME": "Your Name",
+      "EMAIL": "Your Email",
+      "MESSAGE": "Your Message",
+      "SUBMIT": "Send",
+      "ACCEPT": "Please accept the privacy policy",
+      "PRIVACY_POLICY": "Privacy Policy",
+      "PRIVACY_POLICY_TEXT_1": "I've read the",
+      "PRIVACY_POLICY_TEXT_2": "and agree to the processing of my data as outlined.",
+      "NAME_ERROR": "Your name is required",
+      "EMAIL_ERROR": "Your email is required",
+      "MESSAGE_ERROR": "Your message is required",
+      "NAME_HINT": "The name must have more than 2 letters, no numbers or special characters",
+      "EMAIL_HINT": "Please enter a valid email address (e.g. example@domain.com)",
+      "MESSAGE_HINT": "Your message must have at least 4 words"
+    }
+  },
+  "FOOTER": {
+    "IMPRINT": "Legal Notice",
+    "PRIVACY_POLICY": "Privacy Policy"
   }
 }
