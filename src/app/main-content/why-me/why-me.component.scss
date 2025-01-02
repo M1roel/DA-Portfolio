@@ -259,7 +259,7 @@
             opacity: 1;
             @include m.styleFont("Roboto", 16px, 400, 19.2px, black);
             padding: 10px 20px 10px 20px;
-            width: 137px;
+            width: auto;
             height: 43px;
 
             &:hover {
