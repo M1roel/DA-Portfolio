@@ -1,8 +1,32 @@
 {
-    "NAVBAR": {
-      "WHY_ME": "Why me",
-      "SKILLS": "Skills",
-      "PROJECTS": "Projects",
-      "CONTACT": "Contact"
-    }
+  "NAVBAR": {
+    "WHY_ME": "Why me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "CONTACT_ME": "CONTACT ME",
+    "FRONTEND_DEVELOPER": "FRONTEND DEVELOPER"
+  },
+  "WHY_ME": {
+    "TITLE": "Why me",
+    "DESCRIPTION": "I am motivated to continuously learn new technologies and develop myself.\nMy ability to solve complex problems and my passion for programming make\nme a valuable member of your team.",
+    "IAM": "I am",
+    "LOCATED": "located in Mönchengladbach",
+    "AVAILABLE": "open to work remote",
+    "LETS_TALK": "Let's talk"
+  },
+  "SKILLS": {
+    "TITLE": "My Skills",
+    "CHALLENGE": "I am always happy to learn new technologies, just tell me what you need."
+  },
+  "PROJECTS": {
+    "TITLE": "My Projects"
+  },
+  "ABOUT": {
+    "TITLE": "Need a teamplayer? Here what my colleagues said about me",
+    "TITLE_RESPONSIVE": "Need a teamplayer?",
+    "DESCRIPTION_RESPONSIVE": "Here what my colleagues said about me."
   }
+}

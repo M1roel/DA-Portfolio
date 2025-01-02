@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './my-projects.component.html',
   styleUrl: './my-projects.component.scss'
 })
@@ -35,4 +37,15 @@ export class MyProjectsComponent {
       liveDemo: 'https://live-demo3.com'
     }
   ];
+
+  constructor(private translate: TranslateService) {
+      this.translate.addLangs(['de', 'en']);
+      this.translate.setDefaultLang('en');
+      this.translate.use('en');
+    }
+  
+    useLanguage(event: Event, language: string): void {
+      event.preventDefault();
+      this.translate.use(language);
+    }
 }

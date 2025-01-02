@@ -24,7 +24,7 @@ export class NavbarComponent {
   }
 
   useLanguage(event: Event, language: string): void {
-    event.preventDefault(); // Prevent the default link behavior
+    event.preventDefault();
     this.translate.use(language);
   }
 }

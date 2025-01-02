@@ -150,7 +150,7 @@
           background-color: v.$secondary-color;
           @include m.styleFont("Roboto", 18px, 500, 21.6px, black);
           text-decoration: none;
-          width: 169px;
+          width: auto;
           height: 52px;
           padding: 15px 30px 15px 30px;
           gap: 10px;
