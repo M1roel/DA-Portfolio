@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -150,7 +150,7 @@ export class ContactMeComponent {
     icon.image = icon.originalImage;
   }
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private viewportScroller: ViewportScroller) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
