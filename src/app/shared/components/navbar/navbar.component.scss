@@ -27,10 +27,13 @@
 
       .navbar-initials {
         p {
-          font-family: v.$font-secondary !important;
-          font-size: 48px;
-          line-height: 48px;
+          @include m.styleFont("Handjet", 48px, 500, 48px, v.$primary-color);
           margin-right: 48px;
+
+          @media (max-width: 850px) {
+            font-size: 40px;
+            margin-right: 20px;
+          }
         }
       }
 
@@ -41,12 +44,16 @@
             margin-right: 48px;
             @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
 
+            @media (max-width: 850px) {
+              font-size: 18px;
+              margin-right: 20px;
+            }
+
             &:hover {
               color: v.$hover-color;
             }
           }
         }
-        
       }
     }
 
@@ -55,9 +62,9 @@
       margin-left: auto;
 
       a {
+        @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
         text-decoration: none;
         padding: 0px 4px;
-        @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
       }
     }
 

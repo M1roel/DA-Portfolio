@@ -95,6 +95,9 @@
       }
 
       .hero-left-name {
+        @include m.flexBox(column, center, center);
+        width: 100%;
+
         h2 {
           @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$secondary-color);
         }
