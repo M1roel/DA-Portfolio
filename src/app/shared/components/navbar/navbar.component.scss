@@ -107,6 +107,11 @@
         color: v.$hover-color;
       }
     }
+
+    .burger-language {
+      @include m.flexBox(row, space-around, center);
+      width: 30%;
+    }
   }
 }
 

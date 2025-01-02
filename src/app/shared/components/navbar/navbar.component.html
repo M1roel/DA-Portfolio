@@ -6,17 +6,17 @@
       </div>
       <div class="nav-links">
         <div class="nav-links-left">
-          <a href="#why-me">Why me</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact-me">Contact</a>
+          <a href="#why-me">{{ "NAVBAR.WHY_ME" | translate }}</a>
+          <a href="#skills">{{ "NAVBAR.SKILLS" | translate }}</a>
+          <a href="#projects">{{ "NAVBAR.PROJECTS" | translate }}</a>
+          <a href="#contact-me">{{ "NAVBAR.CONTACT" | translate }}</a>
         </div>
       </div>
     </div>
     <div class="nav-right">
-      <a href="">DE</a>
+      <a href="" (click)="useLanguage($event, 'de')">DE</a>
       <p>|</p>
-      <a href="">EN</a>
+      <a href="" (click)="useLanguage($event, 'en')">EN</a>
     </div>
     <div class="nav-burger-menu" (click)="toggleMenu()">
       <img
@@ -31,9 +31,14 @@
       alt="burger menu icon"
       (click)="toggleMenu()"
     />
-    <a href="#why-me" (click)="toggleMenu()">Why me</a>
-    <a href="#skills" (click)="toggleMenu()">Skills</a>
-    <a href="#projects" (click)="toggleMenu()">Projects</a>
-    <a href="#contact-me" (click)="toggleMenu()">Contact</a>
+    <a href="#why-me" (click)="toggleMenu()">{{ "NAVBAR.WHY_ME" | translate }}</a>
+    <a href="#skills" (click)="toggleMenu()">{{ "NAVBAR.SKILLS" | translate }}</a>
+    <a href="#projects" (click)="toggleMenu()">{{ "NAVBAR.PROJECTS" | translate }}</a>
+    <a href="#contact-me" (click)="toggleMenu()">{{ "NAVBAR.CONTACT" | translate }}</a>
+    <div class="burger-language">
+      <a href="" (click)="useLanguage($event, 'de')">DE</a>
+      <p>|</p>
+      <a href="" (click)="useLanguage($event, 'en')">EN</a>
+    </div>
   </div>
 </section>
