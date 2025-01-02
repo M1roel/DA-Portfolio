@@ -14,7 +14,7 @@ export class HeroSectionComponent {
     event.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      const yOffset = -100; // Adjust this value to change the scroll offset
+      const yOffset = -100;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
