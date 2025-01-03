@@ -93,7 +93,6 @@
 
         .form-name,
         .form-email {
-          position: relative;
           width: 100%;
 
           input {
@@ -146,7 +145,6 @@
 
       .form-right {
         .form-message {
-          position: relative;
           width: 100%;
 
           textarea {
@@ -218,7 +216,6 @@
         appearance: none;
         outline: none;
         cursor: pointer;
-        position: relative;
 
         &:hover {
           background-color: v.$secondary-color;
