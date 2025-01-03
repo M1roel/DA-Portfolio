@@ -13,7 +13,7 @@
     width: 75%;
 
     .hero-left-arrow {
-      @include m.flexBox(column, flex-end, flex-end);
+      @include m.flexBox(column, center, flex-end);
       height: 33%;
       width: 85%;
 
@@ -70,8 +70,8 @@
     width: 75%;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       object-fit: contain;
     }
   }
