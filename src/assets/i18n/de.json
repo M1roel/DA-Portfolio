@@ -22,7 +22,10 @@
     "CHALLENGE": "Ich erweitere stetig mein Wissen in neuen Technologien und stehe Ihnen gerne zur Verfügung. Lassen Sie mich wissen, wie ich Sie bestmöglich unterstützen kann."
   },
   "PROJECTS": {
-    "TITLE": "Meine Projekte"
+    "TITLE": "Meine Projekte",
+    "DESCRIPTION_JOIN": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+    "DESCRIPTION_SHARKIE": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Helfen Sie Sharkie, Münzen und vergiftete Flaschen zu finden, um gegen den verrückten Orca zu kämpfen.",
+    "DESCRIPTION_CRM": "Ein CRM (Customer Relationship Management) System verwaltet Kundeninteraktionen, optimiert den Vertrieb und verbessert den Kundenservice durch Datenorganisation und Kommunikationsverfolgung."
   },
   "ABOUT": {
     "TITLE": "Sind Sie auf der Suche nach einem Teamplayer? Das ist die Meinung meiner Kollegen.",

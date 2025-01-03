@@ -15,7 +15,7 @@ export class MyProjectsComponent {
     {
       name: 'JOIN',
       stack: 'HTML | CSS | JavaScript | Firebase',
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
+      descriptionKey: 'PROJECTS.DESCRIPTION_JOIN',
       image: '../../../assets/img/join-project.png',
       github: 'https://github.com/M1roel/DA-Join',
       liveDemo: 'http://join.peterpfautsch.de/'
@@ -23,7 +23,7 @@ export class MyProjectsComponent {
     {
       name: 'Sharkie',
       stack: 'HTML | CSS | JavaScript',
-      description: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poisoned bottles to fight against the crazy orca.',
+      descriptionKey: 'PROJECTS.DESCRIPTION_SHARKIE',
       image: '../../../assets/img/sharkie-project.png',
       github: 'https://github.com/M1roel/DA-Sharkie',
       liveDemo: 'http://sharkie.peterpfautsch.de/'
@@ -31,7 +31,7 @@ export class MyProjectsComponent {
     {
       name: 'CRM',
       stack: 'Angular | TypeScript | SCSS | Firebase',
-      description: 'A CRM (Customer Relationship Management) system manages customer interactions, streamlines sales, and enhances customer service through data organization and communication tracking.',
+      descriptionKey: 'PROJECTS.DESCRIPTION_CRM',
       image: '../../../assets/img/join-project.png',
       github: 'https://github.com/project3',
       liveDemo: 'https://live-demo3.com'
