@@ -93,6 +93,7 @@
 
         .form-name,
         .form-email {
+          position: relative;
           width: 100%;
 
           input {
@@ -145,6 +146,7 @@
 
       .form-right {
         .form-message {
+          position: relative;
           width: 100%;
 
           textarea {
