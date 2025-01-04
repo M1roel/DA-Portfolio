@@ -218,6 +218,7 @@
         appearance: none;
         outline: none;
         cursor: pointer;
+        position: relative;
 
         &:hover {
           background-color: v.$secondary-color;
