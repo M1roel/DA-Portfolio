@@ -21,7 +21,7 @@ export class ContactMeComponent {
     message: '',
   };
 
-  mailTest = true;
+  mailTest = false;
   nameError: string = '';
   emailError: string = '';
   messageError: string = '';
