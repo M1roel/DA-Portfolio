@@ -27,7 +27,7 @@ export class ContactMeComponent {
   messageError: string = '';
 
   post = {
-    endPoint: 'https://peterpfautsch.de/send-email',
+    endPoint: 'https://peterpfautsch.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
