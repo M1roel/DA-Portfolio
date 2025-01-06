@@ -25,7 +25,8 @@
     "TITLE": "My Projects",
     "DESCRIPTION_JOIN": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "DESCRIPTION_SHARKIE": "Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poisoned bottles to fight against the crazy orca.",
-    "DESCRIPTION_CRM": "A CRM (Customer Relationship Management) system manages customer interactions, streamlines sales, and enhances customer service through data organization and communication tracking."
+    "DESCRIPTION_CRM": "A CRM (Customer Relationship Management) system manages customer interactions, streamlines sales, and enhances customer service through data organization and communication tracking.",
+    "DESCRIPTION_POKEDEX": "An interactive web application that allows real-time retrieval and search of Pokémon data. Developed with HTML, CSS, and JavaScript, the project connects API integrations with a user-friendly interface."
   },
   "ABOUT": {
     "TITLE": "Need a teamplayer? Here what my colleagues said about me",

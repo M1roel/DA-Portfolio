@@ -18,7 +18,7 @@ export class MyProjectsComponent {
       descriptionKey: 'PROJECTS.DESCRIPTION_JOIN',
       image: '../../../assets/img/join-project.png',
       github: 'https://github.com/M1roel/DA-Join',
-      liveDemo: 'http://join.peterpfautsch.de/'
+      liveDemo: 'http://join.peterpfautsch.de/public/index.html'
     },
     {
       name: 'Sharkie',
@@ -29,12 +29,12 @@ export class MyProjectsComponent {
       liveDemo: 'http://sharkie.peterpfautsch.de/'
     },
     {
-      name: 'CRM',
-      stack: 'Angular | TypeScript | SCSS | Firebase',
-      descriptionKey: 'PROJECTS.DESCRIPTION_CRM',
-      image: '../../../assets/img/join-project.png',
-      github: 'https://github.com/project3',
-      liveDemo: 'https://live-demo3.com'
+      name: 'Pokedex',
+      stack: 'HTML | CSS | JAVASCRIPT | Rest-API',
+      descriptionKey: 'PROJECTS.DESCRIPTION_POKEDEX',
+      image: '../../../assets/img/pokedex-project.png',
+      github: 'https://github.com/M1roel/DA-Pokedex',
+      liveDemo: 'http://pokedex.peterpfautsch.de/'
     }
   ];
 
