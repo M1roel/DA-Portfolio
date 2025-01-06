@@ -56,11 +56,11 @@
       height: 33%;
 
       h2 {
-        @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$secondary-color);
+      @include m.styleFont("Roboto", clamp(24px, 4vw, 54px), 500, clamp(28.8px, 4.8vw, 64.8px), v.$secondary-color);
       }
 
       p {
-        @include m.styleFont("Roboto", 82px, 700, 98.4px, v.$secondary-color);
+      @include m.styleFont("Roboto", clamp(32px, 6vw, 82px), 700, clamp(38.4px, 7.2vw, 98.4px), v.$secondary-color);
       }
     }
   }

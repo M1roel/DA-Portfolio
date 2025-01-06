@@ -13,19 +13,19 @@ import { TranslateService } from '@ngx-translate/core';
 export class SaidAboutMeComponent {
   abouts = [
     {
-      name: 'Max Muster',
+      name: 'Dennis',
       project: 'JOIN',
-      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
+      descriptionKey: 'ABOUT.DESCRIPTION_DENNIS'
+    },
+    {
+      name: 'Benjamin',
+      project: 'JOIN',
+      descriptionKey: 'ABOUT.DESCRIPTION_BENJAMIN'
     },
     {
       name: 'Max Muster',
       project: 'JOIN',
-      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
-    },
-    {
-      name: 'Max Muster',
-      project: 'JOIN',
-      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
+      descriptionKey: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
     }
   ];
 
