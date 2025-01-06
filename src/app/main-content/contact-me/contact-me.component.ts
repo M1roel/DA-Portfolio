@@ -103,7 +103,7 @@ export class ContactMeComponent {
           .post(this.post.endPoint, this.post.body(this.contactData))
           .subscribe({
             next: (response) => {
-              alert('Message sent successfully!');
+              this.showSuccessMessage();
               ngForm.resetForm();
             },
             error: (error) => {
@@ -115,6 +115,16 @@ export class ContactMeComponent {
         alert('Mail test is active. Form not sent.');
         ngForm.resetForm();
       }
+    }
+  }
+
+  showSuccessMessage() {
+    const successMessageElement = document.getElementById('success-message');
+    if (successMessageElement) {
+      successMessageElement.style.display = 'block';
+      setTimeout(() => {
+        successMessageElement.style.display = 'none';
+      }, 2000);
     }
   }
 
