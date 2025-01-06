@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
+/**
+ * MySkillsComponent displays a list of skills with their respective icons and handles language switching.
+ */
 @Component({
   selector: 'app-my-skills',
   standalone: true,
@@ -11,6 +14,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './my-skills.component.scss'
 })
 export class MySkillsComponent {
+
+  /**
+   * Array of skills with associated image icons to be displayed in the component.
+   */
   skills = [
     { name: 'Angular', img: '../../../assets/img/angular-icon.png'},
     { name: 'TypeScript', img: '../../../assets/img/typescript-icon.png'},
@@ -28,24 +35,46 @@ export class MySkillsComponent {
     { name: 'Challenge me', img: '../../../assets/img/challenge-icon.png'}
   ];
 
+  /**
+   * Flag to determine if the tooltip is visible.
+   */
   tooltipVisible: boolean = false;
 
+  /**
+   * Displays a tooltip when the 'Challenge me' skill is hovered.
+   * 
+   * @param {string} skillName The name of the skill for which the tooltip is to be displayed.
+   */
   showTooltip(skillName: string) {
     if (skillName === 'Challenge me') {
       this.tooltipVisible = true;
     }
   }
 
+  /**
+   * Hides the tooltip.
+   */
   hideTooltip() {
     this.tooltipVisible = false;
   }
 
+  /**
+   * Constructor for initializing the MySkillsComponent and setting up the translation service.
+   * 
+   * @param {TranslateService} translate The translation service used for managing languages.
+   */
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
 
+  /**
+   * Changes the language of the application.
+   * 
+   * @param {Event} event The event object triggered by the language switch.
+   * @param {string} language The language to switch to (e.g., 'en' for English).
+   */
   useLanguage(event: Event, language: string): void {
     event.preventDefault();
     this.translate.use(language);

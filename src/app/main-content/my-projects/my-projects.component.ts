@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
+/**
+ * MyProjectsComponent displays a list of projects with relevant details such as stack, description, and links to GitHub and live demos.
+ */
 @Component({
   selector: 'app-my-projects',
   standalone: true,
@@ -11,6 +14,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './my-projects.component.scss'
 })
 export class MyProjectsComponent {
+
+  /**
+   * Array of projects to be displayed in the component.
+   */
   projects = [
     {
       name: 'JOIN',
@@ -38,14 +45,25 @@ export class MyProjectsComponent {
     }
   ];
 
+  /**
+   * Constructor for initializing the component and setting up the translation service.
+   * 
+   * @param {TranslateService} translate The translation service used for managing languages.
+   */
   constructor(private translate: TranslateService) {
-      this.translate.addLangs(['de', 'en']);
-      this.translate.setDefaultLang('en');
-      this.translate.use('en');
-    }
-  
-    useLanguage(event: Event, language: string): void {
-      event.preventDefault();
-      this.translate.use(language);
-    }
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
+
+  /**
+   * Changes the language of the application.
+   * 
+   * @param {Event} event The event object triggered by the language switch.
+   * @param {string} language The language to switch to (e.g., 'en' for English).
+   */
+  useLanguage(event: Event, language: string): void {
+    event.preventDefault();
+    this.translate.use(language);
+  }
 }

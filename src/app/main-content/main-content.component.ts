@@ -7,6 +7,10 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { SaidAboutMeComponent } from './said-about-me/said-about-me.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 
+/**
+ * MainContentComponent serves as the main container for various sections of the application,
+ * including the hero section, skills, projects, testimonials, and contact form.
+ */
 @Component({
   selector: 'app-main-content',
   standalone: true,
