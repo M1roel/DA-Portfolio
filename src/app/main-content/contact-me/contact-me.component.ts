@@ -17,6 +17,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class ContactMeComponent {
   http = inject(HttpClient);
   privacyChecked: boolean = false;
+  translate = inject(TranslateService);
 
   contactData = {
     name: '',
@@ -192,11 +193,12 @@ export class ContactMeComponent {
    * @param {TranslateService} translate The translation service.
    * @param {ViewportScroller} viewportScroller The viewport scroller service.
    */
-  constructor(private translate: TranslateService, private viewportScroller: ViewportScroller) {
+  constructor(private viewportScroller: ViewportScroller) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
+  
 
   /**
    * Changes the language of the application.
