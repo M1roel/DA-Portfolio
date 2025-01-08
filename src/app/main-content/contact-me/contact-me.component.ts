@@ -17,6 +17,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class ContactMeComponent {
   http = inject(HttpClient);
   privacyChecked: boolean = false;
+  translate = inject(TranslateService);
 
   contactData = {
     name: '',
@@ -42,7 +43,7 @@ export class ContactMeComponent {
 
   /**
    * Validates the input fields for the contact form.
-   * 
+   *
    * @returns {Promise<boolean>} Returns true if all inputs are valid, otherwise false.
    */
   async validateInputs(): Promise<boolean> {
@@ -50,73 +51,77 @@ export class ContactMeComponent {
     const isEmailValid = this.checkEmail();
     const isMessageValid = this.checkMessage();
 
-    const results = await Promise.all([isNameValid, isEmailValid, isMessageValid]);
+    const results = await Promise.all([
+      isNameValid,
+      isEmailValid,
+      isMessageValid,
+    ]);
 
     return results.every((result) => result === true);
   }
 
   /**
    * Checks if the name input is valid.
-   * 
+   *
    * @returns {Promise<boolean>} Returns true if the name is valid, otherwise false.
    */
   async checkName(): Promise<boolean> {
-    const namePattern = /^[A-Za-z]{3,}$/;
-    const nameInput = document.getElementById('name') as HTMLInputElement;
-
+    const namePattern = /^[A-Za-z\s]{3,}$/;
     if (!namePattern.test(this.contactData.name)) {
-      this.nameError = 'Your name is required';
-      nameInput.classList.add('input-error');
-      nameInput.classList.remove('input-done');
+      this.nameError = this.translate.instant('CONTACT.FORM.NAME_HINT');
       return false;
     } else {
       this.nameError = '';
-      nameInput.classList.remove('input-error');
-      nameInput.classList.add('input-done');
       return true;
     }
   }
 
   /**
    * Checks if the email input is valid.
-   * 
+   *
    * @returns {Promise<boolean>} Returns true if the email is valid, otherwise false.
    */
   async checkEmail(): Promise<boolean> {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const allowedDomains = [
+      'com', 'org', 'net', 'int', 'edu', 'gov', 'mil', 'co', 'me', 'de', 'uk', 'eu', 'us', 'ca', 'au', 'co.uk',
+      'ac.uk', 'gov.uk', 'edu.au', 'jp', 'fr', 'it', 'es', 'cn', 'ru', 'in', 'br', 'pl', 'ch', 'nl', 'se', 'no',
+      'fi', 'dk', 'at', 'be', 'cz', 'hu', 'sk', 'bg', 'ro', 'tr', 'il', 'kr', 'ae', 'sa', 'za', 'mx', 'cl', 'co.il',
+      'co.in', 'co.kr', 'co.jp', 'gov.in', 'gov.cn', 'gov.sa', 'edu.cn', 'edu.tr', 'edu.in', 'edu.co', 'edu.pk',
+      'ws', 'tv', 'asia', 'mobi', 'tel', 'coop', 'aero', 'pro', 'cat', 'eus', 'xxx', 'college', 'church', 'museum'
+    ];
+
+    const emailPattern = new RegExp(
+      `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?:${allowedDomains.join('|')})$`
+    );
+
     if (!emailPattern.test(this.contactData.email)) {
-      this.emailError = 'Your Email is required';
-      emailInput.classList.add('input-error');
+      this.emailError = this.translate.instant('CONTACT.FORM.EMAIL_HINT');
       return false;
     } else {
       this.emailError = '';
-      emailInput.classList.remove('input-error');
       return true;
     }
   }
 
   /**
    * Checks if the message input is valid.
-   * 
+   *
    * @returns {Promise<boolean>} Returns true if the message is valid, otherwise false.
    */
   async checkMessage(): Promise<boolean> {
     const wordCount = this.contactData.message.trim().split(/\s+/).length;
-    const messageInput = document.getElementById('message') as HTMLInputElement;
     if (wordCount < 4) {
-      this.messageError = 'Your message is required';
+      this.messageError = this.translate.instant('CONTACT.FORM.MESSAGE_HINT');
       return false;
     } else {
       this.messageError = '';
-      messageInput.classList.remove('input-error');
       return true;
     }
   }
 
   /**
    * Handles the form submission.
-   * 
+   *
    * @param {NgForm} ngForm The Angular form object.
    */
   async onSubmit(ngForm: NgForm) {
@@ -135,7 +140,9 @@ export class ContactMeComponent {
             },
             complete: () => console.info('send post complete'),
           });
-      } else if (isFormValid && this.mailTest) {
+      } else if (!isFormValid) {
+        this.resetFormWithErrors();
+      } else if (this.mailTest) {
         alert('Mail test is active. Form not sent.');
         ngForm.resetForm();
       }
@@ -153,6 +160,25 @@ export class ContactMeComponent {
         successMessageElement.style.display = 'none';
       }, 2000);
     }
+  }
+
+  /**
+    * Resets the form and displays error messages.
+    */
+  resetFormWithErrors() {
+    this.nameError = this.contactData.name
+      ? this.nameError
+      : this.translate.instant('CONTACT.FORM.NAME_HINT');
+    this.emailError = this.contactData.email
+      ? this.emailError
+      : this.translate.instant('CONTACT.FORM.EMAIL_HINT');
+    this.messageError = this.contactData.message
+      ? this.messageError
+      : this.translate.instant('CONTACT.FORM.MESSAGE_HINT');
+
+    this.contactData.name = '';
+    this.contactData.email = '';
+    this.contactData.message = '';
   }
 
   icons = [
@@ -181,7 +207,7 @@ export class ContactMeComponent {
 
   /**
    * Handles the hover event on the social media icons, changing the icon image.
-   * 
+   *
    * @param {any} icon The icon object that is being hovered.
    */
   onHover(icon: any) {
@@ -190,7 +216,7 @@ export class ContactMeComponent {
 
   /**
    * Handles the leave event on the social media icons, reverting the icon image.
-   * 
+   *
    * @param {any} icon The icon object that is being hovered out.
    */
   onLeave(icon: any) {
@@ -199,11 +225,11 @@ export class ContactMeComponent {
 
   /**
    * Constructor for initializing the component with language and viewport settings.
-   * 
+   *
    * @param {TranslateService} translate The translation service.
    * @param {ViewportScroller} viewportScroller The viewport scroller service.
    */
-  constructor(private translate: TranslateService, private viewportScroller: ViewportScroller) {
+  constructor(private viewportScroller: ViewportScroller) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
@@ -211,7 +237,7 @@ export class ContactMeComponent {
 
   /**
    * Changes the language of the application.
-   * 
+   *
    * @param {Event} event The event object triggered by the language switch.
    * @param {string} language The language to switch to.
    */

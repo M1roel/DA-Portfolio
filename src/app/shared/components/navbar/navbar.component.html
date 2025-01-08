@@ -6,10 +6,10 @@
       </div>
       <div class="nav-links">
         <div class="nav-links-left">
-          <a routerLink="/" (click)="scrollToSection($event, 'why-me')">{{ "NAVBAR.WHY_ME" | translate }}</a>
-          <a routerLink="/" (click)="scrollToSection($event, 'skills')">{{ "NAVBAR.SKILLS" | translate }}</a>
-          <a routerLink="/" (click)="scrollToSection($event, 'projects')">{{ "NAVBAR.PROJECTS" | translate }}</a>
-          <a routerLink="/" (click)="scrollToSection($event, 'contact-me')">{{ "NAVBAR.CONTACT" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('why-me')">{{ "NAVBAR.WHY_ME" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('skills')">{{ "NAVBAR.SKILLS" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('projects')">{{ "NAVBAR.PROJECTS" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('contact-me')">{{ "NAVBAR.CONTACT" | translate }}</a>
         </div>
       </div>
     </div>
@@ -19,22 +19,15 @@
       <a href="" (click)="useLanguage($event, 'en')">EN</a>
     </div>
     <div class="nav-burger-menu" (click)="toggleMenu()">
-      <img
-        src="../../../../assets/img/burger_menu.png"
-        alt="burger menu icon"
-      />
+      <img src="../../../../assets/img/burger_menu.png" alt="burger menu icon" />
     </div>
   </div>
   <div class="full-screen-menu" *ngIf="menuOpen">
-    <img
-      src="../../../../assets/img/exit_menu.png"
-      alt="burger menu icon"
-      (click)="toggleMenu()"
-    />
-    <a routerLink="/" (click)="toggleMenu(); scrollToSection($event, 'why-me')">{{ "NAVBAR.WHY_ME" | translate }}</a>
-    <a routerLink="/" (click)="toggleMenu(); scrollToSection($event, 'skills')">{{ "NAVBAR.SKILLS" | translate }}</a>
-    <a routerLink="/" (click)="toggleMenu(); scrollToSection($event, 'projects')">{{ "NAVBAR.PROJECTS" | translate }}</a>
-    <a routerLink="/" (click)="toggleMenu(); scrollToSection($event, 'contact-me')">{{ "NAVBAR.CONTACT" | translate }}</a>
+    <img src="../../../../assets/img/exit_menu.png" alt="burger menu icon" (click)="toggleMenu()" />
+    <a routerLink="/" (click)="toggleMenu(); scrollToSection('why-me')">{{ "NAVBAR.WHY_ME" | translate }}</a>
+    <a routerLink="/" (click)="toggleMenu(); scrollToSection('skills')">{{ "NAVBAR.SKILLS" | translate }}</a>
+    <a routerLink="/" (click)="toggleMenu(); scrollToSection('projects')">{{ "NAVBAR.PROJECTS" | translate }}</a>
+    <a routerLink="/" (click)="toggleMenu(); scrollToSection('contact-me')">{{ "NAVBAR.CONTACT" | translate }}</a>
     <div class="burger-language">
       <a href="" (click)="useLanguage($event, 'de')">DE</a>
       <p>|</p>

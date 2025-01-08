@@ -33,6 +33,10 @@ export class NavbarComponent {
    */
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+
+    if (this.menuOpen) {
+      this.scrollToSection('hero');
+    }
   }
 
   /**
@@ -52,8 +56,11 @@ export class NavbarComponent {
    * @param {Event} event - The DOM event triggered by user interaction.
    * @param {string} sectionId - The ID of the section to scroll to.
    */
-  scrollToSection(event: Event, sectionId: string) {
-    event.preventDefault();
+  scrollToSection(sectionId: string, event?: Event) {
+    if (event) {
+      event.preventDefault();
+    }
+
     const element = document.getElementById(sectionId);
     if (element) {
       const yOffset = -100;
