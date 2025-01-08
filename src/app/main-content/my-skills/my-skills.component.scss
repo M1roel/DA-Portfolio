@@ -47,11 +47,11 @@
       opacity: 1;
       transition: opacity 0.3s;
       pointer-events: none;
-    }
 
-    @media (max-width: 576px) {
-      display: none;
-    }
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }    
 
     .skill {
       text-align: center;
