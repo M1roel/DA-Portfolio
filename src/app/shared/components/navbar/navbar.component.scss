@@ -65,8 +65,10 @@
         @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
         text-decoration: none;
         padding: 0px 4px;
+        transition: color 0.125s;
         
-      &:hover {
+      &:hover,
+      &.activ {
         color: v.$hover-color;
       }
       }

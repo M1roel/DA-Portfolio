@@ -18,7 +18,7 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'DA-Portfolio';
+  title = 'Peter Pfautsch';
 
   /**
    * Initializes the translation service and configures the default language.
@@ -29,11 +29,6 @@ export class AppComponent {
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
-    const browserLang = this.translate.getBrowserLang();
-    if (browserLang && browserLang.match(/en|de/)) {
-      this.translate.use(browserLang);
-    } else {
-      this.translate.use('en');
-    }
+    this.translate.use('en');
   }
 }
