@@ -15,96 +15,90 @@
       @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);
     }
   }
-}
 
-.skill-icons {
-  @include m.flexBox(row, flex-start, center, 60px);
-  flex-wrap: wrap;
-  position: relative;
+  .skill-icons {
+    @include m.flexBox(row, flex-start, center, 60px);
+    flex-wrap: wrap;
 
-  @media (max-width: 576px) {
-    @include m.flexBox();
-    gap: 0;
-    position: static;
-  }
-
-  .skill-arrow-text {
-    display: none;
     @media (max-width: 576px) {
-      @include m.flexBox(column, center, center);
-      @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
-      gap: 24px;
+      @include m.flexBox();
+      gap: 0;
+      position: static;
     }
-  }
-}
 
-.skill {
-  text-align: center;
-  width: 100px;
-  margin-bottom: 50px;
-
-  @media (max-width: 576px) {
-    position: static;
-  }
-
-  .skill-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .tooltip {
-      position: relative;
-      bottom: 50%;
-      left: 20%;
-      background: linear-gradient(to bottom, #0b042d 0%, #0b042d33 100%);
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 10;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-
+    .skill-arrow-text {
+      display: none;
       @media (max-width: 576px) {
-        display: none;
+        @include m.flexBox(column, center, center);
+        @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
+        gap: 24px;
       }
     }
 
-    &:hover .tooltip {
+    .tooltip {
+      @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
+      max-width: 300px;
+      position: fixed;
+      background: linear-gradient(to bottom, #0b042d 0%, #0b042d33 100%);
+      border-radius: 10px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 100;
       opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  &.challenge-me .skill-content {
-    flex-direction: row;
-    align-items: center;
-
-    .icon-and-name {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 5px;
-    @media (max-width: 576px) {
-      width: 45px;
-      height: 45px;
+      transition: opacity 0.3s;
+      pointer-events: none;
     }
 
-    &:hover {
-      animation: bounce 0.9s ease-in-out infinite;
-    }
-  }
-
-  p {
-    @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
     @media (max-width: 576px) {
       display: none;
+    }
+
+    .skill {
+      text-align: center;
+      width: 100px;
+      margin-bottom: 50px;
+
+      @media (max-width: 576px) {
+        position: static;
+      }
+
+      .skill-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &.challenge-me .skill-content {
+        flex-direction: row;
+        align-items: center;
+
+        .icon-and-name {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 5px;
+        @media (max-width: 576px) {
+          width: 45px;
+          height: 45px;
+        }
+
+        &:hover {
+          animation: bounce 0.9s ease-in-out infinite;
+        }
+      }
+
+      p {
+        @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
+        @media (max-width: 576px) {
+          display: none;
+        }
+      }
     }
   }
 }

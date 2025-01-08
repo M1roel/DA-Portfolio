@@ -5,7 +5,7 @@
       *ngFor="let skill of skills"
       class="skill"
       [ngClass]="{ 'challenge-me': skill.name === 'Challenge me' }"
-      (mouseenter)="showTooltip(skill.name)"
+      (mouseenter)="showTooltip(skill.name, $event)"
       (mouseleave)="hideTooltip()"
     >
       <div class="skill-content">
@@ -13,21 +13,14 @@
           <img [src]="skill.img" [alt]="skill.name" />
           <p>{{ skill.name }}</p>
         </div>
-        <div
-          *ngIf="tooltipVisible && skill.name === 'Challenge me'"
-          class="tooltip"
-        >
-          <p>
-            {{"SKILLS.CHALLENGE" | translate}}
-          </p>
-        </div>
       </div>
     </div>
-    <div class="skill-arrow-text">
-      <img src="../../../assets/img/arrow_10.png" alt="arrow icon" />
-      <p>
-        {{"SKILLS.CHALLENGE" | translate}}
-      </p>
+    <div
+      *ngIf="tooltipVisible"
+      class="tooltip"
+      [ngStyle]="{ 'top.px': tooltipY, 'left.px': tooltipX }"
+    >
+      <p>{{ "SKILLS.CHALLENGE" | translate }}</p>
     </div>
   </div>
 </section>
