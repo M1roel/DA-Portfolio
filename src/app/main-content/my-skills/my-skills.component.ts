@@ -52,8 +52,8 @@ export class MySkillsComponent {
   showTooltip(skillName: string, event: MouseEvent) {
     if (skillName === 'Challenge me') {
       this.tooltipVisible = true;
-      this.tooltipX = event.clientX + 20; // 10px rechts der Maus
-      this.tooltipY = event.clientY - 50; // 10px unter der Maus
+      this.tooltipX = event.clientX - 100;
+      this.tooltipY = event.clientY - 100;
     }
   }
 

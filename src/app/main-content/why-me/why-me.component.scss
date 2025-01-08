@@ -3,7 +3,7 @@
 
 .why-me {
   @include m.flexBox(row, space-between, center);
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   gap: 2px;
 
   .why-me-left {

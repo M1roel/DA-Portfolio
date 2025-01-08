@@ -2,8 +2,12 @@
 @use "../../../mixins.scss" as m;
 
 .skills {
-  margin-bottom: 50px;
+  margin-bottom: 250px;
   text-align: center;
+
+  @media  (max-width: 576px) {
+    margin-bottom: 50px;
+  }
 
   h2 {
     @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
@@ -17,7 +21,7 @@
   }
 
   .skill-icons {
-    @include m.flexBox(row, flex-start, center, 60px);
+    @include m.flexBox(row, flex-start, center, 100px);
     flex-wrap: wrap;
 
     @media (max-width: 576px) {
