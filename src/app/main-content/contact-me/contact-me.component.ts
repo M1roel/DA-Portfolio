@@ -63,7 +63,7 @@ export class ContactMeComponent {
   async checkName(): Promise<boolean> {
     const namePattern = /^[A-Za-z]{3,}$/;
     if (!namePattern.test(this.contactData.name)) {
-      this.nameError = 'Name is required';
+      this.nameError = this.translate.instant('CONTACT.FORM.NAME_HINT');
       return false;
     } else {
       this.nameError = '';
@@ -79,7 +79,7 @@ export class ContactMeComponent {
   async checkEmail(): Promise<boolean> {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(this.contactData.email)) {
-      this.emailError = 'Valid email is required';
+      this.emailError = this.translate.instant('CONTACT.FORM.EMAIL_HINT');
       return false;
     } else {
       this.emailError = '';
@@ -95,7 +95,7 @@ export class ContactMeComponent {
   async checkMessage(): Promise<boolean> {
     const wordCount = this.contactData.message.trim().split(/\s+/).length;
     if (wordCount < 4) {
-      this.messageError = 'Message must be at least 4 words';
+      this.messageError = this.translate.instant('CONTACT.FORM.MESSAGE_HINT');
       return false;
     } else {
       this.messageError = '';
