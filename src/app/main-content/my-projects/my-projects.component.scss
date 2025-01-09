@@ -20,11 +20,20 @@
     flex-wrap: wrap;
     margin-bottom: 150px;
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
+    @media (max-width: 576px) { 
+      margin-bottom: 30px;
+    }
+
     &:nth-child(even) {
-      transform: translateX(-1000px);
+      transform: translateX(-500px);
+
+      @media (max-width: 576px) { 
+        transform: translateX(-50px);
+      }
+
       .project-left {
         order: 1;
       }
@@ -39,13 +48,19 @@
     }
 
     &:nth-child(odd) {
-      transform: translateX(1000px);
+      transform: translateX(500px);
+
+      @media (max-width: 576px) { 
+        transform: translateX(-50px);
+      }
+
       .project-left {
         order: 2;
       }
       .project-right {
         order: 1;
       }
+
       &.visible {
         opacity: 1;
         transform: translateX(0);

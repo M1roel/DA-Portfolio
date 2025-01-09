@@ -5,7 +5,7 @@
   text-align: center;
   margin-bottom: 100px;
   opacity: 0;
-  transform: translateX(-1000px);
+  transform: translateX(-100px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
   &.visible {

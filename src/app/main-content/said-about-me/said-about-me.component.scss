@@ -5,6 +5,10 @@
   @include m.flexBox(column, center, center);
   margin-bottom: 100px;
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   .said-about-headline {
     @include m.flexBox(column, center, flex-start);
     width: 100%;
