@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,26 +9,41 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-why-me',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './why-me.component.html',
-  styleUrl: './why-me.component.scss'
+  styleUrl: './why-me.component.scss',
 })
-export class WhyMeComponent {
-
-  /**
-   * Constructor for initializing the WhyMeComponent and setting up the translation service.
-   * 
-   * @param {TranslateService} translate The translation service used for managing languages.
-   */
-  constructor(private translate: TranslateService) {
+export class WhyMeComponent implements OnInit {
+  constructor(private el: ElementRef, private translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
 
+  ngOnInit() {
+    const element = this.el.nativeElement.querySelector('.why-me');
+    if (element) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              element.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      observer.observe(element);
+    } else {
+      console.error('.why-me element not found!');
+    }
+  }
+
   /**
    * Changes the language of the application.
-   * 
+   *
    * @param {Event} event The event object triggered by the language switch.
    * @param {string} language The language to switch to (e.g., 'en' for English).
    */
