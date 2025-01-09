@@ -3,7 +3,15 @@
 
 .said-about {
   @include m.flexBox(column, center, center);
-  margin-bottom: 100px;
+  margin-bottom: 150px;
+  opacity: 0;
+  transform: translateY(300px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   ::-webkit-scrollbar {
     display: none;

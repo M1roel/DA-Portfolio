@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,13 +11,12 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './said-about-me.component.html',
-  styleUrl: './said-about-me.component.scss'
+  styleUrls: ['./said-about-me.component.scss']
 })
-export class SaidAboutMeComponent {
+export class SaidAboutMeComponent implements AfterViewInit {
 
-  /**
-   * Array of testimonials, each containing the name of the person, their project, and a description key for translation.
-   */
+  @ViewChildren('saidAbout') saidAboutElements!: QueryList<ElementRef>;
+
   abouts = [
     {
       name: 'Dennis',
@@ -36,23 +35,30 @@ export class SaidAboutMeComponent {
     }
   ];
 
-  /**
-   * Constructor for initializing the SaidAboutMeComponent and setting up the translation service.
-   * 
-   * @param {TranslateService} translate The translation service used for managing languages.
-   */
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private renderer: Renderer2) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
 
-  /**
-   * Changes the language of the application.
-   * 
-   * @param {Event} event The event object triggered by the language switch.
-   * @param {string} language The language to switch to (e.g., 'en' for English).
-   */
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.renderer.addClass(entry.target, 'visible');
+            observer.unobserve(entry.target); // Stop observing once the element is visible
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    this.saidAboutElements.forEach((element) => {
+      observer.observe(element.nativeElement);
+    });
+  }
+
   useLanguage(event: Event, language: string): void {
     event.preventDefault();
     this.translate.use(language);
