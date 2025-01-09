@@ -1,7 +1,7 @@
 <section class="projects" id="projects">
     <h2> {{"PROJECTS.TITLE" | translate}} </h2>
   
-    <div class="project" *ngFor="let project of projects">
+    <div class="project" *ngFor="let project of projects" #project>
       <div class="project-left">
         <img [src]="project.image" [alt]="project.name">
       </div>

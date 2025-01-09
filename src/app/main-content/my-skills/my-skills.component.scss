@@ -3,6 +3,15 @@
 
 .skills {
   text-align: center;
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateX(-1000px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   @media  (max-width: 576px) {
     margin-bottom: 100px;

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,7 +13,39 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './my-projects.component.html',
   styleUrl: './my-projects.component.scss'
 })
-export class MyProjectsComponent {
+export class MyProjectsComponent implements AfterViewInit {
+
+  @ViewChildren('project') projectElements!: QueryList<ElementRef>;
+
+  /**
+   * Constructor for initializing the component and setting up the translation service.
+   * 
+   * @param {TranslateService} translate The translation service used for managing languages.
+   * @param {Renderer2} renderer The Renderer2 service used for DOM manipulation.
+   */
+  constructor(private translate: TranslateService, private renderer: Renderer2) {
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
+
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.renderer.addClass(entry.target, 'visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    this.projectElements.forEach((project) => {
+      observer.observe(project.nativeElement);
+    });
+  }
 
   /**
    * Array of projects to be displayed in the component.
@@ -44,17 +76,6 @@ export class MyProjectsComponent {
       liveDemo: 'http://pokedex.peterpfautsch.de/'
     }
   ];
-
-  /**
-   * Constructor for initializing the component and setting up the translation service.
-   * 
-   * @param {TranslateService} translate The translation service used for managing languages.
-   */
-  constructor(private translate: TranslateService) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
-  }
 
   /**
    * Changes the language of the application.

@@ -11,30 +11,44 @@
     @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
     margin-bottom: 30px;
     @media (max-width: 576px) {
-      @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);      
+      @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);
     }
   }
 
   .project {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 150px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
     &:nth-child(even) {
+      transform: translateX(-1000px);
       .project-left {
         order: 1;
       }
       .project-right {
         order: 2;
+      }
+
+      &.visible {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
 
     &:nth-child(odd) {
+      transform: translateX(1000px);
       .project-left {
         order: 2;
       }
       .project-right {
         order: 1;
+      }
+      &.visible {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
 
@@ -127,7 +141,7 @@
         @include m.flexBox(column, center, center);
         width: 100%;
         padding: 0px 20px;
-        margin-bottom: 20px;        
+        margin-bottom: 20px;
         text-align: center;
 
         h4 {
@@ -154,28 +168,28 @@
         .buttons {
           display: flex;
           gap: 20px;
-  
+
           .button {
             padding: 10px 20px;
             text-decoration: none;
             @include m.styleFont("Roboto", 18px, 500, 21.6px, v.$primary-color);
           }
-  
+
           .button:nth-child(1) {
             background-color: transparent;
             border: 1px solid v.$secondary-color;
             transition: color 0.5s, transform 0.5s;
-  
+
             &:hover {
               color: v.$secondary-color;
             }
           }
-  
+
           .button:nth-child(2) {
             background-color: #02f4bf;
             color: black;
             transition: color 0.5s, transform 0.5s;
-  
+
             &:hover {
               color: v.$primary-color;
             }
