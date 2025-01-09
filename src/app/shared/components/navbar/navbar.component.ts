@@ -34,10 +34,6 @@ export class NavbarComponent {
    */
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
-
-    if (this.menuOpen) {
-      this.scrollToSection('hero');
-    }
   }
 
   /**

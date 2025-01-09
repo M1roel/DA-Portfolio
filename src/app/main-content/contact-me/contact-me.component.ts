@@ -166,6 +166,18 @@ export class ContactMeComponent {
     * Resets the form and displays error messages.
     */
   resetFormWithErrors() {
+    // Nur die Felder zurücksetzen, die Fehler haben
+    if (!this.contactData.name || this.nameError) {
+      this.contactData.name = '';
+    }
+    if (!this.contactData.email || this.emailError) {
+      this.contactData.email = '';
+    }
+    if (!this.contactData.message || this.messageError) {
+      this.contactData.message = '';
+    }
+  
+    // Setze die Fehlernachrichten nur, wenn die Felder ungültig sind
     this.nameError = this.contactData.name
       ? this.nameError
       : this.translate.instant('CONTACT.FORM.NAME_HINT');
@@ -175,10 +187,6 @@ export class ContactMeComponent {
     this.messageError = this.contactData.message
       ? this.messageError
       : this.translate.instant('CONTACT.FORM.MESSAGE_HINT');
-
-    this.contactData.name = '';
-    this.contactData.email = '';
-    this.contactData.message = '';
   }
 
   icons = [
