@@ -9,4 +9,9 @@
     h2, h3 {
         color: v.$primary-color;
     }
+
+    a {
+        text-decoration: none;
+        @include m.styleFont('Roboto', 16px, 400, 26.1px, v.$primary-color);
+    }
 }
