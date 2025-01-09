@@ -10,7 +10,7 @@
   h2 {
     @include m.styleFont("Roboto", 54px, 500, 64.8px, v.$primary-color);
     margin-bottom: 30px;
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
       @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);      
     }
   }

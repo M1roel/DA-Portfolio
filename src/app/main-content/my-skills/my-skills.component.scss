@@ -2,7 +2,6 @@
 @use "../../../mixins.scss" as m;
 
 .skills {
-  height: 100vh;
   text-align: center;
 
   @media  (max-width: 576px) {
