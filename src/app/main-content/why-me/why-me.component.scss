@@ -4,11 +4,10 @@
 .why-me {
   @include m.flexBox(row, space-between, center);
   margin-bottom: 100px;
-  height: 100vh;
   gap: 2px;
   opacity: 0;
   transform: translateY(300px);
-  transition: opacity 0.125s ease-out, transform 0.125s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
   &.visible {
     opacity: 1;
