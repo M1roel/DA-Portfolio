@@ -3,7 +3,7 @@
 
 .said-about {
   @include m.flexBox(column, center, center);
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 
   .said-about-headline {
     @include m.flexBox(column, center, flex-start);

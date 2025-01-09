@@ -42,6 +42,7 @@
           <div class="input-wrapper" [ngClass]="{ 'input-error': nameError }">
             <input
               [(ngModel)]="contactData.name"
+              (ngModelChange)="checkName()"
               type="text"
               id="name"
               name="name"
@@ -70,6 +71,7 @@
           <div class="input-wrapper" [ngClass]="{ 'input-error': emailError }">
             <input
               [(ngModel)]="contactData.email"
+              (ngModelChange)="checkEmail()"
               type="email"
               id="email"
               name="email"
@@ -103,6 +105,7 @@
           >
             <textarea
               [(ngModel)]="contactData.message"
+              (ngModelChange)="checkMessage()"
               name="message"
               id="message"
               [placeholder]="

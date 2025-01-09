@@ -51,10 +51,10 @@
       "NAME_ERROR": "Ihr Name ist erforderlich",
       "EMAIL_ERROR": "Ihre E-Mail ist erforderlich",
       "MESSAGE_ERROR": "Ihre Nachricht ist erforderlich",
-      "NAME_HINT": "Der Name muss mehr als 2 Buchstaben haben, keine Zahlen oder Sonderzeichen",
-      "EMAIL_HINT": "Bitte geben Sie eine gültige E-Mail-Adresse ein (z. B. beispiel@domain.de)",
-      "MESSAGE_HINT": "Ihre Nachricht muss mindestens 4 Wörter enthalten",
-      "MESSAGE_SUCCESS": "Ihre Nachricht wurde erfolgreich gesendet"
+      "NAME_HINT": "Name muss mehr als 2 Buchstaben haben",
+      "EMAIL_HINT": "(z. B. beispiel@domain.de)",
+      "MESSAGE_HINT": "Nachricht muss mindestens 4 Wörter enthalten",
+      "MESSAGE_SUCCESS": "Nachricht wurde erfolgreich gesendet"
     }
   },
   "FOOTER": {

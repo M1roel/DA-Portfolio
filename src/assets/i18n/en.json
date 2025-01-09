@@ -51,10 +51,10 @@
       "NAME_ERROR": "Your name is required",
       "EMAIL_ERROR": "Your email is required",
       "MESSAGE_ERROR": "Your message is required",
-      "NAME_HINT": "The name must have more than 2 letters, no numbers or special characters",
-      "EMAIL_HINT": "Please enter a valid email address (e.g. example@domain.com)",
-      "MESSAGE_HINT": "Your message must have at least 4 words",
-      "MESSAGE_SUCCESS": "Your message sent successfully"
+      "NAME_HINT": "Name must have more than 2 letters",
+      "EMAIL_HINT": "(e.g. example@domain.com)",
+      "MESSAGE_HINT": "Message must have at least 4 words",
+      "MESSAGE_SUCCESS": "Message sent successfully"
     }
   },
   "FOOTER": {
