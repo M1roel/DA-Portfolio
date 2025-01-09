@@ -2,11 +2,11 @@
 @use "../../../mixins.scss" as m;
 
 .skills {
-  margin-bottom: 250px;
+  height: 100vh;
   text-align: center;
 
   @media  (max-width: 576px) {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   h2 {

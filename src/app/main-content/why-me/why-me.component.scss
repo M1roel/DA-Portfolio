@@ -4,6 +4,7 @@
 .why-me {
   @include m.flexBox(row, space-between, center);
   margin-bottom: 100px;
+  height: 100vh;
   gap: 2px;
 
   .why-me-left {
