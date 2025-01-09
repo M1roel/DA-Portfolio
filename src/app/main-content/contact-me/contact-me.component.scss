@@ -2,6 +2,15 @@
 @use "../../../mixins.scss" as m;
 
 .contact-me {
+  opacity: 0;
+  transform: translateY(300px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
   .contact-headline {
     @include m.flexBox(row, flex-start, center);
 

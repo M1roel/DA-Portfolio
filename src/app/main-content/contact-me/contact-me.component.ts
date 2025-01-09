@@ -1,6 +1,6 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, AfterViewInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -14,10 +14,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss',
 })
-export class ContactMeComponent {
+
+export class ContactMeComponent implements AfterViewInit {
+  @ViewChild('contactMe') contactMeElement!: ElementRef;
+
   http = inject(HttpClient);
   privacyChecked: boolean = false;
-  translate = inject(TranslateService);
 
   contactData = {
     name: '',
@@ -237,10 +239,31 @@ export class ContactMeComponent {
    * @param {TranslateService} translate The translation service.
    * @param {ViewportScroller} viewportScroller The viewport scroller service.
    */
-  constructor(private viewportScroller: ViewportScroller) {
+  constructor(private translate: TranslateService, private renderer: Renderer2) {
+    this.translate = translate;
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
+  }
+
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Wenn das Element sichtbar wird, wird die 'visible' Klasse hinzugefügt
+            this.renderer.addClass(entry.target, 'visible');
+            observer.unobserve(entry.target); // Stoppe das Beobachten, sobald das Element sichtbar ist
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Beobachte das contact-me Element
+    if (this.contactMeElement) {
+      observer.observe(this.contactMeElement.nativeElement);
+    }
   }
 
   /**
