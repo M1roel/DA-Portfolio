@@ -38,68 +38,94 @@
   >
     <div class="form-inputs">
       <div class="form-left">
-        <div
-          class="form-name"
-          [ngClass]="{
-            'input-error': nameError,
-            'input-done': !nameError && contactData.name
-          }"
-        >
-          <input
-            [(ngModel)]="contactData.name"
-            type="text"
-            id="name"
-            name="name"
-            [placeholder]="
-              nameError ? nameError : ('CONTACT.FORM.NAME' | translate)
-            "
-            required
-            (blur)="checkName()"
-            [ngStyle]="{ color: nameError ? '#F92103' : '' }"
-          />
+        <div class="form-name">
+          <div class="input-wrapper" [ngClass]="{ 'input-error': nameError }">
+            <input
+              [(ngModel)]="contactData.name"
+              type="text"
+              id="name"
+              name="name"
+              [placeholder]="
+                nameError ? nameError : ('CONTACT.FORM.NAME' | translate)
+              "
+              required
+              (blur)="checkName()"
+            />
+            <div class="status-icon">
+              <img
+                *ngIf="nameError"
+                src="../../../assets/img/error_icon.png"
+                alt="Error"
+              />
+              <img
+                *ngIf="!nameError && contactData.name"
+                src="../../../assets/img/done_icon.png"
+                alt="Done"
+              />
+            </div>
+          </div>
         </div>
 
-        <div
-          class="form-email"
-          [ngClass]="{
-            'input-error': emailError,
-            'input-done': !emailError && contactData.email
-          }"
-        >
-          <input
-            [(ngModel)]="contactData.email"
-            type="email"
-            id="email"
-            name="email"
-            [placeholder]="
-              emailError ? emailError : ('CONTACT.FORM.EMAIL' | translate)
-            "
-            required
-            (blur)="checkEmail()"
-            [ngStyle]="{ color: emailError ? '#F92103' : '' }"
-          />
+        <div class="form-email">
+          <div class="input-wrapper" [ngClass]="{ 'input-error': emailError }">
+            <input
+              [(ngModel)]="contactData.email"
+              type="email"
+              id="email"
+              name="email"
+              [placeholder]="
+                emailError ? emailError : ('CONTACT.FORM.EMAIL' | translate)
+              "
+              required
+              (blur)="checkEmail()"
+            />
+            <div class="status-icon">
+              <img
+                *ngIf="emailError"
+                src="../../../assets/img/error_icon.png"
+                alt="Error"
+              />
+              <img
+                *ngIf="!emailError && contactData.email"
+                src="../../../assets/img/done_icon.png"
+                alt="Done"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="form-right">
-        <div
-          class="form-message"
-          [ngClass]="{
-            'input-error': messageError,
-            'input-done': !messageError && contactData.message
-          }"
-        >
-          <textarea
-            [(ngModel)]="contactData.message"
-            name="message"
-            id="message"
-            [placeholder]="
-              messageError ? messageError : ('CONTACT.FORM.MESSAGE' | translate)
-            "
-            required
-            (blur)="checkMessage()"
-            [ngStyle]="{ color: messageError ? '#F92103' : '' }"
-          ></textarea>
+        <div class="form-message">
+          <div
+            class="input-wrapper"
+            [ngClass]="{ 'input-error': messageError }"
+          >
+            <textarea
+              [(ngModel)]="contactData.message"
+              name="message"
+              id="message"
+              [placeholder]="
+                messageError
+                  ? messageError
+                  : ('CONTACT.FORM.MESSAGE' | translate)
+              "
+              required
+              (blur)="checkMessage()"
+            ></textarea>
+            <div class="status-icon">
+              <img
+                *ngIf="messageError"
+                src="../../../assets/img/error_icon.png"
+                alt="Error"
+              />
+              <img
+                *ngIf="!messageError && contactData.message"
+                src="../../../assets/img/done_icon.png"
+                alt="Done"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
