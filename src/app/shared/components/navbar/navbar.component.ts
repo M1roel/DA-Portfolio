@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 /**
  * Navbar component that provides navigation and language switch functionality.
@@ -15,19 +14,11 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
+
 export class NavbarComponent {
   menuOpen: boolean = false;
 
-  /**
-   * Initializes the translation service and sets default language to English.
-   *
-   * @param {TranslateService} translate - Service for managing translations and languages.
-   */
-  constructor(private translate: TranslateService) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
-  }
+  constructor(private translate: TranslateService) {}
 
   /**
    * Toggles the state of the navigation menu.
@@ -37,7 +28,7 @@ export class NavbarComponent {
   }
 
   /**
-   * Switches the application language.
+   * Switches the language using the TranslateService.
    *
    * @param {Event} event - The DOM event triggered by user interaction.
    * @param {string} language - The language code to switch to.
