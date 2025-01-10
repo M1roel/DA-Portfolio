@@ -160,7 +160,13 @@
           }
 
           .invalid-feedback {
+            position: absolute;
+            left: 0;
             @include m.styleFont ('Roboto', 0.875rem, 400, 1.25rem, #e3342f );
+
+            @media (max-width: 576px) {
+              font-size: 0.6rem;
+            }
           }
           
           .input-error input {
@@ -230,6 +236,19 @@
                 height: auto;
               }
             }
+          }
+
+          .invalid-feedback {            
+            position: absolute;
+            @include m.styleFont ('Roboto', 0.875rem, 400, 1.25rem, #e3342f );
+
+            @media (max-width: 576px) {
+              font-size: 0.75rem;
+            }
+          }
+          
+          .input-error input {
+            border-color: #e3342f;
           }
         }
       }

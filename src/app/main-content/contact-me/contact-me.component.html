@@ -125,23 +125,21 @@
 
       <div class="form-right">
         <div class="form-message">
-          <div
-            class="input-wrapper"
-            [ngClass]="{ 'input-error': messageError }"
-          >
+          <div class="input-wrapper" [ngClass]="{ 'input-error': messageError, 'input-success': !messageError && contactData.message }">
             <textarea
               [(ngModel)]="contactData.message"
-              (ngModelChange)="checkMessage()"
               name="message"
               id="message"
-              [placeholder]="
-                messageError
-                  ? messageError
-                  : ('CONTACT.FORM.MESSAGE' | translate)
-              "
-              required
+              class="form-control"
+              [class.is-invalid]="messageError"
+              [class.is-valid]="!messageError && contactData.message"
+              placeholder="{{ 'CONTACT.FORM.MESSAGE' | translate }}"
+              (input)="checkMessage()"
               (blur)="checkMessage()"
+              required
+              aria-describedby="messageError"
             ></textarea>
+        
             <div class="status-icon">
               <img
                 *ngIf="messageError"
@@ -154,6 +152,10 @@
                 alt="Done"
               />
             </div>
+          </div>
+        
+          <div id="messageError" class="invalid-feedback" *ngIf="messageError">
+            {{ messageError }}
           </div>
         </div>
       </div>

@@ -1,6 +1,13 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, AfterViewInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import {
+  Component,
+  inject,
+  AfterViewInit,
+  ElementRef,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -14,7 +21,6 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss',
 })
-
 export class ContactMeComponent implements AfterViewInit {
   @ViewChild('contactMe') contactMeElement!: ElementRef;
 
@@ -63,24 +69,26 @@ export class ContactMeComponent implements AfterViewInit {
   }
 
   /**
- * Checks if the name input is valid.
- *
- * @returns {Promise<boolean>} Returns true if the name is valid, otherwise false.
- */
-async checkName(): Promise<boolean> {
-  const nameValue = this.contactData.name.trim();
-  if (nameValue.length < 3) {
-    this.nameError = this.translate.instant('CONTACT.FORM.NAME_TOO_SHORT');
-    return false;
+   * Checks if the name input is valid.
+   *
+   * @returns {Promise<boolean>} Returns true if the name is valid, otherwise false.
+   */
+  async checkName(): Promise<boolean> {
+    const nameValue = this.contactData.name.trim();
+    if (nameValue.length < 3) {
+      this.nameError = this.translate.instant('CONTACT.FORM.NAME_TOO_SHORT');
+      return false;
+    }
+    const namePattern = /^[A-Za-z\s]+$/;
+    if (!namePattern.test(nameValue)) {
+      this.nameError = this.translate.instant(
+        'CONTACT.FORM.NAME_INVALID_CHARACTERS'
+      );
+      return false;
+    }
+    this.nameError = '';
+    return true;
   }
-  const namePattern = /^[A-Za-z\s]+$/;
-  if (!namePattern.test(nameValue)) {
-    this.nameError = this.translate.instant('CONTACT.FORM.NAME_INVALID_CHARACTERS');
-    return false;
-  }
-  this.nameError = '';
-  return true;
-}
 
   /**
    * Checks if the email input is valid.
@@ -100,7 +108,9 @@ async checkName(): Promise<boolean> {
     }
     const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!domainPattern.test(domainPart)) {
-      this.emailError = this.translate.instant('CONTACT.FORM.EMAIL_INVALID_DOMAIN');
+      this.emailError = this.translate.instant(
+        'CONTACT.FORM.EMAIL_INVALID_DOMAIN'
+      );
       return false;
     }
     this.emailError = '';
@@ -113,8 +123,8 @@ async checkName(): Promise<boolean> {
    * @returns {Promise<boolean>} Returns true if the message is valid, otherwise false.
    */
   async checkMessage(): Promise<boolean> {
-    const wordCount = this.contactData.message.trim().split(/\s+/).length;
-    if (wordCount < 4) {
+    const messagePattern = /^(\b\w+\b\s*){4,}$/; // Mindestens 4 Wörter
+    if (!messagePattern.test(this.contactData.message.trim())) {
       this.messageError = this.translate.instant('CONTACT.FORM.MESSAGE_HINT');
       return false;
     } else {
@@ -144,8 +154,6 @@ async checkName(): Promise<boolean> {
             },
             complete: () => console.info('send post complete'),
           });
-      } else if (!isFormValid) {
-        this.resetFormWithErrors();
       } else if (this.mailTest) {
         alert('Mail test is active. Form not sent.');
         ngForm.resetForm();
@@ -167,8 +175,8 @@ async checkName(): Promise<boolean> {
   }
 
   /**
-    * Resets the form and displays error messages.
-    */
+   * Resets the form and displays error messages.
+   */
   resetFormWithErrors() {
     // Nur die Felder zurücksetzen, die Fehler haben
     if (!this.contactData.name || this.nameError) {
@@ -180,7 +188,7 @@ async checkName(): Promise<boolean> {
     if (!this.contactData.message || this.messageError) {
       this.contactData.message = '';
     }
-  
+
     // Setze die Fehlernachrichten nur, wenn die Felder ungültig sind
     this.nameError = this.contactData.name
       ? this.nameError
@@ -241,7 +249,10 @@ async checkName(): Promise<boolean> {
    * @param {TranslateService} translate The translation service.
    * @param {ViewportScroller} viewportScroller The viewport scroller service.
    */
-  constructor(private translate: TranslateService, private renderer: Renderer2) {
+  constructor(
+    private translate: TranslateService,
+    private renderer: Renderer2
+  ) {
     this.translate = translate;
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
