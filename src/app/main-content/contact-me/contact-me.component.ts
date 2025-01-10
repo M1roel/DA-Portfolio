@@ -170,7 +170,7 @@ export class ContactMeComponent implements AfterViewInit {
       successMessageElement.style.display = 'block';
       setTimeout(() => {
         successMessageElement.style.display = 'none';
-      }, 2000);
+      }, 3500);
     }
   }
 

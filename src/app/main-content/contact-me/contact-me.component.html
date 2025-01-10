@@ -55,7 +55,6 @@
               [class.is-invalid]="nameError"
               [class.is-valid]="!nameError && contactData.name"
               placeholder="{{ 'CONTACT.FORM.NAME' | translate }}"
-              (input)="checkName()"
               (blur)="checkName()"
               required
               aria-describedby="nameError"
@@ -97,7 +96,6 @@
               [class.is-invalid]="emailError"
               [class.is-valid]="!emailError && contactData.email"
               placeholder="{{ 'CONTACT.FORM.EMAIL' | translate }}"
-              (input)="checkEmail()"
               (blur)="checkEmail()"
               required
               aria-describedby="emailError"
@@ -134,7 +132,6 @@
               [class.is-invalid]="messageError"
               [class.is-valid]="!messageError && contactData.message"
               placeholder="{{ 'CONTACT.FORM.MESSAGE' | translate }}"
-              (input)="checkMessage()"
               (blur)="checkMessage()"
               required
               aria-describedby="messageError"

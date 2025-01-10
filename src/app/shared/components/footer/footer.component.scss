@@ -24,6 +24,7 @@ footer {
 
     span:nth-of-type(2) {
       @include m.styleFont("Roboto", 12px, 500, 12px, v.$primary-color);
+      text-align: center;
 
       @media (max-width: 576px) {
         display: none;

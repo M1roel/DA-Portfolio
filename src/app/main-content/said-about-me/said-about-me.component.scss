@@ -21,7 +21,7 @@
     @include m.flexBox(column, center, flex-start);
     width: 100%;
 
-    @media (max-width: 576px) {
+    @media (max-width: 630px) {
       display: none;
     }
 
@@ -34,7 +34,7 @@
   .said-about-headline-responsive {
     display: none;
 
-    @media (max-width: 576px) {
+    @media (max-width: 630px) {
       @include m.flexBox(column, center, center);
       width: 100%;
 
@@ -42,7 +42,7 @@
         @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$primary-color);
         margin-bottom: 32px;
 
-        @media (max-width: 576px) {
+        @media (max-width: 630px) {
           margin-bottom: 8px;
           text-align: center;
         }
@@ -51,7 +51,7 @@
       p {
         @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$primary-color);
 
-        @media (max-width: 576px) {
+        @media (max-width: 630px) {
           margin-bottom: 30px;
           text-align: center;
         }
@@ -63,14 +63,14 @@
     @include m.flexBox(row, flex-start, flex-start);
     overflow-x: auto;
 
-    @media (max-width: 576px) {
+    @media (max-width: 630px) {
       width: 100%;
     }
 
     img {
       margin: 0px 32px;
 
-      @media (max-width: 576px) {
+      @media (max-width: 630px) {
         display: none;
       }
     }
@@ -82,7 +82,7 @@
     box-sizing: border-box;
     margin-right: 32px;
 
-    @media (max-width: 576px) {
+    @media (max-width: 630px) {
       @include m.flexBox(column);
       border: 1px solid v.$secondary-color;
       text-align: center;
@@ -98,7 +98,7 @@
     .about-project-responsive {
       display: none;
 
-      @media (max-width: 576px) {
+      @media (max-width: 630px) {
         @include m.flexBox(column, center, center);
         @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
         margin-bottom: 16px;
@@ -109,7 +109,7 @@
       @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
       margin-bottom: 8px;
 
-      @media (max-width: 576px) {
+      @media (max-width: 630px) {
         display: none;
       }
     }
@@ -117,7 +117,7 @@
     p {
       @include m.styleFont("Roboto", 18px, 400, 21.6px, v.$secondary-color);
 
-      @media (max-width: 576px) {
+      @media (max-width: 630px) {
         @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
       }
     }

@@ -13,7 +13,7 @@
     transform: translateX(0);
   }
 
-  @media  (max-width: 576px) {
+  @media  (max-width: 630px) {
     margin-bottom: 100px;
   }
 
@@ -22,7 +22,7 @@
     @include m.flexBox(row, flex-start, flex-start);
     margin-bottom: 50px;
 
-    @media (max-width: 576px) {
+    @media (max-width: 630px) {
       @include m.flexBox();
       @include m.styleFont("Roboto", 32px, 700, 38.4px, v.$primary-color);
     }
@@ -32,7 +32,7 @@
     @include m.flexBox(row, flex-start, center, 100px);
     flex-wrap: wrap;
 
-    @media (max-width: 576px) {
+    @media (max-width: 630px) {
       @include m.flexBox();
       gap: 0;
       position: static;
@@ -40,7 +40,7 @@
 
     .skill-arrow-text {
       display: none;
-      @media (max-width: 576px) {
+      @media (max-width: 630px) {
         @include m.flexBox(column, center, center);
         @include m.styleFont("Roboto", 16px, 400, 19.2px, v.$secondary-color);
         gap: 24px;
@@ -60,7 +60,7 @@
       transition: opacity 0.3s;
       pointer-events: none;
 
-      @media (max-width: 576px) {
+      @media (max-width: 630px) {
         display: none;
       }
     }    
@@ -70,7 +70,7 @@
       width: 100px;
       margin-bottom: 50px;
 
-      @media (max-width: 576px) {
+      @media (max-width: 630px) {
         position: static;
       }
 
@@ -95,7 +95,7 @@
         width: 60px;
         height: 60px;
         margin-bottom: 5px;
-        @media (max-width: 576px) {
+        @media (max-width: 630px) {
           width: 45px;
           height: 45px;
         }
@@ -107,7 +107,7 @@
 
       p {
         @include m.styleFont("Roboto", 18px, 400, 25.2px, v.$secondary-color);
-        @media (max-width: 576px) {
+        @media (max-width: 630px) {
           display: none;
         }
       }
