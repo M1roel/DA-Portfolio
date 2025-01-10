@@ -5,6 +5,7 @@
     @include m.styleFont('Roboto', 16px, 400, 26.1px);
     margin-bottom: 200px;
     margin-top: 120px;
+    height: 100vh;
 
     h2, h3 {
         color: v.$primary-color;
