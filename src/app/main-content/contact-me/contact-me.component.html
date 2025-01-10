@@ -39,19 +39,28 @@
     <div class="form-inputs">
       <div class="form-left">
         <div class="form-name">
-          <div class="input-wrapper" [ngClass]="{ 'input-error': nameError }">
+          <div
+            class="input-wrapper"
+            [ngClass]="{
+              'input-error': nameError,
+              'input-success': !nameError && contactData.name
+            }"
+          >
             <input
               [(ngModel)]="contactData.name"
-              (ngModelChange)="checkName()"
+              name="name"
               type="text"
               id="name"
-              name="name"
-              [placeholder]="
-                nameError ? nameError : ('CONTACT.FORM.NAME' | translate)
-              "
-              required
+              class="form-control"
+              [class.is-invalid]="nameError"
+              [class.is-valid]="!nameError && contactData.name"
+              placeholder="{{ 'CONTACT.FORM.NAME' | translate }}"
+              (input)="checkName()"
               (blur)="checkName()"
+              required
+              aria-describedby="nameError"
             />
+
             <div class="status-icon">
               <img
                 *ngIf="nameError"
@@ -65,22 +74,35 @@
               />
             </div>
           </div>
+
+          <div id="nameError" class="invalid-feedback" *ngIf="nameError">
+            {{ nameError }}
+          </div>
         </div>
 
         <div class="form-email">
-          <div class="input-wrapper" [ngClass]="{ 'input-error': emailError }">
+          <div
+            class="input-wrapper"
+            [ngClass]="{
+              'input-error': emailError,
+              'input-success': !emailError && contactData.email
+            }"
+          >
             <input
               [(ngModel)]="contactData.email"
-              (ngModelChange)="checkEmail()"
+              name="email"
               type="email"
               id="email"
-              name="email"
-              [placeholder]="
-                emailError ? emailError : ('CONTACT.FORM.EMAIL' | translate)
-              "
-              required
+              class="form-control"
+              [class.is-invalid]="emailError"
+              [class.is-valid]="!emailError && contactData.email"
+              placeholder="{{ 'CONTACT.FORM.EMAIL' | translate }}"
+              (input)="checkEmail()"
               (blur)="checkEmail()"
+              required
+              aria-describedby="emailError"
             />
+
             <div class="status-icon">
               <img
                 *ngIf="emailError"
@@ -93,6 +115,10 @@
                 alt="Done"
               />
             </div>
+          </div>
+
+          <div id="emailError" class="invalid-feedback" *ngIf="emailError">
+            {{ emailError }}
           </div>
         </div>
       </div>

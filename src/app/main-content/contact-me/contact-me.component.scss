@@ -158,6 +158,14 @@
               }
             }
           }
+
+          .invalid-feedback {
+            @include m.styleFont ('Roboto', 0.875rem, 400, 1.25rem, #e3342f );
+          }
+          
+          .input-error input {
+            border-color: #e3342f;
+          }
         }
       }
 

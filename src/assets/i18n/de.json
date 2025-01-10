@@ -52,9 +52,11 @@
       "EMAIL_ERROR": "Ihre E-Mail ist erforderlich",
       "MESSAGE_ERROR": "Ihre Nachricht ist erforderlich",
       "NAME_HINT": "Name muss mehr als 2 Buchstaben haben",
+      "NAME_TOO_SHORT": "Der Name muss mindestens 3 Buchstaben enthalten.",
+      "NAME_INVALID_CHARACTERS": "Der Name darf nur Buchstaben und Leerzeichen enthalten.",
       "EMAIL_MISSING_AT": "Die E-Mail-Adresse muss ein '@' enthalten.",
       "EMAIL_INCOMPLETE": "Die E-Mail-Adresse ist unvollständig.",
-      "EMAIL_INVALID_DOMAIN": "Die Domain der E-Mail-Adresse ist ungültig. Beispiel: 'beispiel@test.de'.",
+      "EMAIL_INVALID_DOMAIN": "Die Domain muss mit .de, .com, .org usw. enden.",
       "EMAIL_HINT": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "MESSAGE_HINT": "Nachricht muss mindestens 4 Wörter enthalten",
       "MESSAGE_SUCCESS": "Nachricht wurde erfolgreich gesendet"

@@ -52,6 +52,11 @@
       "EMAIL_ERROR": "Your email is required",
       "MESSAGE_ERROR": "Your message is required",
       "NAME_HINT": "Name must have more than 2 letters",
+      "NAME_TOO_SHORT": "The name must contain at least 3 letters.",
+      "NAME_INVALID_CHARACTERS": "The name can only contain letters and spaces.",
+      "EMAIL_INCOMPLETE": "Please enter a complete email address.",
+      "EMAIL_INVALID_DOMAIN": "The domain must end with .de, .com, .org, etc.",
+      "EMAIL_MISSING_AT": "An '@' symbol is required.",
       "EMAIL_HINT": "(e.g. example@domain.com)",
       "MESSAGE_HINT": "Message must have at least 4 words",
       "MESSAGE_SUCCESS": "Message sent successfully"

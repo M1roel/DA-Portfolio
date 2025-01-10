@@ -63,20 +63,24 @@ export class ContactMeComponent implements AfterViewInit {
   }
 
   /**
-   * Checks if the name input is valid.
-   *
-   * @returns {Promise<boolean>} Returns true if the name is valid, otherwise false.
-   */
-  async checkName(): Promise<boolean> {
-    const namePattern = /^[A-Za-z\s]{3,}$/;
-    if (!namePattern.test(this.contactData.name)) {
-      this.nameError = this.translate.instant('CONTACT.FORM.NAME_HINT');
-      return false;
-    } else {
-      this.nameError = '';
-      return true;
-    }
+ * Checks if the name input is valid.
+ *
+ * @returns {Promise<boolean>} Returns true if the name is valid, otherwise false.
+ */
+async checkName(): Promise<boolean> {
+  const nameValue = this.contactData.name.trim();
+  if (nameValue.length < 3) {
+    this.nameError = this.translate.instant('CONTACT.FORM.NAME_TOO_SHORT');
+    return false;
   }
+  const namePattern = /^[A-Za-z\s]+$/;
+  if (!namePattern.test(nameValue)) {
+    this.nameError = this.translate.instant('CONTACT.FORM.NAME_INVALID_CHARACTERS');
+    return false;
+  }
+  this.nameError = '';
+  return true;
+}
 
   /**
    * Checks if the email input is valid.
@@ -84,25 +88,23 @@ export class ContactMeComponent implements AfterViewInit {
    * @returns {Promise<boolean>} Returns true if the email is valid, otherwise false.
    */
   async checkEmail(): Promise<boolean> {
-    const allowedDomains = [
-      'com', 'org', 'net', 'int', 'edu', 'gov', 'mil', 'co', 'me', 'de', 'uk', 'eu', 'us', 'ca', 'au', 'co.uk',
-      'ac.uk', 'gov.uk', 'edu.au', 'jp', 'fr', 'it', 'es', 'cn', 'ru', 'in', 'br', 'pl', 'ch', 'nl', 'se', 'no',
-      'fi', 'dk', 'at', 'be', 'cz', 'hu', 'sk', 'bg', 'ro', 'tr', 'il', 'kr', 'ae', 'sa', 'za', 'mx', 'cl', 'co.il',
-      'co.in', 'co.kr', 'co.jp', 'gov.in', 'gov.cn', 'gov.sa', 'edu.cn', 'edu.tr', 'edu.in', 'edu.co', 'edu.pk',
-      'ws', 'tv', 'asia', 'mobi', 'tel', 'coop', 'aero', 'pro', 'cat', 'eus', 'xxx', 'college', 'church', 'museum'
-    ];
-
-    const emailPattern = new RegExp(
-      `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?:${allowedDomains.join('|')})$`
-    );
-
-    if (!emailPattern.test(this.contactData.email)) {
-      this.emailError = this.translate.instant('CONTACT.FORM.EMAIL_HINT');
+    const emailValue = this.contactData.email;
+    if (!emailValue.includes('@')) {
+      this.emailError = this.translate.instant('CONTACT.FORM.EMAIL_MISSING_AT');
       return false;
-    } else {
-      this.emailError = '';
-      return true;
     }
+    const [localPart, domainPart] = emailValue.split('@');
+    if (!localPart || !domainPart) {
+      this.emailError = this.translate.instant('CONTACT.FORM.EMAIL_INCOMPLETE');
+      return false;
+    }
+    const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!domainPattern.test(domainPart)) {
+      this.emailError = this.translate.instant('CONTACT.FORM.EMAIL_INVALID_DOMAIN');
+      return false;
+    }
+    this.emailError = '';
+    return true;
   }
 
   /**
