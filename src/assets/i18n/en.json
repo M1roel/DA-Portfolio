@@ -65,5 +65,115 @@
   "FOOTER": {
     "IMPRINT": "Legal Notice",
     "PRIVACY_POLICY": "Privacy Policy"
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy",
+    "responsible": {
+      "title": "Responsible",
+      "name": "Peter Pfautsch",
+      "address": "Oberheydener Str. 35, 41236 Mönchengladbach",
+      "email": "kontakt@pfautsch-portfolio.de"
+    },
+    "general-notes": {
+      "title": "General Information",
+      "text": "The protection of your personal data is very important to me. I treat your personal data confidentially and in accordance with the legal data protection regulations and this privacy policy."
+    },
+    "data-collection": {
+      "title": "Collection and Storage of Personal Data",
+      "visit-website": {
+        "title": "1. When visiting the website",
+        "text": "When you visit my website, your browser automatically sends information to the server of my website. This information is temporarily stored in a log file.",
+        "items": [
+          "IP address of the requesting computer",
+          "Date and time of access",
+          "Name and URL of the retrieved file",
+          "Website from which access occurs (Referrer URL)",
+          "Browser used and possibly the operating system of your computer and your access provider's name"
+        ],
+        "text2": "The mentioned data is processed by me for the following purposes:",
+        "purpose1": "Ensuring a smooth connection setup to the website",
+        "purpose2": "Ensuring comfortable use of my website",
+        "purpose3": "Analyzing system security and stability, as well as for administrative purposes"
+      }
+    },
+    "hosting": {
+      "title": "Website Hosting",
+      "text": "This website is hosted by STRATO AG, Pascalstraße 10, 10587 Berlin.",
+      "link": "https://www.strato.de/datenschutz"
+    },
+    "social-media-plugins": {
+      "title": "Social Media Plugins",
+      "text": "My website uses social media plugins from LinkedIn and GitHub.",
+      "linkedin": {
+        "title": "LinkedIn",
+        "text": "A plugin from LinkedIn is used on my website. The operator is LinkedIn Corporation, 1000 W Maude, Sunnyvale, CA 94085, USA.",
+        "link": "https://www.linkedin.com/legal/privacy-policy"
+      },
+      "github": {
+        "title": "GitHub",
+        "text": "This website links to GitHub. The operator is GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.",
+        "link": "https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement"
+      }
+    },
+    "your-rights": {
+      "title": "Your Rights",
+      "items": [
+        "Request information about your personal data processed by me.",
+        "Request immediate correction of inaccurate or incomplete personal data stored by me.",
+        "Request the deletion of your personal data stored by me.",
+        "Request the restriction of the processing of your personal data.",
+        "Receive your personal data in a structured, commonly used, and machine-readable format, or request its transmission to another controller.",
+        "Withdraw your consent at any time.",
+        "File a complaint with a supervisory authority."
+      ]
+    },
+    "right-to-object": {
+      "title": "Right to Object",
+      "text": "If your personal data is processed based on legitimate interests, you have the right to object to the processing of your personal data."
+    },
+    "update": {
+      "title": "Updates and Changes to This Privacy Policy",
+      "text": "This privacy policy is currently valid and has the status of December 2024."
+    }
+  },
+  "imprint": {
+    "section-1": {
+      "title": "Information according to § 5 TMG",
+      "name": "Peter Pfautsch",
+      "address": "Oberheydener Str. 35",
+      "city": "41236 Mönchengladbach"
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "Phone: +49 1522 1763968",
+      "email": "kontakt@pfautsch-portfolio.de"
+    },
+    "responsible": {
+      "title": "Responsible for the content according to § 55 Abs. 2 RStV",
+      "name": "Peter Pfautsch",
+      "address": "Oberheydener Str. 35",
+      "city": "41236 Mönchengladbach"
+    },
+    "liability-content": {
+      "title": "Liability for content",
+      "text1": "As a service provider, I am responsible for my own content on these pages according to § 7 Abs.1 TMG and the general laws. However, according to §§ 8 to 10 TMG, I am not obliged to monitor transmitted or stored foreign information or to investigate circumstances that indicate illegal activities.",
+      "text2": "Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this regard is only possible from the point in time at which I become aware of a concrete legal violation. If I become aware of corresponding legal violations, I will immediately remove this content."
+    },
+    "liability-links": {
+      "title": "Liability for links",
+      "text1": "My offer contains links to external websites of third parties, over whose content I have no influence. Therefore, I cannot assume any liability for these foreign contents. The respective provider or operator of the linked pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of the link. Illegal content was not detectable at the time the link was created.",
+      "text2": "However, permanent monitoring of the linked pages without concrete evidence of a legal violation is unreasonable. If I become aware of legal violations, I will immediately remove such links."
+    },
+    "copyright": {
+      "title": "Copyright",
+      "text1": "The content and works created by the site operators on these pages are subject to German copyright law. The duplication, editing, distribution, and any kind of use beyond the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use.",
+      "text2": "As far as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. If you become aware of a copyright violation, we ask you to inform us. If legal violations become known, I will immediately remove such content."
+    },
+    "dispute-resolution": {
+      "title": "Dispute resolution",
+      "text1": "The European Commission provides a platform for online dispute resolution (OS):",
+      "link": "https://ec.europa.eu/consumers/odr",
+      "text2": "I am neither willing nor obliged to participate in dispute resolution procedures before a consumer dispute resolution body."
+    }
   }
 }

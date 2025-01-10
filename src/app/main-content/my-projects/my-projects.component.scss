@@ -28,7 +28,7 @@
     }
 
     &:nth-child(even) {
-      transform: translateX(-500px);
+      transform: translateX(-350px);
 
       @media (max-width: 576px) { 
         transform: translateX(-50px);
@@ -48,7 +48,7 @@
     }
 
     &:nth-child(odd) {
-      transform: translateX(500px);
+      transform: translateX(350px);
 
       @media (max-width: 576px) { 
         transform: translateX(-50px);

@@ -3,7 +3,8 @@
 
 footer {
   @include m.flexBox(row, space-between, center);
-  margin-bottom: 50px;
+  margin-bottom: 0;
+  padding: 20px 0;
 
   @media (max-width: 576px) {
     @include m.flexBox(column, center, center);
