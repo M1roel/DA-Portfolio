@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslateService } from '@ngx-translate/core';
 
 /**
  * WhyMeComponent is responsible for providing information about why the user should be chosen for a particular role or task.
@@ -14,12 +13,19 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './why-me.component.scss',
 })
 export class WhyMeComponent implements OnInit {
-  constructor(private el: ElementRef, private translate: TranslateService) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+
+  /**
+   * Constructor for the WhyMeComponent.
+   * @param el - Reference to the host element of this component. Used to manipulate the DOM directly.
+   */
+  constructor(private el: ElementRef) {
   }
 
+  /**
+   * Lifecycle hook that runs after the component is initialized.
+   * Sets up an Intersection Observer to detect when the `.why-me` element becomes visible in the viewport
+   * and applies a `visible` CSS class for animations or styling.
+   */
   ngOnInit() {
     const element = this.el.nativeElement.querySelector('.why-me');
     if (element) {
@@ -39,16 +45,5 @@ export class WhyMeComponent implements OnInit {
     } else {
       console.error('.why-me element not found!');
     }
-  }
-
-  /**
-   * Changes the language of the application.
-   *
-   * @param {Event} event The event object triggered by the language switch.
-   * @param {string} language The language to switch to (e.g., 'en' for English).
-   */
-  useLanguage(event: Event, language: string): void {
-    event.preventDefault();
-    this.translate.use(language);
   }
 }

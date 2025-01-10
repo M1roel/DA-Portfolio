@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslateService } from '@ngx-translate/core';
 
 /**
  * SaidAboutMeComponent displays testimonials or feedback from people about the user's projects.
@@ -35,12 +34,18 @@ export class SaidAboutMeComponent implements AfterViewInit {
     }
   ];
 
-  constructor(private translate: TranslateService, private renderer: Renderer2) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+  /**
+   * Constructor to inject necessary services.
+   * @param renderer - Angular Renderer2 service to safely manipulate DOM elements.
+   */
+  constructor(private renderer: Renderer2) {
   }
 
+  /**
+   * Lifecycle hook that is called after Angular has fully initialized the component's view.
+   * This method sets up an Intersection Observer to detect when testimonial elements become visible
+   * and applies a CSS class for animation or styling purposes.
+   */
   ngAfterViewInit() {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -54,13 +59,9 @@ export class SaidAboutMeComponent implements AfterViewInit {
       { threshold: 0.1 }
     );
 
+    // Attach the observer to each testimonial element
     this.saidAboutElements.forEach((element) => {
       observer.observe(element.nativeElement);
     });
-  }
-
-  useLanguage(event: Event, language: string): void {
-    event.preventDefault();
-    this.translate.use(language);
   }
 }

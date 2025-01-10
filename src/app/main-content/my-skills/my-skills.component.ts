@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslateService } from '@ngx-translate/core';
 
 /**
  * MySkillsComponent displays a list of skills with their respective icons and 
@@ -52,15 +51,12 @@ export class MySkillsComponent implements OnInit {
   tooltipY: number = 0;
 
   /**
-   * Constructs the MySkillsComponent and initializes the translation service.
+   * Constructs the MySkillsComponent and initializes the element service.
    * 
    * @param {ElementRef} el Reference to the DOM element associated with this component.
-   * @param {TranslateService} translate Service for managing translations and language switching.
+   *
    */
-  constructor(private el: ElementRef, private translate: TranslateService) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+  constructor(private el: ElementRef) {
   }
 
   /**
@@ -107,16 +103,5 @@ export class MySkillsComponent implements OnInit {
    */
   hideTooltip() {
     this.tooltipVisible = false;
-  }
-
-  /**
-   * Changes the current language of the application.
-   * 
-   * @param {Event} event The event triggered by the language switch action.
-   * @param {string} language The language to switch to (e.g., 'en' for English).
-   */
-  useLanguage(event: Event, language: string): void {
-    event.preventDefault();
-    this.translate.use(language);
   }
 }

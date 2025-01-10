@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslateService } from '@ngx-translate/core';
 
 /**
  * MyProjectsComponent displays a list of projects with relevant details such as stack, description, and links to GitHub and live demos.
@@ -18,15 +17,12 @@ export class MyProjectsComponent implements AfterViewInit {
   @ViewChildren('project') projectElements!: QueryList<ElementRef>;
 
   /**
-   * Constructor for initializing the component and setting up the translation service.
+   * Constructor for initializing the component and setting up the render service.
    * 
-   * @param {TranslateService} translate The translation service used for managing languages.
+   *
    * @param {Renderer2} renderer The Renderer2 service used for DOM manipulation.
    */
-  constructor(private translate: TranslateService, private renderer: Renderer2) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+  constructor(private renderer: Renderer2) {
   }
 
   ngAfterViewInit() {
@@ -76,15 +72,4 @@ export class MyProjectsComponent implements AfterViewInit {
       liveDemo: 'http://pokedex.peterpfautsch.de/'
     }
   ];
-
-  /**
-   * Changes the language of the application.
-   * 
-   * @param {Event} event The event object triggered by the language switch.
-   * @param {string} language The language to switch to (e.g., 'en' for English).
-   */
-  useLanguage(event: Event, language: string): void {
-    event.preventDefault();
-    this.translate.use(language);
-  }
 }

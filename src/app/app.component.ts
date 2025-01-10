@@ -31,4 +31,24 @@ export class AppComponent {
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
+
+   /**
+   * Switches the language of the application using the TranslateService.
+   * 
+   * @param {Event} event The event object triggered by the language switch.
+   * @param {string} language The language to switch to.
+   */
+   useLanguage(event: Event, language: string): void {
+    event.preventDefault();
+    this.translate.use(language);
+  }
+
+  /**
+   * Retrieves the current language for display or further processing.
+   * 
+   * @returns {string} The current language of the application.
+   */
+  get currentLanguage(): string {
+    return this.translate.currentLang;
+  }
 }
