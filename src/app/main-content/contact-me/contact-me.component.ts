@@ -123,7 +123,7 @@ export class ContactMeComponent implements AfterViewInit {
    * @returns {Promise<boolean>} Returns true if the message is valid, otherwise false.
    */
   async checkMessage(): Promise<boolean> {
-    const messagePattern = /^(\b\w+\b\s*){4,}$/; // Mindestens 4 Wörter
+    const messagePattern = /^([\wäöüÄÖÜß,.!?]+(\s|$)){4,}$/; // Mindestens 4 Wörter
     if (!messagePattern.test(this.contactData.message.trim())) {
       this.messageError = this.translate.instant('CONTACT.FORM.MESSAGE_HINT');
       return false;
