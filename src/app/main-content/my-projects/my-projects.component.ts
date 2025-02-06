@@ -48,6 +48,14 @@ export class MyProjectsComponent implements AfterViewInit {
    */
   projects = [
     {
+      name: 'CRM (work in progress)',
+      stack: 'Angular | SCSS | Firebase | Material Design',
+      descriptionKey: 'PROJECTS.DESCRIPTION_CRM',
+      image: '../../../assets/img/crm.jpg',
+      github: 'https://github.com/M1roel/simplecrm',
+      liveDemo: 'http://crm.peterpfautsch.de/'
+    },
+    {
       name: 'JOIN',
       stack: 'HTML | CSS | JavaScript | Firebase',
       descriptionKey: 'PROJECTS.DESCRIPTION_JOIN',

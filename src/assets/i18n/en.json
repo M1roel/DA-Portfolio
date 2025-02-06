@@ -25,7 +25,7 @@
     "TITLE": "My Projects",
     "DESCRIPTION_JOIN": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "DESCRIPTION_SHARKIE": "Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poisoned bottles to fight against the crazy orca.",
-    "DESCRIPTION_CRM": "A CRM (Customer Relationship Management) system manages customer interactions, streamlines sales, and enhances customer service through data organization and communication tracking.",
+    "DESCRIPTION_CRM": "CRM system that can be used as an interface between different departments in a hospital.",
     "DESCRIPTION_POKEDEX": "An interactive web application that allows real-time retrieval and search of Pokémon data. Developed with HTML, CSS, and JavaScript, the project connects API integrations with a user-friendly interface."
   },
   "ABOUT": {
@@ -72,7 +72,7 @@
       "title": "Responsible",
       "name": "Peter Pfautsch",
       "address": "Oberheydener Str. 35, 41236 Mönchengladbach",
-      "email": "kontakt@pfautsch-portfolio.de"
+      "email": "kontakt@peterpfautsch.de"
     },
     "general-notes": {
       "title": "General Information",
@@ -146,7 +146,7 @@
     "contact": {
       "title": "Contact",
       "phone": "Phone: +49 1522 1763968",
-      "email": "kontakt@pfautsch-portfolio.de"
+      "email": "kontakt@peterpfautsch.de"
     },
     "responsible": {
       "title": "Responsible for the content according to § 55 Abs. 2 RStV",

@@ -93,8 +93,8 @@ export class MySkillsComponent implements OnInit {
   showTooltip(skillName: string, event: MouseEvent) {
     if (skillName === 'Challenge me') {
       this.tooltipVisible = true;
-      this.tooltipX = event.clientX - 100;
-      this.tooltipY = event.clientY - 100;
+      this.tooltipX = event.clientX - 10;
+      this.tooltipY = event.clientY - 10;
     }
   }
 
