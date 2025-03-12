@@ -26,6 +26,7 @@
     "DESCRIPTION_JOIN": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
     "DESCRIPTION_SHARKIE": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Helfen Sie Sharkie, Münzen und vergiftete Flaschen zu finden, um gegen den verrückten Orca zu kämpfen.",
     "DESCRIPTION_CRM": "CRM System, dass als Schnittstelle zwischen verschiedenen Abteilungen in einem Krankenhauses eingesetzt werden kann.",
+    "DESCRIPTION_DABUBBLE": "Eine Chatplatform im Stile von Slack. Erstellen Sie Channels, senden Sie Nachrichten und Dateien, und verwalten Sie Benutzer.",
     "DESCRIPTION_POKEDEX": "Eine interaktive Webanwendung, die es ermöglicht, Pokémon-Daten in Echtzeit abzurufen und zu durchsuchen. Entwickelt mit HTML, CSS und JavaScript, verbindet das Projekt API-Integrationen mit einer benutzerfreundlichen Oberfläche."
   },
   "ABOUT": {

@@ -48,12 +48,12 @@ export class MyProjectsComponent implements AfterViewInit {
    */
   projects = [
     {
-      name: 'CRM (work in progress)',
-      stack: 'Angular | SCSS | Firebase | Material Design',
-      descriptionKey: 'PROJECTS.DESCRIPTION_CRM',
-      image: '../../../assets/img/crm.jpg',
-      github: 'https://github.com/M1roel/simplecrm',
-      liveDemo: 'http://crm.peterpfautsch.de/'
+      name: 'DABubble (work in progress)',
+      stack: 'Angular | SCSS | TypeScript | Firebase',
+      descriptionKey: 'PROJECTS.DESCRIPTION_DABUBBLE',
+      image: '../../../assets/img/dabubble.jpg',
+      github: 'https://github.com/Ozinho78/DaBubble395',
+      liveDemo: 'https://dabubble.peterpfautsch.de/'
     },
     {
       name: 'JOIN',
@@ -61,7 +61,7 @@ export class MyProjectsComponent implements AfterViewInit {
       descriptionKey: 'PROJECTS.DESCRIPTION_JOIN',
       image: '../../../assets/img/join-project.png',
       github: 'https://github.com/M1roel/DA-Join',
-      liveDemo: 'http://join.peterpfautsch.de/public/index.html'
+      liveDemo: 'https://join.peterpfautsch.de/public/index.html'
     },
     {
       name: 'Sharkie',
@@ -69,7 +69,7 @@ export class MyProjectsComponent implements AfterViewInit {
       descriptionKey: 'PROJECTS.DESCRIPTION_SHARKIE',
       image: '../../../assets/img/sharkie-project.png',
       github: 'https://github.com/M1roel/DA-Sharkie',
-      liveDemo: 'http://sharkie.peterpfautsch.de/'
+      liveDemo: 'https://sharkie.peterpfautsch.de/'
     },
     {
       name: 'Pokedex',
@@ -77,7 +77,7 @@ export class MyProjectsComponent implements AfterViewInit {
       descriptionKey: 'PROJECTS.DESCRIPTION_POKEDEX',
       image: '../../../assets/img/pokedex-project.png',
       github: 'https://github.com/M1roel/DA-Pokedex',
-      liveDemo: 'http://pokedex.peterpfautsch.de/'
+      liveDemo: 'https://pokedex.peterpfautsch.de/'
     }
   ];
 }

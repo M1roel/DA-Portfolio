@@ -26,6 +26,7 @@
     "DESCRIPTION_JOIN": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "DESCRIPTION_SHARKIE": "Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poisoned bottles to fight against the crazy orca.",
     "DESCRIPTION_CRM": "CRM system that can be used as an interface between different departments in a hospital.",
+    "DESCRIPTION_DABUBBLE": "A chat platform in the style of Slack. Create channels, send messages and files, and manage users.",
     "DESCRIPTION_POKEDEX": "An interactive web application that allows real-time retrieval and search of Pokémon data. Developed with HTML, CSS, and JavaScript, the project connects API integrations with a user-friendly interface."
   },
   "ABOUT": {
