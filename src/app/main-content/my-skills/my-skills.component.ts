@@ -32,6 +32,7 @@ export class MySkillsComponent implements OnInit {
     { name: 'Python', img: '../../../assets/img/python-icon.png' },
     { name: 'Linux', img: '../../../assets/img/linux-icon.png' },
     { name: 'Flask', img: '../../../assets/img/flask-icon.png' },
+    { name: 'React', img: '../../../assets/img/react-icon.png' },
     { name: 'Challenge me', img: '../../../assets/img/challenge-icon.png' }
   ];
 
