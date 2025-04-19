@@ -48,7 +48,7 @@ export class MyProjectsComponent implements AfterViewInit {
    */
   projects = [
     {
-      name: 'DABubble (work in progress)',
+      name: 'DABubble',
       stack: 'Angular | SCSS | TypeScript | Firebase',
       descriptionKey: 'PROJECTS.DESCRIPTION_DABUBBLE',
       image: '../../../assets/img/dabubble.jpg',
