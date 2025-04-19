@@ -52,7 +52,7 @@ export class MyProjectsComponent implements AfterViewInit {
       stack: 'Angular | SCSS | TypeScript | Firebase',
       descriptionKey: 'PROJECTS.DESCRIPTION_DABUBBLE',
       image: '../../../assets/img/dabubble.jpg',
-      github: 'https://github.com/Ozinho78/DaBubble395',
+      github: 'https://github.com/M1roel/DaBubble395',
       liveDemo: 'https://dabubble.peterpfautsch.de/'
     },
     {
