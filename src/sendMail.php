@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers = [
         'MIME-Version: 1.0',
         'Content-type: text/html; charset=utf-8',
-        'From: noreply@mywebsite.com'
+        'From: noreply@peterpfautsch.de'
     ];
 
     // E-Mail senden
