@@ -26,6 +26,7 @@ export class MySkillsComponent implements OnInit {
     { name: 'CSS', img: '../../../assets/img/css-icon.png' },
     { name: 'Rest-Api', img: '../../../assets/img/api-icon.png' },
     { name: 'Firebase', img: '../../../assets/img/firebase-icon.png' },
+    { name: 'Supabase', img: '../../../assets/img/supabase-icon.png' },
     { name: 'GIT', img: '../../../assets/img/git-icon.png' },
     { name: 'Scrum', img: '../../../assets/img/scrum-icon.png' },
     { name: 'Material design', img: '../../../assets/img/materialdesign-icon.png' },
