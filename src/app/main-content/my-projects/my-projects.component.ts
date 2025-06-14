@@ -52,7 +52,7 @@ export class MyProjectsComponent implements AfterViewInit {
       stack: 'Angular | SCSS | TypeScript | Supabase',
       descriptionKey: 'PROJECTS.DESCRIPTION_PEYTOR',
       image: '../../../assets/img/peytor.jpeg',
-      github: 'https://peytor.de/',
+      github: 'https://github.com/M1roel/Peytor',
       liveDemo: 'https://peytor.de/'
     },
     {
