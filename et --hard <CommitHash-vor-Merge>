@@ -1,0 +1,37 @@
+[33m78fea88[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Add Peytor project details and update styles; enhance internationalization
+[33mfbb0af1[m Refactor translation syntax in imprint component for consistency
+[33m5f28de9[m Update GitHub link for DaBubble project in MyProjectsComponent
+[33m46b306f[m Update project name for DABubble in MyProjectsComponent
+[33m0755a7d[m Fix CSS formatting in hero section component
+[33m7e8631e[m Update hero section images and styles; add article CSV data
+[33mda50af9[m Add React icon image to assets
+[33m0ebd94a[m Increase budget limits for initial and component styles in angular.json
+[33mdc4697e[m Increase budget limits for initial and component styles in angular.json
+[33mdf7cc7f[m Add DABubble project details and description to MyProjects component
+[33mff6cfd4[m Merge branch 'main' of https://github.com/M1roel/DA-Portfolio
+[33m2d48305[m Update message validation regex in ContactMe component to allow special characters and improve message format requirements
+[33m8539c88[m correct the contact mail address in imprint and policy
+[33m3e86154[m optimized why-me and project section
+[33m3727e65[m Refactor ContactMe and MySkills components: update media query breakpoints, adjust styles for improved responsiveness, and enhance layout consistency
+[33m5beff76[m Refactor Navbar component: streamline language handling by consolidating TranslateService usage and removing unnecessary initialization code
+[33mce0d834[m Refactor language handling in components: remove TranslateService dependency and consolidate language switching logic in AppComponent
+[33mbae9666[m Refactor Imprint and Privacy Policy components: adjust layout, reduce margins, and update links to use routerLink for improved navigation
+[33m52cddf3[m Update margin and height styles in Imprint and Privacy Policy components for improved layout
+[33me10b269[m Set height to 100vh for Imprint and Privacy Policy components to ensure full viewport coverage
+[33ma9865c4[m Refactor styles and improve translations in Imprint and Privacy Policy components; adjust layout and padding for better presentation
+[33m06c8c64[m Enhance message input validation in ContactMeComponent: update error handling, improve success states, and adjust styles for better user feedback
+[33mf3bb8f6[m Enhance form validation in ContactMeComponent: improve name and email checks, update error messages, and add success states for inputs
+[33m68b54ae[m Add styles for links in imprint and privacy policy sections; update email validation messages in German localization
+[33m08937e2[m Implement visibility transitions for 'Contact Me' section; add IntersectionObserver for improved animations
+[33m65a96b9[m Refactor visibility transitions for 'Said About Me' section; adjust styles and implement IntersectionObserver for improved animations
+[33m84c4529[m Refactor form reset logic in ContactMeComponent to only clear fields with errors; remove unnecessary resets for valid fields
+[33md76fbf8[m Refactor animations for projects and skills sections; adjust transform values for improved visibility transitions and add responsive styles
+[33m82e53ef[m Add GSAP for animations; implement visibility transitions for projects and skills sections
+[33m4adc15b[m Enhance visibility transition for 'Why Me' section; increase transition duration for smoother effect
+[33mc36921f[m Implement visibility transition for 'Why Me' section; enhance component with IntersectionObserver for improved user experience
+[33mf4b371e[m Refactor styles for 'My Projects' and 'My Skills' sections; update navbar imports for improved routing functionality
+[33me0aa1f3[m Enhance contact form validation and user feedback; update styles for improved layout and consistency
+[33m4a9054a[m Refactor styles for 'My Skills' and 'Why Me' sections to improve layout and add height; update navbar z-index for better visibility
+[33m86758f9[m Merge abgeschlossen und Konflikte behoben
+[33m1e5a8f6[m Refactor contact form styles for improved error display and layout consistency
+[33mc2f5725[m Refactor contact form layout and error handling for improved user feedback and styling

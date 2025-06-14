@@ -23,6 +23,7 @@
   },
   "PROJECTS": {
     "TITLE": "My Projects",
+    "DESCRIPTION_PEYTOR": "Invoice and client management for the self-employed and small businesses. Create invoices with PDF export and use AI for text and invoicing assistance.",
     "DESCRIPTION_JOIN": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "DESCRIPTION_SHARKIE": "Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poisoned bottles to fight against the crazy orca.",
     "DESCRIPTION_CRM": "CRM system that can be used as an interface between different departments in a hospital.",

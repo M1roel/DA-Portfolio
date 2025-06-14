@@ -48,6 +48,14 @@ export class MyProjectsComponent implements AfterViewInit {
    */
   projects = [
     {
+      name: 'Peytor',
+      stack: 'Angular | SCSS | TypeScript | Supabase',
+      descriptionKey: 'PROJECTS.DESCRIPTION_PEYTOR',
+      image: '../../../assets/img/peytor.jpeg',
+      github: 'https://peytor.de/',
+      liveDemo: 'https://peytor.de/'
+    },
+    {
       name: 'DABubble',
       stack: 'Angular | SCSS | TypeScript | Firebase',
       descriptionKey: 'PROJECTS.DESCRIPTION_DABUBBLE',
@@ -62,22 +70,6 @@ export class MyProjectsComponent implements AfterViewInit {
       image: '../../../assets/img/join-project.png',
       github: 'https://github.com/M1roel/DA-Join',
       liveDemo: 'https://join.peterpfautsch.de/public/index.html'
-    },
-    {
-      name: 'Sharkie',
-      stack: 'HTML | CSS | JavaScript',
-      descriptionKey: 'PROJECTS.DESCRIPTION_SHARKIE',
-      image: '../../../assets/img/sharkie-project.png',
-      github: 'https://github.com/M1roel/DA-Sharkie',
-      liveDemo: 'https://sharkie.peterpfautsch.de/'
-    },
-    {
-      name: 'Pokedex',
-      stack: 'HTML | CSS | JAVASCRIPT | Rest-API',
-      descriptionKey: 'PROJECTS.DESCRIPTION_POKEDEX',
-      image: '../../../assets/img/pokedex-project.png',
-      github: 'https://github.com/M1roel/DA-Pokedex',
-      liveDemo: 'https://pokedex.peterpfautsch.de/'
     }
   ];
 }
