@@ -48,7 +48,7 @@ export class MyProjectsComponent implements AfterViewInit {
    */
   projects = [
     {
-      name: 'Peytor',
+      name: 'Peytor (Work in Progress)',
       stack: 'Angular | SCSS | TypeScript | Supabase',
       descriptionKey: 'PROJECTS.DESCRIPTION_PEYTOR',
       image: '../../../assets/img/peytor.jpeg',
