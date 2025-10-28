@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { WhyMeComponent } from './why-me/why-me.component';
 import { CommonModule } from '@angular/common';
@@ -6,6 +6,7 @@ import { MySkillsComponent } from './my-skills/my-skills.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { SaidAboutMeComponent } from './said-about-me/said-about-me.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { SeoService } from '../shared/services/seo.service';
 
 /**
  * MainContentComponent serves as the main container for various sections of the application,
@@ -28,4 +29,15 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
   `,
   styleUrl: './main-content.component.scss',
 })
-export class MainContentComponent {}
+export class MainContentComponent implements OnInit {
+
+  constructor(private seoService: SeoService) { }
+
+  ngOnInit(): void {
+    this.seoService.updateMetaData(
+      'Peter Pfautsch – Fullstack-Entwickler | Angular + Node.js Webentwicklung',
+      'Peter Pfautsch – Fullstack-Entwickler mit Erfahrung in Angular und Node.js. Moderne Webentwicklung, SCSS, responsive UI und saubere Code-Architektur.',
+      'https://peterpfautsch.de'
+    );
+  }
+}

@@ -7,11 +7,11 @@
   },
   "HERO": {
     "CONTACT_ME": "CONTACT ME",
-    "FRONTEND_DEVELOPER": "FRONTEND DEVELOPER"
+    "FRONTEND_DEVELOPER": "FRONTEND-DEVELOPER"
   },
   "WHY_ME": {
     "TITLE": "Why me",
-    "DESCRIPTION": "I am motivated to continuously learn new technologies and develop myself.\nMy ability to solve complex problems and my passion for programming make\nme a valuable member of your team.",
+    "DESCRIPTION": "I am a skilled Frontend Developer with strong expertise in Angular and a growing focus on Node.js.\nI enjoy building modern, responsive web applications, tackling complex problems, and continuously expanding my technical skills.\nMy passion for clean code, scalable architectures, and innovative solutions makes me ready for exciting new challenges in full-stack development.",
     "IAM": "I am",
     "LOCATED": "located in Mönchengladbach",
     "AVAILABLE": "open to work remote",

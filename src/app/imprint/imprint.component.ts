@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { SeoService } from '../shared/services/seo.service';
 
 @Component({
   selector: 'app-imprint',
@@ -10,7 +11,14 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './imprint.component.scss'
 })
 export class ImprintComponent {
-  
-  constructor() {
-  }
+
+  constructor(private seoService: SeoService) {}
+
+    ngOnInit(): void {
+      this.seoService.updateMetaData(
+        'Impressum - Peter Pfautsch',
+        'Impressum von Peter Pfautsch',
+        'https://peterpfautsch.de/impressum'
+      );
+    }
 }

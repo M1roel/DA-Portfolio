@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { SeoService } from '../shared/services/seo.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -9,8 +10,15 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })
-export class PrivacyPolicyComponent {
+export class PrivacyPolicyComponent implements OnInit {
 
-  constructor() {
+  constructor(private seoService: SeoService) { }
+
+    ngOnInit(): void {
+      this.seoService.updateMetaData(
+        'Datenschutzerklärung - Peter Pfautsch',
+        'Datenschutzerklärung von Peter Pfautsch',
+        'https://peterpfautsch.de/datenschutzerklaerung'
+      );
   }
 }
