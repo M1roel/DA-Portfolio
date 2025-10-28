@@ -35,8 +35,8 @@ export class MainContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateMetaData(
-      'Peter Pfautsch – Fullstack-Entwickler | Angular + Node.js Webentwicklung',
-      'Peter Pfautsch – Fullstack-Entwickler mit Erfahrung in Angular und Node.js. Moderne Webentwicklung, SCSS, responsive UI und saubere Code-Architektur.',
+      'Peter Pfautsch – Frontend-Entwickler | Angular, Node.js',
+      'Peter Pfautsch – Frontend-Entwickler mit Erfahrung in Angular und wachsendem Fokus auf Node.js. SCSS, responsive UI und saubere Code-Architektur.',
       'https://peterpfautsch.de'
     );
   }
