@@ -46,7 +46,7 @@ export class FooterComponent {
       hoverImage: '../../../../assets/img/email_button_hover.png'
     },
     {
-      url: 'https://www.linkedin.com/in/peter-pfautsch-379bb62aa/',
+      url: 'https://www.linkedin.com/in/peter-pfautsch/',
       image: '../../../../assets/img/linkedin_button.png',
       originalImage: '../../../../assets/img/linkedin_button.png',
       alt: 'LinkedIn',
