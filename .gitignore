@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 
 config.py
+
+robot.txt
