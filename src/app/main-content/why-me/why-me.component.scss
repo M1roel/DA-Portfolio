@@ -8,10 +8,10 @@
   opacity: 0;
   transform: translateY(200px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  height: 90vh;
+  height: 90dvh;
 
   @media(max-width: 630px) {
-    height: 75dvh;
+    height: 85dvh;
   }
 
   &.visible {
