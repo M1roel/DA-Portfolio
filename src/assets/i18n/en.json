@@ -11,10 +11,10 @@
   },
   "WHY_ME": {
     "TITLE": "Why me",
-    "DESCRIPTION": "I am a skilled Web Developer with strong expertise in Angular and a growing focus on Node.js.\nI enjoy building modern, responsive web applications, tackling complex problems, and continuously expanding my technical skills.\nAs a software developer passionate about clean code, scalable architectures, and innovative solutions, I am ready for exciting new challenges in full-stack development.",
+    "DESCRIPTION": "Structured data management, clear analysis, and modern web development underpin my work as a web developer; with frontend and backend experience (Angular, Node.js) I deliver stable, well-architected applications.\nClean architecture, type safety, and efficient workflows ensure performant, responsive solutions that scale reliably and remain maintainable.\nI am broadening my expertise in design systems, using reusable components, and working remote in collaborative teams with transparent communication and a focus on measurable outcomes.",
     "IAM": "I am",
-    "LOCATED": "located in Mönchengladbach",
-    "AVAILABLE": "open to work remote",
+    "LOCATED": "Based in Mönchengladbach",
+    "AVAILABLE": "Remote-ready",
     "LETS_TALK": "Let's talk"
   },
   "SKILLS": {

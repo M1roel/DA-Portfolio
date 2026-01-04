@@ -11,10 +11,10 @@
   },
   "WHY_ME": {
     "TITLE": "Warum ich",
-    "DESCRIPTION": "Ich bin ein erfahrener Webentwickler mit fundierten Kenntnissen in Angular und wachsendem Schwerpunkt auf Node.js.\nIch liebe es, moderne, responsive Webanwendungen zu entwickeln, komplexe Probleme zu lösen und meine technischen Fähigkeiten kontinuierlich auszubauen.\nAls Softwareentwickler mit Fokus auf sauberen Code, skalierbare Architekturen und innovative Lösungen bin ich bereit für spannende neue Herausforderungen im Full-Stack-Bereich.",
+    "DESCRIPTION": "Strukturiertes Datenmanagement, klare Analyse und moderne Webentwicklung bilden die Basis meiner Arbeit als Webentwickler; mit Frontend- und Backend-Erfahrung (Angular, Node.js) entstehen stabile, durchdachte Anwendungen.\nSaubere Architektur, Typsicherheit und effiziente Abläufe sichern performante, responsive Webanwendungen, die zuverlässig skalieren und wartbar bleiben.\nAktuell vertiefe ich mein Wissen in Design-Systemen, setze wiederverwendbare Komponenten ein und arbeite remote in kollegialen Teams mit transparenter Kommunikation sowie Fokus auf messbare Ergebnisse.",
     "IAM": "Ich bin",
-    "LOCATED": "in Mönchengladbach zu Hause",
-    "AVAILABLE": "bereit für Remote-Arbeit",
+    "LOCATED": "zu Hause in Mönchengladbach",
+    "AVAILABLE": "Remote einsatzbereit",
     "LETS_TALK": "Kommen wir ins Gespräch"
   },
   "SKILLS": {
