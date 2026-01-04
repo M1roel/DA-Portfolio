@@ -37,7 +37,7 @@ export class MainContentComponent implements OnInit {
     this.seoService.updateMetaData(
       'Peter Pfautsch – Frontend-Entwickler | Angular, Node.js',
       'Peter Pfautsch – Frontend-Entwickler mit Erfahrung in Angular und wachsendem Fokus auf Node.js. SCSS, responsive UI und saubere Code-Architektur.',
-      'https://peterpfautsch.de'
+      'https://peterpfautsch.de/'
     );
   }
 }

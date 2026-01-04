@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peterpfautsch.de/sitemap.xml
+
+# Crawling hints
+Crawl-delay: 10

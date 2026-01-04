@@ -1,4 +1,4 @@
-<section class="navbar" id="navbar">
+<nav class="navbar" id="navbar" aria-label="Hauptnavigation">
   <div class="nav-link">
     <div class="nav-left">
       <div class="navbar-initials">
@@ -6,32 +6,34 @@
       </div>
       <div class="nav-links">
         <div class="nav-links-left">
-          <a routerLink="/" (click)="scrollToSection('why-me')">{{ "NAVBAR.WHY_ME" | translate }}</a>
-          <a routerLink="/" (click)="scrollToSection('skills')">{{ "NAVBAR.SKILLS" | translate }}</a>
-          <a routerLink="/" (click)="scrollToSection('projects')">{{ "NAVBAR.PROJECTS" | translate }}</a>
-          <a routerLink="/" (click)="scrollToSection('contact-me')">{{ "NAVBAR.CONTACT" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('why-me', $event)">{{ "NAVBAR.WHY_ME" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('skills', $event)">{{ "NAVBAR.SKILLS" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('projects', $event)">{{ "NAVBAR.PROJECTS" | translate }}</a>
+          <a routerLink="/" (click)="scrollToSection('contact-me', $event)">{{ "NAVBAR.CONTACT" | translate }}</a>
         </div>
       </div>
     </div>
     <div class="nav-right">
-      <a href="" (click)="useLanguage($event, 'de')">DE</a>
-      <p>|</p>
-      <a href="" (click)="useLanguage($event, 'en')">EN</a>
+      <button type="button" (click)="useLanguage($event, 'de')" aria-label="Sprache Deutsch">DE</button>
+      <p aria-hidden="true">|</p>
+      <button type="button" (click)="useLanguage($event, 'en')" aria-label="Sprache Englisch">EN</button>
     </div>
-    <div class="nav-burger-menu" (click)="toggleMenu()">
-      <img src="../../../../assets/img/burger_menu.png" alt="burger menu icon" />
-    </div>
+    <button class="nav-burger-menu" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-label="Navigation öffnen" aria-controls="mobile-menu">
+      <img src="../../../../assets/img/burger_menu.png" alt="" aria-hidden="true" />
+    </button>
   </div>
-  <div class="full-screen-menu" *ngIf="menuOpen">
-    <img src="../../../../assets/img/exit_menu.png" alt="burger menu icon" (click)="toggleMenu()" />
+  <div class="full-screen-menu" *ngIf="menuOpen" id="mobile-menu" role="dialog" aria-label="Mobile Navigation">
+    <button type="button" class="close-menu" aria-label="Navigation schließen" (click)="toggleMenu()">
+      <img src="../../../../assets/img/exit_menu.png" alt="" aria-hidden="true" />
+    </button>
     <a routerLink="/" (click)="toggleMenu(); scrollToSection('why-me')">{{ "NAVBAR.WHY_ME" | translate }}</a>
     <a routerLink="/" (click)="toggleMenu(); scrollToSection('skills')">{{ "NAVBAR.SKILLS" | translate }}</a>
     <a routerLink="/" (click)="toggleMenu(); scrollToSection('projects')">{{ "NAVBAR.PROJECTS" | translate }}</a>
     <a routerLink="/" (click)="toggleMenu(); scrollToSection('contact-me')">{{ "NAVBAR.CONTACT" | translate }}</a>
     <div class="burger-language">
-      <a href="" (click)="useLanguage($event, 'de')">DE</a>
-      <p>|</p>
-      <a href="" (click)="useLanguage($event, 'en')">EN</a>
+      <button type="button" (click)="useLanguage($event, 'de')" aria-label="Sprache Deutsch">DE</button>
+      <p aria-hidden="true">|</p>
+      <button type="button" (click)="useLanguage($event, 'en')" aria-label="Sprache Englisch">EN</button>
     </div>
   </div>
-</section>
+</nav>

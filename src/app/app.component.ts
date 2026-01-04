@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { TranslateModule } from "@ngx-translate/core";
 import { TranslateService } from "@ngx-translate/core";
+import { DOCUMENT } from '@angular/common';
 
 /**
  * Root component of the Angular application.
@@ -26,10 +27,11 @@ export class AppComponent {
    *
    * @param {TranslateService} translate - Service for managing translations and languages.
    */
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
+    this.document.documentElement.lang = 'en';
   }
 
    /**
@@ -41,6 +43,7 @@ export class AppComponent {
    useLanguage(event: Event, language: string): void {
     event.preventDefault();
     this.translate.use(language);
+    this.document.documentElement.lang = language;
   }
 
   /**

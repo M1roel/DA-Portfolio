@@ -18,7 +18,7 @@ export class ImprintComponent {
       this.seoService.updateMetaData(
         'Impressum - Peter Pfautsch',
         'Impressum von Peter Pfautsch',
-        'https://peterpfautsch.de/impressum'
+        'https://peterpfautsch.de/imprint'
       );
     }
 }

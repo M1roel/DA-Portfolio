@@ -67,12 +67,19 @@
       @include m.flexBox(row, center, center);
       cursor: pointer;
 
-      a .arrow-img {
+      button {
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      button .arrow-img {
         width: 25px;
         height: 60px;
       }
 
-      a:hover .arrow-img {
+      button:hover .arrow-img {
         transform: scaleY(1.2) scaleX(1.8);
         content: url("../../../assets/img/arrow_07.png");
       }

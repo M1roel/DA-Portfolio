@@ -1,14 +1,12 @@
 <section class="hero" id="hero">
   <div class="hero-left">
     <div class="hero-left-btn">
-      <a href="#contact-me">
-        <button>{{ 'HERO.CONTACT_ME' | translate }}</button>
-      </a>
+      <button type="button" (click)="scrollToSection($event, 'contact-me')">{{ 'HERO.CONTACT_ME' | translate }}</button>
     </div>
     <div class="hero-left-arrow">
-      <a href="#why-me" (click)="scrollToSection($event, 'why-me')">
-        <img src="../../../assets/img/arrow_04.png" alt="arrow down" class="arrow-img">
-      </a>
+      <button type="button" (click)="scrollToSection($event, 'why-me')" aria-label="Scrolle zum Abschnitt Warum ich">
+        <img src="../../../assets/img/arrow_04.png" alt="" aria-hidden="true" class="arrow-img">
+      </button>
     </div> 
     <div class="hero-left-name">
       <h2>{{ 'HERO.FRONTEND_DEVELOPER' | translate }}</h2>
@@ -16,6 +14,6 @@
     </div>
   </div>
   <div class="hero-right">
-    <img src="../../../assets/img/me2.png" alt="this is me picture" />
+    <img src="../../../assets/img/me2.png" alt="Porträt von Peter Pfautsch" />
   </div>
 </section>

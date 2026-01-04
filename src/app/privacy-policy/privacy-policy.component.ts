@@ -18,7 +18,7 @@ export class PrivacyPolicyComponent implements OnInit {
       this.seoService.updateMetaData(
         'Datenschutzerklärung - Peter Pfautsch',
         'Datenschutzerklärung von Peter Pfautsch',
-        'https://peterpfautsch.de/datenschutzerklaerung'
+        'https://peterpfautsch.de/policy'
       );
   }
 }

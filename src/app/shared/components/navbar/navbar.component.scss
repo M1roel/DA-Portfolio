@@ -63,9 +63,10 @@
       @include m.flexBox(row, center, center);
       margin-left: auto;
 
-      a {
+      button {
         @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
-        text-decoration: none;
+        background: transparent;
+        border: none;
         padding: 0px 4px;
         transition: color 0.125s;
         cursor: pointer;

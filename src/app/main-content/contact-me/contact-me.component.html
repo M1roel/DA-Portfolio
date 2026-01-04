@@ -1,7 +1,7 @@
 <section class="contact-me" id="contact-me" #contactMe>
   <div class="contact-headline">
     <h2>{{ "CONTACT.TITLE" | translate }}</h2>
-    <img src="../../../assets/img/arrow_01.png" alt="arrow" />
+    <img src="../../../assets/img/arrow_01.png" alt="" aria-hidden="true" />
   </div>
   <div class="contact-text">
     <div class="contact-text-left">
@@ -11,22 +11,23 @@
     </div>
     <div class="contact-text-right">
       <div class="contact-text-mail">
-        <img src="../../../assets/img/icon _email.png" alt="mail icon" />
+        <img src="../../../assets/img/icon _email.png" alt="" aria-hidden="true" />
         <span>E-Mail: kontakt&#64;peterpfautsch.de</span>
       </div>
       <div class="contact-text-phone">
-        <img src="../../../assets/img/icon _phone.png" alt="phone icon" />
+        <img src="../../../assets/img/icon _phone.png" alt="" aria-hidden="true" />
         <span>Tel: 01522 1763968</span>
       </div>
     </div>
     <div class="contact-text-arrow">
-      <a href="#hero">
+      <button type="button" (click)="scrollToSection($event, 'hero')" aria-label="Zurück zum Seitenanfang">
         <img
           src="../../../assets/img/arrow_06.png"
-          alt="arrow up"
+          alt=""
+          aria-hidden="true"
           class="arrow-img"
         />
-      </a>
+      </button>
     </div>
   </div>
 
@@ -58,6 +59,7 @@
               (blur)="checkName()"
               required
               aria-describedby="nameError"
+              [attr.aria-label]="'CONTACT.FORM.NAME' | translate"
             />
 
             <div class="status-icon">
@@ -74,7 +76,7 @@
             </div>
           </div>
 
-          <div id="nameError" class="invalid-feedback" *ngIf="nameError">
+          <div id="nameError" class="invalid-feedback" *ngIf="nameError" role="alert">
             {{ nameError }}
           </div>
         </div>
@@ -99,6 +101,7 @@
               (blur)="checkEmail()"
               required
               aria-describedby="emailError"
+              [attr.aria-label]="'CONTACT.FORM.EMAIL' | translate"
             />
 
             <div class="status-icon">
@@ -115,7 +118,7 @@
             </div>
           </div>
 
-          <div id="emailError" class="invalid-feedback" *ngIf="emailError">
+          <div id="emailError" class="invalid-feedback" *ngIf="emailError" role="alert">
             {{ emailError }}
           </div>
         </div>
@@ -135,6 +138,7 @@
               (blur)="checkMessage()"
               required
               aria-describedby="messageError"
+              [attr.aria-label]="'CONTACT.FORM.MESSAGE' | translate"
             ></textarea>
         
             <div class="status-icon">
@@ -151,7 +155,7 @@
             </div>
           </div>
         
-          <div id="messageError" class="invalid-feedback" *ngIf="messageError">
+          <div id="messageError" class="invalid-feedback" *ngIf="messageError" role="alert">
             {{ messageError }}
           </div>
         </div>
@@ -199,11 +203,11 @@
 
   <div class="contact-text-right-responsive">
     <div class="contact-text-mail">
-      <img src="../../../assets/img/icon _email.png" alt="mail icon" />
+      <img src="../../../assets/img/icon _email.png" alt="" aria-hidden="true" />
       <span>kontakt&#64;peterpfautsch.de</span>
     </div>
     <div class="contact-text-phone">
-      <img src="../../../assets/img/icon _phone.png" alt="phone icon" />
+      <img src="../../../assets/img/icon _phone.png" alt="" aria-hidden="true" />
       <span>01522 1763968</span>
     </div>
   </div>
@@ -221,6 +225,6 @@
   </div>
 
   <div class="success-message" id="success-message">
-    <span> {{ "CONTACT.FORM.MESSAGE_SUCCESS" | translate }}</span>
+    <span aria-live="polite"> {{ "CONTACT.FORM.MESSAGE_SUCCESS" | translate }}</span>
   </div>
 </section>

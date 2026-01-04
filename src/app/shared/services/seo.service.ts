@@ -20,6 +20,8 @@ export class SeoService {
     this.setTitle(title);
     this.setDescription(description);
     this.setCanonicalURL(url);
+    this.setOpenGraph(title, description, url);
+    this.setTwitterCard(title, description, url);
   }
 
   /**
@@ -34,6 +36,27 @@ export class SeoService {
    */
   setDescription(description: string): void {
     this.metaService.updateTag({ name: 'description', content: description });
+  }
+
+  /**
+   * OpenGraph / Social Sharing
+   */
+  setOpenGraph(title: string, description: string, url: string): void {
+    this.metaService.updateTag({ property: 'og:title', content: title });
+    this.metaService.updateTag({ property: 'og:description', content: description });
+    this.metaService.updateTag({ property: 'og:url', content: url });
+    this.metaService.updateTag({ property: 'og:type', content: 'website' });
+    this.metaService.updateTag({ property: 'og:site_name', content: 'Peter Pfautsch Portfolio' });
+  }
+
+  /**
+   * Twitter card defaults
+   */
+  setTwitterCard(title: string, description: string, url: string): void {
+    this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.metaService.updateTag({ name: 'twitter:title', content: title });
+    this.metaService.updateTag({ name: 'twitter:description', content: description });
+    this.metaService.updateTag({ name: 'twitter:url', content: url });
   }
 
   /**
