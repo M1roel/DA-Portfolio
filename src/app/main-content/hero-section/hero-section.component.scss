@@ -20,8 +20,8 @@
       button {
         background: transparent;
         border: none;
-        padding: 0;
         cursor: pointer;
+        padding: 0;
       }
 
       button .arrow-img {
@@ -42,15 +42,15 @@
       button {
         @include m.styleFont("Roboto", 18px, 500, 21.6px, v.$primary-color);
         background-color: transparent;
-        width: auto;
+        border: 1px solid v.$secondary-color;
+        cursor: pointer;
         height: 52px;
         padding: 15px 15px;
+        text-align: center;
         transform: rotate(-90deg) translate(-220px, 0);
         transform-origin: top left;
-        border: 1px solid v.$secondary-color;
-        text-align: center;
-        cursor: pointer;
         transition: all 0.3s ease-out;
+        width: auto;
 
         &:hover {
           color: v.$secondary-color;
@@ -62,7 +62,7 @@
       @include m.flexBox(column, flex-end, flex-start);
       height: 33%;
 
-      h2 {
+      h1 {
         @include m.styleFont(
           "Roboto",
           clamp(24px, 4vw, 54px),
@@ -118,7 +118,7 @@
         @include m.flexBox(column, center, center);
         width: 100%;
 
-        h2 {
+        h1 {
           @include m.styleFont("Roboto", 24px, 700, 28.8px, v.$secondary-color);
         }
 
