@@ -5,6 +5,21 @@
   scroll-behavior: smooth;
 }
 
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
+  padding: 0px 4px;
+  transition: color 0.125s;
+
+  &:hover,
+  &.activ {
+    color: v.$hover-color;
+  }
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -64,17 +79,13 @@
       margin-left: auto;
 
       button {
-        @include m.styleFont("Roboto", 22px, 500, 26.4px, v.$primary-color);
-        background: transparent;
-        border: none;
         padding: 0px 4px;
         transition: color 0.125s;
-        cursor: pointer;
-        
-      &:hover,
-      &.activ {
-        color: v.$hover-color;
-      }
+
+        &:hover,
+        &.activ {
+          color: v.$hover-color;
+        }
       }
     }
 
