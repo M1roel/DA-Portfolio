@@ -61,7 +61,8 @@ export class MyProjectsComponent implements AfterViewInit {
       descriptionKey: 'PROJECTS.DESCRIPTION_DABUBBLE',
       image: '../../../assets/img/dabubble.jpg',
       github: 'https://github.com/M1roel/DaBubble395',
-      liveDemo: 'https://dabubble.peterpfautsch.de/'
+      liveDemo: 'https://peterpfautsch.de/projekte/dabubble/'
+
     },
     {
       name: 'JOIN',
@@ -69,7 +70,7 @@ export class MyProjectsComponent implements AfterViewInit {
       descriptionKey: 'PROJECTS.DESCRIPTION_JOIN',
       image: '../../../assets/img/join-project.png',
       github: 'https://github.com/M1roel/DA-Join',
-      liveDemo: 'https://join.peterpfautsch.de/public/index.html'
+      liveDemo: 'https://peterpfautsch.de/projekte/join/'
     }
   ];
 }
